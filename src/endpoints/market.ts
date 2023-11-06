@@ -1,4 +1,4 @@
-import {APIClient} from '@wharfkit/antelope'
+import type {APIClient} from '@wharfkit/antelope'
 import {MarketV1APIClient} from './market/v1'
 import {MarketV2APIClient} from './market/v2'
 

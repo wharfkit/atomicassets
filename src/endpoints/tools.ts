@@ -1,4 +1,4 @@
-import {APIClient} from '@wharfkit/antelope'
+import type {APIClient} from '@wharfkit/antelope'
 import {ToolsV1APIClient} from './tools/v1'
 
 export class ToolsAPIClient {

@@ -1,8 +1,8 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelope'
 import type {ActionType} from '../../contracts/atomicassets'
-import type {OfferState} from '../../types'
 import {Assets} from '../../types'
+import type {OfferState} from '../../types'
 
 export class AssetsV1APIClient {
     constructor(private client: APIClient) {}

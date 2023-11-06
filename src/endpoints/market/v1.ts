@@ -1,6 +1,5 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
-import {UInt32Type, UInt8Type} from '@wharfkit/antelope'
 import type {AuctionState, BuyofferState, OfferState} from '../../types'
 import {Market} from '../../types'
 import type {ActionType as SActionType} from '../../contracts/atomicassets'
