@@ -74,7 +74,7 @@ export class Contract extends BaseContract {
             | 'config'
             | 'counters'
             | 'marketplaces'
-            | 'sales',
+            | 'sales'
     >(name: T, scope?: NameType) {
         return super.table(name, scope, TableMap[name])
     }

@@ -93,7 +93,7 @@ export class Contract extends BaseContract {
             | 'offers'
             | 'schemas'
             | 'templates'
-            | 'tokenconfigs',
+            | 'tokenconfigs'
     >(name: T, scope?: NameType) {
         return super.table(name, scope, TableMap[name])
     }
