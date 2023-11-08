@@ -60,7 +60,7 @@ export class MarketV2APIClient {
         const queryParts = {}
 
         for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as string
+            queryParts[key] = String(value)
         }
         for (const [key, value] of Object.entries(extra_options || {})) {
             queryParts[key] = value
@@ -92,7 +92,7 @@ export class MarketV2APIClient {
         const queryParts = {}
 
         for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as string
+            queryParts[key] = String(value)
         }
 
         const queryParams = Object.keys(queryParts).length

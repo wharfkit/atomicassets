@@ -28,7 +28,7 @@ export class ToolsV1APIClient {
         const queryParts = {}
 
         for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as string
+            queryParts[key] = String(value)
         }
 
         const queryParams = Object.keys(queryParts).length
@@ -63,7 +63,7 @@ export class ToolsV1APIClient {
         const queryParts = {}
 
         for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as string
+            queryParts[key] = String(value)
         }
 
         const queryParams = Object.keys(queryParts).length
