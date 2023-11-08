@@ -71,8 +71,6 @@ suite('Sale', function () {
     })
 
     test('takerMarketplace', function () {
-        console.log(testSale.takerMarketplace)
-        console.log(testSale.data.taker_marketplace)
         if (testSale.takerMarketplace) {
             assert.isTrue(testSale.takerMarketplace.equals(testSale.data.taker_marketplace))
         } else {
