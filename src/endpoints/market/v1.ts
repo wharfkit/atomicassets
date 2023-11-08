@@ -4,6 +4,7 @@ import type {AuctionState, BuyofferState, OfferState} from '../../types'
 import {Market} from '../../types'
 import type {ActionType as SActionType} from '../../contracts/atomicassets'
 import type {ActionType as MActionType} from '../../contracts/atomicmarket'
+import {buildQueryParams} from '../utils'
 
 export class MarketV1APIClient {
     constructor(private client: APIClient) {}
@@ -56,19 +57,7 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicmarket/v1/assets${queryParams}`,
@@ -103,15 +92,7 @@ export class MarketV1APIClient {
             action_blacklist?: SActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/assets/${asset_id}/logs${queryParams}`,
@@ -129,15 +110,7 @@ export class MarketV1APIClient {
             order?: 'asc' | 'desc'
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/assets/${asset_id}/sales${queryParams}`,
@@ -179,15 +152,7 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'updated'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/offers${queryParams}`,
@@ -214,15 +179,7 @@ export class MarketV1APIClient {
             action_blacklist?: SActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/offers/${offer_id}/logs${queryParams}`,
@@ -255,15 +212,7 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/transfers${queryParams}`,
@@ -290,15 +239,7 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/sales/${sale_id}/logs${queryParams}`,
@@ -335,18 +276,7 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicmarket/v1/sales/templates${queryParams}`,
@@ -416,18 +346,7 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicmarket/v1/auctions${queryParams}`,
@@ -454,15 +373,7 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/auctions/${auction_id}/logs${queryParams}`,
@@ -528,18 +439,7 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicmarket/v1/buyoffers${queryParams}`,
@@ -566,15 +466,7 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs${queryParams}`,
@@ -606,15 +498,7 @@ export class MarketV1APIClient {
         burned?: boolean
         symbol?: string
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/prices/sales${queryParams}`,
@@ -630,15 +514,7 @@ export class MarketV1APIClient {
         burned?: boolean
         symbol?: string
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/prices/sales/days${queryParams}`,
@@ -657,15 +533,7 @@ export class MarketV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/prices/templates${queryParams}`,
@@ -701,15 +569,7 @@ export class MarketV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/prices/assets${queryParams}`,
@@ -741,15 +601,7 @@ export class MarketV1APIClient {
             upper_bound?: string
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/prices/inventory/${account}${queryParams}`,
@@ -774,15 +626,7 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'volume' | 'listings'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/collections${queryParams}`,
@@ -797,15 +641,7 @@ export class MarketV1APIClient {
             symbol: string
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/collections/${collection_name}${queryParams}`,
@@ -826,15 +662,7 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'buy_volume' | 'sell_volume'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/accounts${queryParams}`,
@@ -851,15 +679,7 @@ export class MarketV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/accounts/${account}${queryParams}`,
@@ -880,15 +700,7 @@ export class MarketV1APIClient {
             sort?: 'volume' | 'listings'
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/schemas/${collection_name}${queryParams}`,
@@ -914,15 +726,7 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'volume' | 'sales'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/templates${queryParams}`,
@@ -936,15 +740,7 @@ export class MarketV1APIClient {
         collection_blacklist?: NameType[]
         collection_whitelist?: NameType[]
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/graph${queryParams}`,
@@ -958,15 +754,7 @@ export class MarketV1APIClient {
         collection_blacklist?: NameType[]
         collection_whitelist?: NameType[]
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v1/stats/sales${queryParams}`,

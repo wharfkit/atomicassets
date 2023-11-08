@@ -1,6 +1,6 @@
 import {assert} from 'chai'
 
-import {APIClient, FetchProvider} from '@wharfkit/antelope'
+import {APIClient, FetchProvider, Name} from '@wharfkit/antelope'
 import {mockFetch} from '@wharfkit/mock-data'
 
 import {AtomicAssetsAPIClient} from '$lib'
@@ -119,7 +119,7 @@ suite('atomicassets', function () {
 
     test('get_assets', async function () {
         const res = await atomicassets.atomicassets.v1.get_assets({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             owner: ['taco'],
             limit: 10,
         })

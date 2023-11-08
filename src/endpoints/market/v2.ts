@@ -2,6 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
 import type {SaleState} from '../../types'
 import {Market} from '../../types'
+import {buildQueryParams} from '../utils'
 
 export class MarketV2APIClient {
     constructor(private client: APIClient) {}
@@ -57,18 +58,7 @@ export class MarketV2APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicmarket/v2/sales${queryParams}`,
@@ -89,15 +79,7 @@ export class MarketV2APIClient {
             sort?: 'volume' | 'sales'
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicmarket/v2/stats/schemas/${collection_name}${queryParams}`,

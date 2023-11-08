@@ -3,6 +3,7 @@ import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelo
 import type {ActionType} from '../../contracts/atomicassets'
 import {Assets} from '../../types'
 import type {OfferState} from '../../types'
+import {buildQueryParams} from '../utils'
 
 export class AssetsV1APIClient {
     constructor(private client: APIClient) {}
@@ -45,19 +46,7 @@ export class AssetsV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicassets/v1/assets${queryParams}`,
@@ -92,15 +81,7 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/assets/${asset_id}/logs${queryParams}`,
@@ -127,15 +108,7 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'collection_name'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/collections${queryParams}`,
@@ -170,15 +143,7 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/collections/${collection_name}/logs${queryParams}`,
@@ -204,15 +169,7 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'schema_name' | 'assets'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/schemas${queryParams}`,
@@ -248,15 +205,7 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/logs${queryParams}`,
@@ -293,18 +242,7 @@ export class AssetsV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-        for (const [key, value] of Object.entries(extra_options || {})) {
-            queryParts[key] = value
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options, extra_options)
 
         return this.client.call({
             path: `/atomicassets/v1/templates${queryParams}`,
@@ -340,15 +278,7 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/templates/${collection_name}/${template_id}/logs${queryParams}`,
@@ -390,15 +320,7 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'updated'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/offers${queryParams}`,
@@ -425,15 +347,7 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/offers/${offer_id}/logs${queryParams}`,
@@ -466,15 +380,7 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/transfers${queryParams}`,
@@ -500,15 +406,7 @@ export class AssetsV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/accounts${queryParams}`,
@@ -525,15 +423,7 @@ export class AssetsV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as unknown as string
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/accounts/${account}${queryParams}`,
@@ -566,15 +456,7 @@ export class AssetsV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/burns${queryParams}`,
@@ -591,15 +473,7 @@ export class AssetsV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = value as unknown as string
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const queryParams = buildQueryParams(options)
 
         return this.client.call({
             path: `/atomicassets/v1/burns/${account}${queryParams}`,
