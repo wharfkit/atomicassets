@@ -29,7 +29,7 @@ const accountName = 'test.gm'
 
 suite('Template', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(5 * 1000)
 
     let testTemplate: Template
 

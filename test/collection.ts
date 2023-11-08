@@ -28,7 +28,7 @@ const accountName = 'test.gm'
 
 suite('Collection', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(5 * 1000)
 
     let testCollection: Collection
 

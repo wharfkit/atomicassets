@@ -29,7 +29,7 @@ const accountName = 'test.gm'
 
 suite('Schema', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(5 * 1000)
 
     let testSchema: Schema
 

@@ -34,7 +34,7 @@ const saleId = 89024803
 
 suite('Sale', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(5 * 1000)
 
     let testSale: Sale
 

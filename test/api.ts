@@ -15,7 +15,7 @@ const atomicassets = new AtomicAssetsAPIClient(client)
 
 suite('atomicassets', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(10 * 1000)
 
     test('get_config', async function () {
         const res = await atomicassets.atomicassets.v1.get_config()
@@ -190,7 +190,7 @@ suite('atomicassets', function () {
 
 suite('atomictools', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(10 * 1000)
 
     test('get_links', async function () {
         const res = await atomicassets.atomictools.v1.get_links({
@@ -218,7 +218,7 @@ suite('atomictools', function () {
 
 suite('atomicmarket', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(10 * 1000)
 
     test('get_assets', async function () {
         const res = await atomicassets.atomicmarket.v1.get_assets({

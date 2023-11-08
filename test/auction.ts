@@ -34,7 +34,7 @@ const auctionId = 1301765
 
 suite('Auction', function () {
     this.slow(200)
-    this.timeout(10 * 10000)
+    this.timeout(5 * 1000)
 
     let testAuction: Auction
 
