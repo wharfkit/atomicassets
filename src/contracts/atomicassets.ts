@@ -462,7 +462,7 @@ export namespace Types {
         supported_tokens!: ExtendedSymbol[]
     }
 
-    @Variant.type('my_variant', [
+    @Variant.type('atomic_variant', [
         Int8,
         Int16,
         Int32,
