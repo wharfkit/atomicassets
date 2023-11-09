@@ -25,7 +25,7 @@ suite('atomicassets', function () {
 
     test('get_accounts', async function () {
         const res = await atomicassets.atomicassets.v1.get_accounts({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             owner: ['taco'],
             limit: 10,
         })
@@ -50,7 +50,7 @@ suite('atomicassets', function () {
 
     test('get_collections', async function () {
         const res = await atomicassets.atomicassets.v1.get_collections({
-            author: ['taco', 'alien.worlds'],
+            author: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Assets.GetCollectionsResponse)
@@ -70,14 +70,16 @@ suite('atomicassets', function () {
     })
 
     test('get_collection_logs', async function () {
-        const res = await atomicassets.atomicassets.v1.get_collection_logs('taco', {limit: 10})
+        const res = await atomicassets.atomicassets.v1.get_collection_logs('taco', {
+            limit: 10,
+        })
         assert.instanceOf(res, Types.Assets.ActionLogsResponse)
         assert.equal(res.success, true)
     })
 
     test('get_schemas', async function () {
         const res = await atomicassets.atomicassets.v1.get_schemas({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Assets.GetSchemasResponse)
@@ -106,7 +108,7 @@ suite('atomicassets', function () {
 
     test('get_templates', async function () {
         const res = await atomicassets.atomicassets.v1.get_templates({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Assets.GetTemplatesResponse)
@@ -166,7 +168,7 @@ suite('atomicassets', function () {
 
     test('get_offers', async function () {
         const res = await atomicassets.atomicassets.v1.get_offers({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Assets.GetOffersResponse)
@@ -190,7 +192,7 @@ suite('atomicassets', function () {
     test('get_transfers', async function () {
         const res = await atomicassets.atomicassets.v1.get_transfers({
             account: ['taco'],
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Assets.GetTransfersResponse)
@@ -199,7 +201,7 @@ suite('atomicassets', function () {
 
     test('get_burns', async function () {
         const res = await atomicassets.atomicassets.v1.get_burns({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             match_owner: 'taco',
             limit: 10,
         })
@@ -220,7 +222,7 @@ suite('atomictools', function () {
 
     test('get_links', async function () {
         const res = await atomicassets.atomictools.v1.get_links({
-            creator: ['taco', 'federation'],
+            creator: [Name.from('taco'), 'federation'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Tools.GetLinksResponse)
@@ -252,7 +254,7 @@ suite('atomicmarket', function () {
 
     test('get_assets', async function () {
         const res = await atomicassets.atomicmarket.v1.get_assets({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             owner: ['taco'],
             limit: 10,
         })
@@ -289,7 +291,7 @@ suite('atomicmarket', function () {
 
     test('get_offers', async function () {
         const res = await atomicassets.atomicmarket.v1.get_offers({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetOffersResponse)
@@ -313,7 +315,7 @@ suite('atomicmarket', function () {
     test('get_transfers', async function () {
         const res = await atomicassets.atomicmarket.v1.get_transfers({
             account: ['taco'],
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetTransfersResponse)
@@ -322,7 +324,7 @@ suite('atomicmarket', function () {
 
     test('get_sales', async function () {
         const res = await atomicassets.atomicmarket.v2.get_sales({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             buyer: ['taco'],
             limit: 10,
         })
@@ -356,7 +358,7 @@ suite('atomicmarket', function () {
 
     test('get_auctions', async function () {
         const res = await atomicassets.atomicmarket.v1.get_auctions({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetAuctionsResponse)
@@ -379,7 +381,7 @@ suite('atomicmarket', function () {
 
     test('get_buyoffers', async function () {
         const res = await atomicassets.atomicmarket.v1.get_buyoffers({
-            collection_name: ['taco', 'alien.worlds'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetBuyoffersResponse)
