@@ -17,7 +17,7 @@ export class AtomicToolsKit {
         return Link.from(data.data, this.utility)
     }
 
-    announceLink(value: AtomicToolsContract.Types.Announcelink): Action {
+    announceLink(value: AtomicToolsContract.ActionParams.Announcelink): Action {
         return this.utility.toolsContract.action('announcelink', value)
     }
 }

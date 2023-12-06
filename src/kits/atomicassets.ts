@@ -17,7 +17,7 @@ export class AtomicAssetsKit {
         return Collection.from(data.data, this.utility)
     }
 
-    createCollection(value: AtomicAssetsContract.Types.Createcol): Action {
+    createCollection(value: AtomicAssetsContract.ActionParams.Createcol): Action {
         return this.utility.assetsContract.action('createcol', value)
     }
 
@@ -30,7 +30,7 @@ export class AtomicAssetsKit {
         return Schema.from(data.data, this.utility)
     }
 
-    createSchema(value: AtomicAssetsContract.Types.Createschema): Action {
+    createSchema(value: AtomicAssetsContract.ActionParams.Createschema): Action {
         return this.utility.assetsContract.action('createschema', value)
     }
 
@@ -43,7 +43,7 @@ export class AtomicAssetsKit {
         return Template.from(data.data, this.utility)
     }
 
-    createTemplate(value: AtomicAssetsContract.Types.Createtempl): Action {
+    createTemplate(value: AtomicAssetsContract.ActionParams.Createtempl): Action {
         return this.utility.assetsContract.action('createtempl', value)
     }
 
@@ -53,7 +53,7 @@ export class AtomicAssetsKit {
         return Asset.from(data.data, this.utility)
     }
 
-    mintAsset(value: AtomicAssetsContract.Types.Mintasset): Action {
+    mintAsset(value: AtomicAssetsContract.ActionParams.Mintasset): Action {
         return this.utility.assetsContract.action('mintasset', value)
     }
 
@@ -63,31 +63,31 @@ export class AtomicAssetsKit {
         return Offer.from(data.data, this.utility)
     }
 
-    createOffer(value: AtomicAssetsContract.Types.Createoffer): Action {
+    createOffer(value: AtomicAssetsContract.ActionParams.Createoffer): Action {
         return this.utility.assetsContract.action('createoffer', value)
     }
 
-    transfer(value: AtomicAssetsContract.Types.Transfer): Action {
+    transfer(value: AtomicAssetsContract.ActionParams.Transfer): Action {
         return this.utility.assetsContract.action('transfer', value)
     }
 
-    withdraw(value: AtomicAssetsContract.Types.Withdraw): Action {
+    withdraw(value: AtomicAssetsContract.ActionParams.Withdraw): Action {
         return this.utility.assetsContract.action('withdraw', value)
     }
 
-    addConfToken(value: AtomicAssetsContract.Types.Addconftoken): Action {
+    addConfToken(value: AtomicAssetsContract.ActionParams.Addconftoken): Action {
         return this.utility.assetsContract.action('addconftoken', value)
     }
 
-    adminColEdit(value: AtomicAssetsContract.Types.Admincoledit): Action {
+    adminColEdit(value: AtomicAssetsContract.ActionParams.Admincoledit): Action {
         return this.utility.assetsContract.action('admincoledit', value)
     }
 
-    announceDepo(value: AtomicAssetsContract.Types.Announcedepo): Action {
+    announceDepo(value: AtomicAssetsContract.ActionParams.Announcedepo): Action {
         return this.utility.assetsContract.action('announcedepo', value)
     }
 
-    setVersion(value: AtomicAssetsContract.Types.Setversion): Action {
+    setVersion(value: AtomicAssetsContract.ActionParams.Setversion): Action {
         return this.utility.assetsContract.action('setversion', value)
     }
 }

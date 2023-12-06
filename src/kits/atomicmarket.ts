@@ -17,7 +17,7 @@ export class AtomicMarketKit {
         return Auction.from(data.data, this.utility)
     }
 
-    announceAuction(value: AtomicMarketContract.Types.Announceauct): Action {
+    announceAuction(value: AtomicMarketContract.ActionParams.Announceauct): Action {
         return this.utility.marketContract.action('announceauct', value)
     }
 
@@ -27,7 +27,7 @@ export class AtomicMarketKit {
         return Sale.from(data.data, this.utility)
     }
 
-    announceSale(value: AtomicMarketContract.Types.Announcesale): Action {
+    announceSale(value: AtomicMarketContract.ActionParams.Announcesale): Action {
         return this.utility.marketContract.action('announcesale', value)
     }
 
@@ -37,51 +37,51 @@ export class AtomicMarketKit {
         return Buyoffer.from(data.data, this.utility)
     }
 
-    createBuyo(value: AtomicMarketContract.Types.Createbuyo): Action {
+    createBuyo(value: AtomicMarketContract.ActionParams.Createbuyo): Action {
         return this.utility.marketContract.action('createbuyo', value)
     }
 
-    addBonusfeeCounter(value: AtomicMarketContract.Types.Addbonusfee): Action {
+    addBonusfeeCounter(value: AtomicMarketContract.ActionParams.Addbonusfee): Action {
         return this.utility.marketContract.action('addafeectr', value)
     }
 
-    addBonusfee(value: AtomicMarketContract.Types.Addbonusfee): Action {
+    addBonusfee(value: AtomicMarketContract.ActionParams.Addbonusfee): Action {
         return this.utility.marketContract.action('addbonusfee', value)
     }
 
-    delBonusfee(value: AtomicMarketContract.Types.Delbonusfee): Action {
+    delBonusfee(value: AtomicMarketContract.ActionParams.Delbonusfee): Action {
         return this.utility.marketContract.action('delbonusfee', value)
     }
 
-    stopBonusfee(value: AtomicMarketContract.Types.Stopbonusfee): Action {
+    stopBonusfee(value: AtomicMarketContract.ActionParams.Stopbonusfee): Action {
         return this.utility.marketContract.action('stopbonusfee', value)
     }
 
-    addConfToken(value: AtomicMarketContract.Types.Addconftoken): Action {
+    addConfToken(value: AtomicMarketContract.ActionParams.Addconftoken): Action {
         return this.utility.marketContract.action('addconftoken', value)
     }
 
-    addDelphi(value: AtomicMarketContract.Types.Adddelphi): Action {
+    addDelphi(value: AtomicMarketContract.ActionParams.Adddelphi): Action {
         return this.utility.marketContract.action('adddelphi', value)
     }
 
-    registerMarketplace(value: AtomicMarketContract.Types.Regmarket): Action {
+    registerMarketplace(value: AtomicMarketContract.ActionParams.Regmarket): Action {
         return this.utility.marketContract.action('regmarket', value)
     }
 
-    setMarketfee(value: AtomicMarketContract.Types.Setmarketfee): Action {
+    setMarketfee(value: AtomicMarketContract.ActionParams.Setmarketfee): Action {
         return this.utility.marketContract.action('setmarketfee', value)
     }
 
-    setMinbidinc(value: AtomicMarketContract.Types.Setminbidinc): Action {
+    setMinbidinc(value: AtomicMarketContract.ActionParams.Setminbidinc): Action {
         return this.utility.marketContract.action('setminbidinc', value)
     }
 
-    setVersion(value: AtomicMarketContract.Types.Setversion): Action {
+    setVersion(value: AtomicMarketContract.ActionParams.Setversion): Action {
         return this.utility.marketContract.action('setversion', value)
     }
 
-    withdraw(value: AtomicMarketContract.Types.Withdraw): Action {
+    withdraw(value: AtomicMarketContract.ActionParams.Withdraw): Action {
         return this.utility.marketContract.action('withdraw', value)
     }
 }
