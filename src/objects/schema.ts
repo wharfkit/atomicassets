@@ -3,19 +3,19 @@ import {Name} from '@wharfkit/antelope'
 import type {SchemaObject} from '../types'
 import {Collection} from './collection'
 import type * as AtomicAssetsContract from '../contracts/atomicassets'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Schema {
     readonly data: SchemaObject
     readonly collection: Collection
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(schemaObject: SchemaObject, utility: AtomicUtility) {
+    static from(schemaObject: SchemaObject, utility: KitUtility) {
         const collection = new Collection(utility, schemaObject.collection)
         return new this(utility, schemaObject, collection)
     }
 
-    constructor(utility: AtomicUtility, data: SchemaObject, collection: Collection) {
+    constructor(utility: KitUtility, data: SchemaObject, collection: Collection) {
         this.utility = utility
         this.data = data
         this.collection = collection

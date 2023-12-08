@@ -4,13 +4,7 @@ import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
 import type {Sale} from '$lib'
-import {
-    AtomicAssetsAPIClient,
-    AtomicMarketContract,
-    AtomicMarketKit,
-    AtomicUtility,
-    Types,
-} from '$lib'
+import {AtomicAssetsAPIClient, AtomicMarketContract, AtomicMarketKit, KitUtility, Types} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -23,12 +17,12 @@ const atomicassets = new AtomicAssetsAPIClient(
     })
 )
 
-const utility = new AtomicUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
+const utility = new KitUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
     client,
     atomicClient: atomicassets,
 })
 
-const kitInst = new AtomicMarketKit(utility)
+const kitInst = new AtomicMarketKit('https://wax.api.atomicassets.io/', Chains.WAX, utility)
 const accountName = 'test.gm'
 const saleId = 89024803
 

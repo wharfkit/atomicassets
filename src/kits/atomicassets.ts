@@ -1,14 +1,16 @@
 import type {Action, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
-import {Asset, Collection, Offer, Schema, Template} from '../objects'
+import type {ChainDefinition} from '@wharfkit/common'
 
+import {Asset, Collection, Offer, Schema, Template} from '../objects'
 import type * as AtomicAssetsContract from '../contracts/atomicassets'
-import type {AtomicUtility} from '../utility'
+import type {KitOptions} from '../utility'
+import {KitUtility} from '../utility'
 
 export class AtomicAssetsKit {
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    constructor(utility: AtomicUtility) {
-        this.utility = utility
+    constructor(url: string, chain: ChainDefinition, options?: KitOptions) {
+        this.utility = new KitUtility(url, chain, options)
     }
 
     async loadCollection(collectionName: NameType): Promise<Collection> {

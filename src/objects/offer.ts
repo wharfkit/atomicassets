@@ -3,15 +3,15 @@ import {Name} from '@wharfkit/antelope'
 import type {OfferObject} from '../types'
 import {OfferState} from '../types'
 import {Asset} from './asset'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Offer {
     readonly data: OfferObject
     readonly sender_assets: Asset[]
     readonly recipient_assets: Asset[]
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(offerObject: OfferObject, utility: AtomicUtility) {
+    static from(offerObject: OfferObject, utility: KitUtility) {
         const sender_assets: Asset[] = []
         const recipient_assets: Asset[] = []
 
@@ -28,7 +28,7 @@ export class Offer {
     }
 
     constructor(
-        utility: AtomicUtility,
+        utility: KitUtility,
         data: OfferObject,
         sender_assets: Asset[],
         recipient_assets: Asset[]

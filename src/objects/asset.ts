@@ -5,7 +5,7 @@ import type {AssetObject} from '../types'
 import {Collection} from './collection'
 import {Schema} from './schema'
 import {Template} from './template'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 import type * as AtomicAssetsContract from '../contracts/atomicassets'
 
 export class Asset {
@@ -14,9 +14,9 @@ export class Asset {
     readonly schema: Schema
     readonly template: Template
     readonly backedTokens: ExtendedAsset[]
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(assetObject: AssetObject, utility: AtomicUtility) {
+    static from(assetObject: AssetObject, utility: KitUtility) {
         const collection = new Collection(utility, assetObject.collection)
         const schema = new Schema(utility, assetObject.schema, collection)
         const template = new Template(utility, assetObject.template, collection, schema)
@@ -25,7 +25,7 @@ export class Asset {
     }
 
     constructor(
-        utility: AtomicUtility,
+        utility: KitUtility,
         data: AssetObject,
         collection: Collection,
         schema: Schema,

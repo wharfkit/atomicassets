@@ -3,20 +3,20 @@ import {Name, PublicKey, UInt64} from '@wharfkit/antelope'
 import type {LinkObject} from '../types'
 import {LinkState} from '../types'
 import {Asset} from './asset'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Link {
     readonly data: LinkObject
     readonly assets: Asset[]
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
     readonly publicKey: PublicKey
 
-    static from(linkObject: LinkObject, utility: AtomicUtility) {
+    static from(linkObject: LinkObject, utility: KitUtility) {
         const assets = linkObject.assets.map((a) => Asset.from(a, utility))
         return new this(utility, linkObject, assets)
     }
 
-    constructor(utility: AtomicUtility, data: LinkObject, assets: Asset[]) {
+    constructor(utility: KitUtility, data: LinkObject, assets: Asset[]) {
         this.utility = utility
         this.data = data
         this.assets = assets

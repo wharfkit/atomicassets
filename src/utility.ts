@@ -8,7 +8,7 @@ import * as AtomicAssetsContract from './contracts/atomicassets'
 import * as AtomicMarketContract from './contracts/atomicmarket'
 import * as AtomicToolsContract from './contracts/atomictoolsx'
 
-interface UtilityOptions {
+export interface KitOptions {
     assetsContract?: Contract
     marketContract?: Contract
     toolsContract?: Contract
@@ -16,7 +16,7 @@ interface UtilityOptions {
     atomicClient?: AtomicAssetsAPIClient
 }
 
-export class AtomicUtility {
+export class KitUtility {
     readonly url: string
     readonly chain: ChainDefinition
     readonly client: APIClient
@@ -25,7 +25,7 @@ export class AtomicUtility {
     readonly marketContract: Contract
     readonly toolsContract: Contract
 
-    constructor(url: string, chain: ChainDefinition, options?: UtilityOptions) {
+    constructor(url: string, chain: ChainDefinition, options?: KitOptions) {
         this.url = url
         this.chain = chain
         this.client = options?.client || new APIClient({url: this.chain.url})

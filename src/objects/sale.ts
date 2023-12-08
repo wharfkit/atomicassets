@@ -4,22 +4,22 @@ import type {SaleObject} from '../types'
 import {SaleState} from '../types'
 import {Collection} from './collection'
 import {Asset} from './asset'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Sale {
     readonly data: SaleObject
     readonly collection: Collection
     readonly assets: Asset[]
     readonly price: ExtendedAsset
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(saleObject: SaleObject, utility: AtomicUtility) {
+    static from(saleObject: SaleObject, utility: KitUtility) {
         const collection = new Collection(utility, saleObject.collection)
         const assets = saleObject.assets.map((a) => Asset.from(a, utility))
         return new this(utility, saleObject, collection, assets)
     }
 
-    constructor(utility: AtomicUtility, data: SaleObject, collection: Collection, assets: Asset[]) {
+    constructor(utility: KitUtility, data: SaleObject, collection: Collection, assets: Asset[]) {
         this.utility = utility
         this.data = data
         this.collection = collection

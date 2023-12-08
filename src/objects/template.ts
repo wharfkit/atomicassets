@@ -3,22 +3,22 @@ import {Int32, UInt32} from '@wharfkit/antelope'
 import type {TemplateObject} from '../types'
 import {Collection} from './collection'
 import {Schema} from './schema'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Template {
     readonly data: TemplateObject
     readonly collection: Collection
     readonly schema: Schema
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(templateObject: TemplateObject, utility: AtomicUtility) {
+    static from(templateObject: TemplateObject, utility: KitUtility) {
         const collection = new Collection(utility, templateObject.collection)
         const schema = new Schema(utility, templateObject.schema, collection)
         return new this(utility, templateObject, collection, schema)
     }
 
     constructor(
-        utility: AtomicUtility,
+        utility: KitUtility,
         data: TemplateObject,
         collection: Collection,
         schema: Schema

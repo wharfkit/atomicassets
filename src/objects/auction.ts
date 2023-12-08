@@ -4,23 +4,23 @@ import type {AuctionObject} from '../types'
 import {AuctionState} from '../types'
 import {Collection} from './collection'
 import {Asset} from './asset'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Auction {
     readonly data: AuctionObject
     readonly collection: Collection
     readonly assets: Asset[]
     readonly price: ExtendedAsset
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(auctionObject: AuctionObject, utility: AtomicUtility) {
+    static from(auctionObject: AuctionObject, utility: KitUtility) {
         const collection = new Collection(utility, auctionObject.collection)
         const assets = auctionObject.assets.map((a) => Asset.from(a, utility))
         return new this(utility, auctionObject, collection, assets)
     }
 
     constructor(
-        utility: AtomicUtility,
+        utility: KitUtility,
         data: AuctionObject,
         collection: Collection,
         assets: Asset[]

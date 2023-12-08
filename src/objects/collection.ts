@@ -2,17 +2,17 @@ import type {Action, Float64Type, NameType} from '@wharfkit/antelope'
 import {Float64, Name} from '@wharfkit/antelope'
 import type {CollectionObject} from '../types'
 import type * as AtomicAssetsContract from '../contracts/atomicassets'
-import type {AtomicUtility} from '../utility'
+import type {KitUtility} from '../utility'
 
 export class Collection {
     readonly data: CollectionObject
-    readonly utility: AtomicUtility
+    readonly utility: KitUtility
 
-    static from(collectionObject: CollectionObject, utility: AtomicUtility) {
+    static from(collectionObject: CollectionObject, utility: KitUtility) {
         return new this(utility, collectionObject)
     }
 
-    constructor(utility: AtomicUtility, data: CollectionObject) {
+    constructor(utility: KitUtility, data: CollectionObject) {
         this.utility = utility
         this.data = data
     }

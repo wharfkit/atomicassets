@@ -9,7 +9,7 @@ import {
     AtomicAssetsAPIClient,
     AtomicToolsContract,
     AtomicToolsKit,
-    AtomicUtility,
+    KitUtility,
     Types,
 } from '$lib'
 
@@ -24,12 +24,12 @@ const atomicassets = new AtomicAssetsAPIClient(
     })
 )
 
-const utility = new AtomicUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
+const utility = new KitUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
     client,
     atomicClient: atomicassets,
 })
 
-const kitInst = new AtomicToolsKit(utility)
+const kitInst = new AtomicToolsKit('https://wax.api.atomicassets.io/', Chains.WAX, utility)
 const linkId = 1451754
 const accountName = 'test.gm'
 
