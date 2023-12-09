@@ -19,12 +19,7 @@ export class Auction {
         return new this(utility, auctionObject, collection, assets)
     }
 
-    constructor(
-        utility: KitUtility,
-        data: AuctionObject,
-        collection: Collection,
-        assets: Asset[]
-    ) {
+    constructor(utility: KitUtility, data: AuctionObject, collection: Collection, assets: Asset[]) {
         this.utility = utility
         this.data = data
         this.collection = collection

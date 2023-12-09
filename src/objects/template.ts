@@ -17,12 +17,7 @@ export class Template {
         return new this(utility, templateObject, collection, schema)
     }
 
-    constructor(
-        utility: KitUtility,
-        data: TemplateObject,
-        collection: Collection,
-        schema: Schema
-    ) {
+    constructor(utility: KitUtility, data: TemplateObject, collection: Collection, schema: Schema) {
         this.utility = utility
         this.data = data
         this.collection = collection
