@@ -2,7 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {NameType, PublicKeyType, UInt64Type} from '@wharfkit/antelope'
 import type {LinkState} from '../../types'
 import {Tools} from '../../types'
-import type {ActionType} from '../../contracts/atomictoolsx'
+import type {ActionNames as ActionType} from '../../contracts/atomictoolsx'
 
 export class ToolsV1APIClient {
     constructor(private client: APIClient) {}

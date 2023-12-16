@@ -60,7 +60,7 @@ suite('Schema', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Extendschema,
+            type: AtomicAssetsContract.Types.extendschema,
         })
         assert.isTrue(decoded.authorized_editor.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(collectionName))
@@ -71,7 +71,7 @@ suite('Schema', function () {
 
     test('createSchema', function () {
         const action = kitInst.createSchema(
-            AtomicAssetsContract.Types.Createschema.from({
+            AtomicAssetsContract.Types.createschema.from({
                 authorized_creator: accountName,
                 collection_name: collectionName,
                 schema_name: schemaName,
@@ -87,7 +87,7 @@ suite('Schema', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Createschema,
+            type: AtomicAssetsContract.Types.createschema,
         })
         assert.isTrue(decoded.authorized_creator.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(collectionName))

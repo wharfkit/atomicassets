@@ -82,7 +82,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Addcolauth,
+            type: AtomicAssetsContract.Types.addcolauth,
         })
         assert.isTrue(decoded.account_to_add.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
@@ -97,22 +97,22 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Remcolauth,
+            type: AtomicAssetsContract.Types.remcolauth,
         })
         assert.isTrue(decoded.account_to_remove.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
     })
 
     test('setData', function () {
-        const data: AtomicAssetsContract.Types.AtomicAttribute[] = []
+        const data: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[] = []
         data.push(
-            AtomicAssetsContract.Types.AtomicAttribute.from({
+            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                 key: 'hello',
                 value: 'world',
             })
         )
         data.push(
-            AtomicAssetsContract.Types.AtomicAttribute.from({
+            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                 key: 'description',
                 value: Int64.from(0),
             })
@@ -126,7 +126,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Setcoldata,
+            type: AtomicAssetsContract.Types.setcoldata,
         })
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
         assert.isTrue(decoded.data[0].key === 'hello')
@@ -145,7 +145,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Addnotifyacc,
+            type: AtomicAssetsContract.Types.addnotifyacc,
         })
         assert.isTrue(decoded.account_to_add.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
@@ -160,7 +160,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Remnotifyacc,
+            type: AtomicAssetsContract.Types.remnotifyacc,
         })
         assert.isTrue(decoded.account_to_remove.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
@@ -176,7 +176,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Setmarketfee,
+            type: AtomicAssetsContract.Types.setmarketfee,
         })
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
         assert.isTrue(decoded.market_fee.equals(fee))
@@ -191,14 +191,14 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Forbidnotify,
+            type: AtomicAssetsContract.Types.forbidnotify,
         })
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))
     })
 
     test('createCollection', function () {
         const action = kitInst.createCollection(
-            AtomicAssetsContract.Types.Createcol.from({
+            AtomicAssetsContract.Types.createcol.from({
                 author: testCollection.author,
                 collection_name: testCollection.collectionName,
                 allow_notify: testCollection.allowNotify,
@@ -206,11 +206,11 @@ suite('Collection', function () {
                 notify_accounts: testCollection.notifyAccounts,
                 market_fee: testCollection.marketFee,
                 data: [
-                    AtomicAssetsContract.Types.AtomicAttribute.from({
+                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                         key: 'name',
                         value: testCollection.collectionData.name,
                     }),
-                    AtomicAssetsContract.Types.AtomicAttribute.from({
+                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                         key: 'img',
                         value: testCollection.collectionData.img,
                     }),
@@ -224,7 +224,7 @@ suite('Collection', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Createcol,
+            type: AtomicAssetsContract.Types.createcol,
         })
         assert.isTrue(decoded.author.equals(testCollection.author))
         assert.isTrue(decoded.collection_name.equals(testCollection.collectionName))

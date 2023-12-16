@@ -74,7 +74,7 @@ suite('Template', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Locktemplate,
+            type: AtomicAssetsContract.Types.locktemplate,
         })
         assert.isTrue(decoded.collection_name.equals(testTemplate.collection.collectionName))
         assert.isTrue(decoded.authorized_editor.equals(accountName))
@@ -83,7 +83,7 @@ suite('Template', function () {
 
     test('createtemplate', function () {
         const action = kitInst.createTemplate(
-            AtomicAssetsContract.Types.Createtempl.from({
+            AtomicAssetsContract.Types.createtempl.from({
                 authorized_creator: accountName,
                 collection_name: testTemplate.collection.collectionName,
                 schema_name: testTemplate.schema.schemaName,
@@ -91,7 +91,7 @@ suite('Template', function () {
                 burnable: true,
                 max_supply: testTemplate.maxSupply,
                 immutable_data: [
-                    AtomicAssetsContract.Types.AtomicAttribute.from({
+                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                         key: 'example',
                         value: ['int64', 0],
                     }),
@@ -105,7 +105,7 @@ suite('Template', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Createtempl,
+            type: AtomicAssetsContract.Types.createtempl,
         })
         assert.isTrue(decoded.authorized_creator.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testTemplate.collection.collectionName))

@@ -85,7 +85,7 @@ suite('Link', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicToolsContract.Types.Cancellink,
+            type: AtomicToolsContract.Types.cancellink,
         })
         assert.isTrue(decoded.link_id.equals(testLink.linkId))
     })
@@ -102,7 +102,7 @@ suite('Link', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicToolsContract.Types.Claimlink,
+            type: AtomicToolsContract.Types.claimlink,
         })
         assert.isTrue(decoded.link_id.equals(testLink.linkId))
         assert.isTrue(decoded.claimer.equals(accountName))
@@ -111,7 +111,7 @@ suite('Link', function () {
 
     test('announceLink', function () {
         const action = kitInst.announceLink(
-            AtomicToolsContract.Types.Announcelink.from({
+            AtomicToolsContract.Types.announcelink.from({
                 creator: testLink.creator,
                 key: testLink.publicKey,
                 asset_ids: testLink.assets.map((x) => x.assetId),
@@ -125,7 +125,7 @@ suite('Link', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicToolsContract.Types.Announcelink,
+            type: AtomicToolsContract.Types.announcelink,
         })
         assert.isTrue(decoded.creator.equals(testLink.creator))
         assert.isTrue(decoded.key.equals(testLink.publicKey))

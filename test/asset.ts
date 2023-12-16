@@ -98,7 +98,7 @@ suite('Asset', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Burnasset,
+            type: AtomicAssetsContract.Types.burnasset,
         })
         assert.isTrue(decoded.asset_owner.equals(testAsset.owner))
         assert.isTrue(decoded.asset_id.equals(testAsset.assetId))
@@ -114,7 +114,7 @@ suite('Asset', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Backasset,
+            type: AtomicAssetsContract.Types.backasset,
         })
         assert.isTrue(decoded.payer.equals(accountName))
         assert.isTrue(decoded.asset_owner.equals(testAsset.owner))
@@ -122,15 +122,15 @@ suite('Asset', function () {
     })
 
     test('setData', function () {
-        const data: AtomicAssetsContract.Types.AtomicAttribute[] = []
+        const data: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[] = []
         data.push(
-            AtomicAssetsContract.Types.AtomicAttribute.from({
+            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                 key: 'hello',
                 value: 'world',
             })
         )
         data.push(
-            AtomicAssetsContract.Types.AtomicAttribute.from({
+            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                 key: 'description',
                 value: Int64.from(0),
             })
@@ -144,7 +144,7 @@ suite('Asset', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Setassetdata,
+            type: AtomicAssetsContract.Types.setassetdata,
         })
         assert.isTrue(decoded.asset_owner.equals(testAsset.owner))
         assert.isTrue(decoded.asset_id.equals(testAsset.assetId))
@@ -159,14 +159,14 @@ suite('Asset', function () {
     test('mintAsset', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
         const action = kitInst.mintAsset(
-            AtomicAssetsContract.Types.Mintasset.from({
+            AtomicAssetsContract.Types.mintasset.from({
                 authorized_minter: accountName,
                 collection_name: testAsset.collection.collectionName,
                 schema_name: testAsset.schema.schemaName,
                 template_id: testAsset.template.templateId,
                 new_asset_owner: testAsset.owner,
                 immutable_data: [
-                    AtomicAssetsContract.Types.AtomicAttribute.from({
+                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
                         key: 'name',
                         value: 'hello world',
                     }),
@@ -182,7 +182,7 @@ suite('Asset', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Mintasset,
+            type: AtomicAssetsContract.Types.mintasset,
         })
         assert.isTrue(decoded.authorized_minter.equals(accountName))
         assert.isTrue(decoded.collection_name.equals(testAsset.collection.collectionName))

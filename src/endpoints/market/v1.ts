@@ -2,8 +2,8 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
 import type {AuctionState, BuyofferState, OfferState} from '../../types'
 import {Market} from '../../types'
-import type {ActionType as SActionType} from '../../contracts/atomicassets'
-import type {ActionType as MActionType} from '../../contracts/atomicmarket'
+import type {ActionNames as SActionType} from '../../contracts/atomicassets'
+import type {ActionNames as MActionType} from '../../contracts/atomicmarket'
 import {buildQueryParams} from '../utils'
 
 export class MarketV1APIClient {

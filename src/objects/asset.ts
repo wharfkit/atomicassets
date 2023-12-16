@@ -101,7 +101,7 @@ export class Asset {
 
     setData(
         authorizedEditor: NameType,
-        mutableData: AtomicAssetsContract.Types.AtomicAttribute[]
+        mutableData: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[]
     ): Action {
         return this.utility.assetsContract.action('setassetdata', {
             authorized_editor: authorizedEditor,

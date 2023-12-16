@@ -86,7 +86,7 @@ suite('Buyoffer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Acceptbuyo,
+            type: AtomicMarketContract.Types.acceptbuyo,
         })
         assert.isTrue(decoded.buyoffer_id.equals(testBuyoffer.buyofferId))
         assert.isTrue(decoded.expected_asset_ids.length === testBuyoffer.assets.length)
@@ -103,7 +103,7 @@ suite('Buyoffer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Cancelbuyo,
+            type: AtomicMarketContract.Types.cancelbuyo,
         })
         assert.isTrue(decoded.buyoffer_id.equals(testBuyoffer.buyofferId))
     })
@@ -118,7 +118,7 @@ suite('Buyoffer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Declinebuyo,
+            type: AtomicMarketContract.Types.declinebuyo,
         })
         assert.isTrue(decoded.buyoffer_id.equals(testBuyoffer.buyofferId))
         assert.isTrue(decoded.decline_memo === declineMemo)
@@ -133,7 +133,7 @@ suite('Buyoffer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Paybuyoram,
+            type: AtomicMarketContract.Types.paybuyoram,
         })
         assert.isTrue(decoded.buyoffer_id.equals(testBuyoffer.buyofferId))
         assert.isTrue(decoded.payer.equals(accountName))
@@ -141,7 +141,7 @@ suite('Buyoffer', function () {
 
     test('createbuyo', function () {
         const action = kitInst.createBuyo(
-            AtomicMarketContract.Types.Createbuyo.from({
+            AtomicMarketContract.Types.createbuyo.from({
                 buyer: testBuyoffer.buyer,
                 recipient: accountName,
                 price: testBuyoffer.price.quantity,
@@ -157,7 +157,7 @@ suite('Buyoffer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Createbuyo,
+            type: AtomicMarketContract.Types.createbuyo,
         })
         assert.isTrue(decoded.buyer.equals(testBuyoffer.buyer))
         assert.isTrue(decoded.recipient.equals(accountName))

@@ -1,6 +1,6 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelope'
-import type {ActionType} from '../../contracts/atomicassets'
+import type {ActionNames as ActionType} from '../../contracts/atomicassets'
 import {Assets} from '../../types'
 import type {OfferState} from '../../types'
 import {buildQueryParams} from '../utils'

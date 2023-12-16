@@ -97,7 +97,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Assertauct,
+            type: AtomicMarketContract.Types.assertauct,
         })
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
         assert.isTrue(decoded.asset_ids_to_assert.length === testAuction.assets.length)
@@ -112,7 +112,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Auctclaimbuy,
+            type: AtomicMarketContract.Types.auctclaimbuy,
         })
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
     })
@@ -126,7 +126,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Auctclaimsel,
+            type: AtomicMarketContract.Types.auctclaimsel,
         })
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
     })
@@ -142,7 +142,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Auctionbid,
+            type: AtomicMarketContract.Types.auctionbid,
         })
         assert.isTrue(decoded.bidder.equals(accountName))
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
@@ -159,7 +159,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Cancelauct,
+            type: AtomicMarketContract.Types.cancelauct,
         })
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
     })
@@ -173,7 +173,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Payauctram,
+            type: AtomicMarketContract.Types.payauctram,
         })
         assert.isTrue(decoded.auction_id.equals(testAuction.auctionId))
         assert.isTrue(decoded.payer.equals(accountName))
@@ -182,7 +182,7 @@ suite('Auction', function () {
     test('announceAuction', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
         const action = kitInst.announceAuction(
-            AtomicMarketContract.Types.Announceauct.from({
+            AtomicMarketContract.Types.announceauct.from({
                 seller: testAuction.seller,
                 asset_ids: testAuction.assets.map((x) => x.assetId),
                 starting_bid: token,
@@ -197,7 +197,7 @@ suite('Auction', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Announceauct,
+            type: AtomicMarketContract.Types.announceauct,
         })
         assert.isTrue(decoded.seller.equals(testAuction.seller))
         assert.isTrue(decoded.asset_ids.length === testAuction.assets.length)

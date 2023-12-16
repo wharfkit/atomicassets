@@ -89,7 +89,7 @@ suite('Sale', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Assertsale,
+            type: AtomicMarketContract.Types.assertsale,
         })
         assert.isTrue(decoded.sale_id.equals(testSale.saleId))
         assert.isTrue(decoded.asset_ids_to_assert.length === testSale.assets.length)
@@ -106,7 +106,7 @@ suite('Sale', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Cancelsale,
+            type: AtomicMarketContract.Types.cancelsale,
         })
         assert.isTrue(decoded.sale_id.equals(testSale.saleId))
     })
@@ -120,7 +120,7 @@ suite('Sale', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Paysaleram,
+            type: AtomicMarketContract.Types.paysaleram,
         })
         assert.isTrue(decoded.sale_id.equals(testSale.saleId))
         assert.isTrue(decoded.payer.equals(accountName))
@@ -137,7 +137,7 @@ suite('Sale', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Purchasesale,
+            type: AtomicMarketContract.Types.purchasesale,
         })
         assert.isTrue(decoded.buyer.equals(accountName))
         assert.isTrue(decoded.sale_id.equals(testSale.saleId))
@@ -148,7 +148,7 @@ suite('Sale', function () {
     test('announceSale', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
         const action = kitInst.announceSale(
-            AtomicMarketContract.Types.Announcesale.from({
+            AtomicMarketContract.Types.announcesale.from({
                 seller: testSale.seller,
                 asset_ids: testSale.assets.map((x) => x.assetId),
                 listing_price: token,
@@ -163,7 +163,7 @@ suite('Sale', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicMarketContract.Types.Announcesale,
+            type: AtomicMarketContract.Types.announcesale,
         })
         assert.isTrue(decoded.seller.equals(testSale.seller))
         assert.isTrue(decoded.asset_ids.length === testSale.assets.length)

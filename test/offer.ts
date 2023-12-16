@@ -92,7 +92,7 @@ suite('Offer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Canceloffer,
+            type: AtomicAssetsContract.Types.canceloffer,
         })
         assert.isTrue(decoded.offer_id.equals(testOffer.offerId))
     })
@@ -106,7 +106,7 @@ suite('Offer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Declineoffer,
+            type: AtomicAssetsContract.Types.declineoffer,
         })
         assert.isTrue(decoded.offer_id.equals(testOffer.offerId))
     })
@@ -120,7 +120,7 @@ suite('Offer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Acceptoffer,
+            type: AtomicAssetsContract.Types.acceptoffer,
         })
         assert.isTrue(decoded.offer_id.equals(testOffer.offerId))
     })
@@ -134,7 +134,7 @@ suite('Offer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Payofferram,
+            type: AtomicAssetsContract.Types.payofferram,
         })
         assert.isTrue(decoded.offer_id.equals(testOffer.offerId))
         assert.isTrue(decoded.payer.equals(accountName))
@@ -142,7 +142,7 @@ suite('Offer', function () {
 
     test('createOffer', function () {
         const action = kitInst.createOffer(
-            AtomicAssetsContract.Types.Createoffer.from({
+            AtomicAssetsContract.Types.createoffer.from({
                 sender: testOffer.senderName,
                 recipient: testOffer.recipientName,
                 sender_asset_ids: testOffer.sender_assets.map((x) => x.assetId),
@@ -157,7 +157,7 @@ suite('Offer', function () {
 
         const decoded = Serializer.decode({
             data: action.data,
-            type: AtomicAssetsContract.Types.Createoffer,
+            type: AtomicAssetsContract.Types.createoffer,
         })
         assert.isTrue(decoded.sender.equals(testOffer.senderName))
         assert.isTrue(decoded.recipient.equals(testOffer.recipientName))
