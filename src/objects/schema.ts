@@ -31,7 +31,7 @@ export class Schema {
 
     extendSchema(
         authorizedEditor: NameType,
-        schemaFormat: AtomicAssetsContract.Types.FORMAT[]
+        schemaFormat: AtomicAssetsContract.ActionParams.Type.FORMAT[]
     ): Action {
         return this.utility.assetsContract.action('extendschema', {
             authorized_editor: authorizedEditor,

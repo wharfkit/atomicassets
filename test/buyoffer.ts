@@ -1,5 +1,5 @@
 import {assert} from 'chai'
-import {Asset as AntelopeAsset, APIClient, FetchProvider, Serializer} from '@wharfkit/antelope'
+import {APIClient, FetchProvider, Serializer} from '@wharfkit/antelope'
 import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
@@ -140,16 +140,14 @@ suite('Buyoffer', function () {
     })
 
     test('createbuyo', function () {
-        const action = kitInst.createBuyo(
-            AtomicMarketContract.Types.createbuyo.from({
-                buyer: testBuyoffer.buyer,
-                recipient: accountName,
-                price: testBuyoffer.price.quantity,
-                asset_ids: testBuyoffer.assets.map((x) => x.assetId),
-                memo: 'everything',
-                maker_marketplace: testBuyoffer.makerMarketplace,
-            })
-        )
+        const action = kitInst.createBuyo({
+            buyer: testBuyoffer.buyer,
+            recipient: accountName,
+            price: testBuyoffer.price.quantity,
+            asset_ids: testBuyoffer.assets.map((x) => x.assetId),
+            memo: 'everything',
+            maker_marketplace: testBuyoffer.makerMarketplace,
+        })
 
         assert.isTrue(action.account.equals('atomicmarket'))
         assert.isTrue(action.name.equals('createbuyo'))

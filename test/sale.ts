@@ -147,15 +147,13 @@ suite('Sale', function () {
 
     test('announceSale', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
-        const action = kitInst.announceSale(
-            AtomicMarketContract.Types.announcesale.from({
-                seller: testSale.seller,
-                asset_ids: testSale.assets.map((x) => x.assetId),
-                listing_price: token,
-                settlement_symbol: token.symbol,
-                maker_marketplace: testSale.makerMarketplace,
-            })
-        )
+        const action = kitInst.announceSale({
+            seller: testSale.seller,
+            asset_ids: testSale.assets.map((x) => x.assetId),
+            listing_price: token,
+            settlement_symbol: token.symbol,
+            maker_marketplace: testSale.makerMarketplace,
+        })
 
         assert.isTrue(action.account.equals('atomicmarket'))
         assert.isTrue(action.name.equals('announcesale'))

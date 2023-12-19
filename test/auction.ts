@@ -181,15 +181,13 @@ suite('Auction', function () {
 
     test('announceAuction', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
-        const action = kitInst.announceAuction(
-            AtomicMarketContract.Types.announceauct.from({
-                seller: testAuction.seller,
-                asset_ids: testAuction.assets.map((x) => x.assetId),
-                starting_bid: token,
-                duration: 100000, // seconds
-                maker_marketplace: testAuction.makerMarketplace,
-            })
-        )
+        const action = kitInst.announceAuction({
+            seller: testAuction.seller,
+            asset_ids: testAuction.assets.map((x) => x.assetId),
+            starting_bid: token,
+            duration: 100000, // seconds
+            maker_marketplace: testAuction.makerMarketplace,
+        })
 
         assert.isTrue(action.account.equals('atomicmarket'))
         assert.isTrue(action.name.equals('announceauct'))

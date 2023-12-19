@@ -104,19 +104,16 @@ suite('Collection', function () {
     })
 
     test('setData', function () {
-        const data: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[] = []
-        data.push(
-            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
+        const data: AtomicAssetsContract.ActionParams.Type.pair_string_ATOMIC_ATTRIBUTE[] = [
+            {
                 key: 'hello',
                 value: 'world',
-            })
-        )
-        data.push(
-            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
+            },
+            {
                 key: 'description',
                 value: Int64.from(0),
-            })
-        )
+            },
+        ]
 
         const action = testCollection.setData(data)
 
@@ -197,26 +194,24 @@ suite('Collection', function () {
     })
 
     test('createCollection', function () {
-        const action = kitInst.createCollection(
-            AtomicAssetsContract.Types.createcol.from({
-                author: testCollection.author,
-                collection_name: testCollection.collectionName,
-                allow_notify: testCollection.allowNotify,
-                authorized_accounts: testCollection.authorizedAccounts,
-                notify_accounts: testCollection.notifyAccounts,
-                market_fee: testCollection.marketFee,
-                data: [
-                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
-                        key: 'name',
-                        value: testCollection.collectionData.name,
-                    }),
-                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
-                        key: 'img',
-                        value: testCollection.collectionData.img,
-                    }),
-                ],
-            })
-        )
+        const action = kitInst.createCollection({
+            author: testCollection.author,
+            collection_name: testCollection.collectionName,
+            allow_notify: testCollection.allowNotify,
+            authorized_accounts: testCollection.authorizedAccounts,
+            notify_accounts: testCollection.notifyAccounts,
+            market_fee: testCollection.marketFee,
+            data: [
+                {
+                    key: 'name',
+                    value: testCollection.collectionData.name,
+                },
+                {
+                    key: 'img',
+                    value: testCollection.collectionData.img,
+                },
+            ],
+        })
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('createcol'))

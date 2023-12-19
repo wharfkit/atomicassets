@@ -4,14 +4,13 @@ import {
     APIClient,
     FetchProvider,
     Int64,
-    Name,
     Serializer,
 } from '@wharfkit/antelope'
 import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
 import type {Asset} from '$lib'
-import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility, Types} from '$lib'
+import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -122,19 +121,16 @@ suite('Asset', function () {
     })
 
     test('setData', function () {
-        const data: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[] = []
-        data.push(
-            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
+        const data: AtomicAssetsContract.ActionParams.Type.pair_string_ATOMIC_ATTRIBUTE[] = [
+            {
                 key: 'hello',
                 value: 'world',
-            })
-        )
-        data.push(
-            AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
+            },
+            {
                 key: 'description',
                 value: Int64.from(0),
-            })
-        )
+            },
+        ]
 
         const action = testAsset.setData(accountName, data)
 
@@ -158,23 +154,21 @@ suite('Asset', function () {
 
     test('mintAsset', function () {
         const token = AntelopeAsset.from('0.0001 WAX')
-        const action = kitInst.mintAsset(
-            AtomicAssetsContract.Types.mintasset.from({
-                authorized_minter: accountName,
-                collection_name: testAsset.collection.collectionName,
-                schema_name: testAsset.schema.schemaName,
-                template_id: testAsset.template.templateId,
-                new_asset_owner: testAsset.owner,
-                immutable_data: [
-                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
-                        key: 'name',
-                        value: 'hello world',
-                    }),
-                ],
-                mutable_data: [],
-                tokens_to_back: [token],
-            })
-        )
+        const action = kitInst.mintAsset({
+            authorized_minter: accountName,
+            collection_name: testAsset.collection.collectionName,
+            schema_name: testAsset.schema.schemaName,
+            template_id: testAsset.template.templateId,
+            new_asset_owner: testAsset.owner,
+            immutable_data: [
+                {
+                    key: 'name',
+                    value: 'hello world',
+                },
+            ],
+            mutable_data: [],
+            tokens_to_back: [token],
+        })
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('mintasset'))

@@ -70,7 +70,7 @@ export interface ActionNameParams {
     withdraw: ActionParams.withdraw
 }
 export namespace ActionParams {
-    export namespace Base {}
+    export namespace Type {}
     export interface acceptbuyo {
         buyoffer_id: UInt64Type
         expected_asset_ids: UInt64Type[]

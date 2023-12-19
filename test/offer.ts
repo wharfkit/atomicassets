@@ -141,15 +141,13 @@ suite('Offer', function () {
     })
 
     test('createOffer', function () {
-        const action = kitInst.createOffer(
-            AtomicAssetsContract.Types.createoffer.from({
-                sender: testOffer.senderName,
-                recipient: testOffer.recipientName,
-                sender_asset_ids: testOffer.sender_assets.map((x) => x.assetId),
-                recipient_asset_ids: testOffer.recipient_assets.map((x) => x.assetId),
-                memo: testOffer.memo,
-            })
-        )
+        const action = kitInst.createOffer({
+            sender: testOffer.senderName,
+            recipient: testOffer.recipientName,
+            sender_asset_ids: testOffer.sender_assets.map((x) => x.assetId),
+            recipient_asset_ids: testOffer.recipient_assets.map((x) => x.assetId),
+            memo: testOffer.memo,
+        })
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('createoffer'))

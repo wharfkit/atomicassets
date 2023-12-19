@@ -110,14 +110,12 @@ suite('Link', function () {
     })
 
     test('announceLink', function () {
-        const action = kitInst.announceLink(
-            AtomicToolsContract.Types.announcelink.from({
-                creator: testLink.creator,
-                key: testLink.publicKey,
-                asset_ids: testLink.assets.map((x) => x.assetId),
-                memo: testLink.memo,
-            })
-        )
+        const action = kitInst.announceLink({
+            creator: testLink.creator,
+            key: testLink.publicKey,
+            asset_ids: testLink.assets.map((x) => x.assetId),
+            memo: testLink.memo,
+        })
 
         assert.isTrue(action.account.equals('atomictoolsx'))
         assert.isTrue(action.name.equals('announcelink'))

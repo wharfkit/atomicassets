@@ -82,22 +82,20 @@ suite('Template', function () {
     })
 
     test('createtemplate', function () {
-        const action = kitInst.createTemplate(
-            AtomicAssetsContract.Types.createtempl.from({
-                authorized_creator: accountName,
-                collection_name: testTemplate.collection.collectionName,
-                schema_name: testTemplate.schema.schemaName,
-                transferable: true,
-                burnable: true,
-                max_supply: testTemplate.maxSupply,
-                immutable_data: [
-                    AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE.from({
-                        key: 'example',
-                        value: ['int64', 0],
-                    }),
-                ],
-            })
-        )
+        const action = kitInst.createTemplate({
+            authorized_creator: accountName,
+            collection_name: testTemplate.collection.collectionName,
+            schema_name: testTemplate.schema.schemaName,
+            transferable: true,
+            burnable: true,
+            max_supply: testTemplate.maxSupply,
+            immutable_data: [
+                {
+                    key: 'example',
+                    value: Int64.from(0),
+                },
+            ],
+        })
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('createtempl'))

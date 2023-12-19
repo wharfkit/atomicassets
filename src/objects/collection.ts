@@ -67,7 +67,7 @@ export class Collection {
         })
     }
 
-    setData(data: AtomicAssetsContract.Types.pair_string_ATOMIC_ATTRIBUTE[]): Action {
+    setData(data: AtomicAssetsContract.ActionParams.Type.pair_string_ATOMIC_ATTRIBUTE[]): Action {
         return this.utility.assetsContract.action('setcoldata', {
             collection_name: this.collectionName,
             data,

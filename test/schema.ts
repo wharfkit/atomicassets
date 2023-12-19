@@ -50,9 +50,7 @@ suite('Schema', function () {
     })
 
     test('extendSchema', function () {
-        const action = testSchema.extendSchema(accountName, [
-            AtomicAssetsContract.Types.FORMAT.from({name: 'video', type: 'string'}),
-        ])
+        const action = testSchema.extendSchema(accountName, [{name: 'video', type: 'string'}])
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('extendschema'))
@@ -70,16 +68,12 @@ suite('Schema', function () {
     })
 
     test('createSchema', function () {
-        const action = kitInst.createSchema(
-            AtomicAssetsContract.Types.createschema.from({
-                authorized_creator: accountName,
-                collection_name: collectionName,
-                schema_name: schemaName,
-                schema_format: [
-                    AtomicAssetsContract.Types.FORMAT.from({name: 'video', type: 'string'}),
-                ],
-            })
-        )
+        const action = kitInst.createSchema({
+            authorized_creator: accountName,
+            collection_name: collectionName,
+            schema_name: schemaName,
+            schema_format: [{name: 'video', type: 'string'}],
+        })
 
         assert.isTrue(action.account.equals('atomicassets'))
         assert.isTrue(action.name.equals('createschema'))
