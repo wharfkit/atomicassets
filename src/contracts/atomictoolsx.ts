@@ -35,7 +35,7 @@ export interface ActionNameParams {
     lognewlink: ActionParams.lognewlink
 }
 export namespace ActionParams {
-    export namespace Types {}
+    export namespace Base {}
     export interface announcelink {
         creator: NameType
         key: PublicKeyType
