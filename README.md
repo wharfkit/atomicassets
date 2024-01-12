@@ -1,6 +1,6 @@
-# @wharfkit/api-client-atomicassets
+# @wharfkit/atomicassets
 
-AtomicAsset kit for Wharf Kit
+AtomicAsset library for Wharf
 
 ## Running Tests
 
