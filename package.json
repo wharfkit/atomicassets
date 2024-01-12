@@ -1,11 +1,11 @@
 {
-    "name": "@wharfkit/api-client-atomicassets",
-    "description": "AtomicAsset kit for Wharf Kit",
+    "name": "@wharfkit/atomicassets",
+    "description": "AtomicAsset library for Wharf",
     "version": "0.0.0",
-    "homepage": "https://github.com/wharfkit/api-client-atomicassets",
-    "main": "lib/api-client-atomicassets.js",
-    "module": "lib/api-client-atomicassets.m.js",
-    "types": "lib/api-client-atomicassets.d.ts",
+    "homepage": "https://github.com/wharfkit/atomicassets",
+    "main": "lib/atomicassets.js",
+    "module": "lib/atomicassets.m.js",
+    "types": "lib/atomicassets.d.ts",
     "browser": {
         "buffer": false,
         "crypto": false
