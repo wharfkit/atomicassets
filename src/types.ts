@@ -112,8 +112,8 @@ export class CollectionObject extends Struct {
     @Struct.field(Name, {array: true}) declare authorized_accounts: Name[]
     @Struct.field(Name, {array: true}) declare notify_accounts: Name[]
     @Struct.field(Float64) declare market_fee: Float64
-    @Struct.field('string') declare name: string
-    @Struct.field('string') declare img: string
+    @Struct.field('string', {optional: true}) declare name: string
+    @Struct.field('string', {optional: true}) declare img: string
     @Struct.field(Name, {optional: true}) declare contract: Name
     @Struct.field('any', {optional: true}) declare data: Record<string, any>
     @Struct.field(UInt64) declare created_at_block: UInt64
