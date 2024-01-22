@@ -171,6 +171,7 @@ export class AssetPriceV2 extends Struct {
     @Struct.field(UInt64) declare suggested_average: UInt64
     @Struct.field(UInt64) declare max: UInt64
     @Struct.field(UInt64) declare min: UInt64
+    @Struct.field(UInt64) declare sales: UInt64
 }
 
 @Struct.type('asset_object')
@@ -228,6 +229,7 @@ export class TransferObject extends Struct {
     @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
+    @Struct.field('string') declare txid: string
 }
 
 @Struct.type('link_object')
@@ -679,7 +681,7 @@ export namespace Market {
     export class CollectionStat extends Struct {
         @Struct.field(Name) declare contract: Name
         @Struct.field(Name) declare collection_name: Name
-        @Struct.field(Name) declare name: Name
+        @Struct.field('string') declare name: string
         @Struct.field('string') declare img: string
         @Struct.field(Name) declare author: Name
         @Struct.field('bool') declare allow_notify: boolean
@@ -702,7 +704,7 @@ export namespace Market {
     @Struct.type('market_templates')
     export class MarketTemplates extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(TemplateStat, {array: true}) declare results: TemplateStat
+        @Struct.field(TemplateStat, {array: true}) declare results: TemplateStat[]
     }
 
     @Struct.type('graph_stat')
@@ -716,7 +718,7 @@ export namespace Market {
     @Struct.type('market_graph')
     export class MarketGraph extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(GraphStat, {array: true}) declare results: GraphStat
+        @Struct.field(GraphStat, {array: true}) declare results: GraphStat[]
     }
 
     @Struct.type('sale_stat')
@@ -734,7 +736,7 @@ export namespace Market {
     @Struct.type('market_collections')
     export class MarketCollections extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(CollectionStat, {array: true}) declare results: CollectionStat
+        @Struct.field(CollectionStat, {array: true}) declare results: CollectionStat[]
     }
 
     @Struct.type('market_collection')
@@ -753,7 +755,7 @@ export namespace Market {
     @Struct.type('market_accounts')
     export class MarketAccounts extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(AccountStats, {array: true}) declare results: AccountStats
+        @Struct.field(AccountStats, {array: true}) declare results: AccountStats[]
     }
 
     @Struct.type('market_account')
