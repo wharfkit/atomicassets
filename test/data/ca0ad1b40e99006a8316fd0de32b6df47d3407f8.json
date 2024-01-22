@@ -40,7 +40,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -49,7 +50,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -89,6 +91,14 @@
                         {
                             "name": "acr_owner",
                             "type": "string"
+                        },
+                        {
+                            "name": "size",
+                            "type": "string"
+                        },
+                        {
+                            "name": "value",
+                            "type": "string"
                         }
                     ],
                     "created_at_block": "159727801",
@@ -99,7 +109,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "895",
+                    "issued_supply": "1127",
                     "immutable_data": {
                         "img": "QmUZaMua7betQF4dPUGXEHoyNfi3dC73gDVkyDHqCNSpBx",
                         "name": "Seeds",
@@ -131,13 +141,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "640000000",
-                        "average": "902770937",
-                        "suggested_median": "1899000000",
-                        "suggested_average": "1939598000",
+                        "median": "950000000",
+                        "average": "1225819375",
+                        "suggested_median": "1740000000",
+                        "suggested_average": "1735232102",
                         "min": "60000000",
-                        "max": "2400000000",
-                        "sales": "430"
+                        "max": "2645000000",
+                        "sales": "600"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "127923",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -178,7 +195,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -187,7 +205,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -237,7 +256,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -272,13 +291,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -322,7 +348,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -331,7 +358,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -381,7 +409,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -416,13 +444,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -466,7 +501,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -475,7 +511,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -525,7 +562,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -560,13 +597,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -610,7 +654,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -619,7 +664,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -669,7 +715,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -704,13 +750,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -754,7 +807,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -763,7 +817,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -813,7 +868,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -848,13 +903,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -898,7 +960,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -907,7 +970,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -957,7 +1021,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -992,13 +1056,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -1042,7 +1113,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -1051,7 +1123,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -1101,7 +1174,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "22210",
+                    "issued_supply": "25505",
                     "immutable_data": {
                         "img": "QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW",
                         "name": "Universe Pack - Series One",
@@ -1136,13 +1209,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "819126000",
-                        "average": "961661774",
-                        "suggested_median": "1930500000",
-                        "suggested_average": "1947710300",
+                        "median": "997920000",
+                        "average": "1252776788",
+                        "suggested_median": "2374912088",
+                        "suggested_average": "2251386255",
                         "min": "100000000",
                         "max": "7000000000",
-                        "sales": "4718"
+                        "sales": "6264"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "143367",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -1186,7 +1266,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -1195,7 +1276,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -1235,6 +1317,14 @@
                         {
                             "name": "acr_owner",
                             "type": "string"
+                        },
+                        {
+                            "name": "size",
+                            "type": "string"
+                        },
+                        {
+                            "name": "value",
+                            "type": "string"
                         }
                     ],
                     "created_at_block": "159727801",
@@ -1245,7 +1335,7 @@
                     "max_supply": "0",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "2752",
+                    "issued_supply": "3419",
                     "immutable_data": {
                         "img": "Qmf99bHtGm43Rd7d7R1RfqybMyo8FRFJCDEvo1j9tkEUyi",
                         "name": "Water",
@@ -1277,13 +1367,20 @@
                             "token_precision": 8,
                             "token_contract": "eosio.token"
                         },
-                        "median": "435000000",
-                        "average": "639677882",
-                        "suggested_median": "1891296000",
-                        "suggested_average": "1848505071",
+                        "median": "683100000",
+                        "average": "941581795",
+                        "suggested_median": "1760563380",
+                        "suggested_average": "1761086304",
                         "min": "50000000",
                         "max": "5000000000",
-                        "sales": "1318"
+                        "sales": "1808"
+                    }
+                ],
+                "template_buyoffers": [
+                    {
+                        "market_contract": "atomicmarket",
+                        "buyoffer_id": "139847",
+                        "token_symbol": "WAX"
                     }
                 ],
                 "data": {
@@ -1324,7 +1421,8 @@
                         "worker.taco",
                         "tacotacopool",
                         "primarysale1",
-                        "combz.taco"
+                        "combz.taco",
+                        "v.taco"
                     ],
                     "notify_accounts": [
                         "g.taco",
@@ -1333,7 +1431,8 @@
                         "swap.taco",
                         "blend.nefty",
                         "neftyblocksd",
-                        "neftyblocksp"
+                        "neftyblocksp",
+                        "rent.taco"
                     ],
                     "market_fee": 0.06,
                     "created_at_block": "123329591",
@@ -1373,6 +1472,14 @@
                         {
                             "name": "acr_owner",
                             "type": "string"
+                        },
+                        {
+                            "name": "size",
+                            "type": "string"
+                        },
+                        {
+                            "name": "value",
+                            "type": "string"
                         }
                     ],
                     "created_at_block": "159727801",
@@ -1383,7 +1490,7 @@
                     "max_supply": "1234",
                     "is_transferable": true,
                     "is_burnable": true,
-                    "issued_supply": "596",
+                    "issued_supply": "610",
                     "immutable_data": {
                         "img": "QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V",
                         "name": "Common License",
@@ -1417,14 +1524,15 @@
                             "token_contract": "eosio.token"
                         },
                         "median": "10900000000",
-                        "average": "12374102261",
-                        "suggested_median": "9000000000",
-                        "suggested_average": "9000000000",
+                        "average": "12231486887",
+                        "suggested_median": "3252418920",
+                        "suggested_average": "3252418920",
                         "min": "7795760583",
                         "max": "21100000000",
-                        "sales": "82"
+                        "sales": "85"
                     }
                 ],
+                "template_buyoffers": [],
                 "data": {
                     "img": "QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V",
                     "name": "Common License",
@@ -1434,7 +1542,7 @@
                 "name": "Common License"
             }
         ],
-        "query_time": 1697980949086
+        "query_time": 1705978787882
     },
-    "text": "{\"success\":true,\"data\":[{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897745\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"654240\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"895\",\"immutable_data\":{\"img\":\"QmUZaMua7betQF4dPUGXEHoyNfi3dC73gDVkyDHqCNSpBx\",\"name\":\"Seeds\",\"rarity\":\"uncommon\"},\"created_at_time\":\"1674954067500\",\"created_at_block\":\"226972647\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985756\",\"updated_at_time\":\"1674960622500\",\"transferred_at_block\":\"226985756\",\"transferred_at_time\":\"1674960622500\",\"minted_at_block\":\"226985756\",\"minted_at_time\":\"1674960622500\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"640000000\",\"average\":\"902770937\",\"suggested_median\":\"1899000000\",\"suggested_average\":\"1939598000\",\"min\":\"60000000\",\"max\":\"2400000000\",\"sales\":\"430\"}],\"data\":{\"img\":\"QmUZaMua7betQF4dPUGXEHoyNfi3dC73gDVkyDHqCNSpBx\",\"name\":\"Seeds\",\"rarity\":\"uncommon\"},\"name\":\"Seeds\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897197\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"7\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897196\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"6\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897195\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"5\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897194\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"4\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897193\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"3\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897192\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"2\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897191\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"22210\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"819126000\",\"average\":\"961661774\",\"suggested_median\":\"1930500000\",\"suggested_average\":\"1947710300\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"4718\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851887066\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"654236\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"2752\",\"immutable_data\":{\"img\":\"Qmf99bHtGm43Rd7d7R1RfqybMyo8FRFJCDEvo1j9tkEUyi\",\"name\":\"Water\",\"rarity\":\"common\"},\"created_at_time\":\"1674953760000\",\"created_at_block\":\"226972032\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226981601\",\"updated_at_time\":\"1674958545000\",\"transferred_at_block\":\"226981601\",\"transferred_at_time\":\"1674958545000\",\"minted_at_block\":\"226981601\",\"minted_at_time\":\"1674958545000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"435000000\",\"average\":\"639677882\",\"suggested_median\":\"1891296000\",\"suggested_average\":\"1848505071\",\"min\":\"50000000\",\"max\":\"5000000000\",\"sales\":\"1318\"}],\"data\":{\"img\":\"Qmf99bHtGm43Rd7d7R1RfqybMyo8FRFJCDEvo1j9tkEUyi\",\"name\":\"Water\",\"rarity\":\"common\"},\"name\":\"Water\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099795046474\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"531613\",\"max_supply\":\"1234\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"596\",\"immutable_data\":{\"img\":\"QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V\",\"name\":\"Common License\",\"rarity\":\"common\",\"description\":\"Convert your Series 1 Venue into a Series 2 Venue. The Venue maintains its rarity, level and custom name\"},\"created_at_time\":\"1655124252500\",\"created_at_block\":\"187331427\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"2\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"187995971\",\"updated_at_time\":\"1655457017500\",\"transferred_at_block\":\"187995971\",\"transferred_at_time\":\"1655457017500\",\"minted_at_block\":\"187995971\",\"minted_at_time\":\"1655457017500\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"10900000000\",\"average\":\"12374102261\",\"suggested_median\":\"9000000000\",\"suggested_average\":\"9000000000\",\"min\":\"7795760583\",\"max\":\"21100000000\",\"sales\":\"82\"}],\"data\":{\"img\":\"QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V\",\"name\":\"Common License\",\"rarity\":\"common\",\"description\":\"Convert your Series 1 Venue into a Series 2 Venue. The Venue maintains its rarity, level and custom name\"},\"name\":\"Common License\"}],\"query_time\":1697980949086}"
+    "text": "{\"success\":true,\"data\":[{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897745\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"value\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"654240\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"1127\",\"immutable_data\":{\"img\":\"QmUZaMua7betQF4dPUGXEHoyNfi3dC73gDVkyDHqCNSpBx\",\"name\":\"Seeds\",\"rarity\":\"uncommon\"},\"created_at_time\":\"1674954067500\",\"created_at_block\":\"226972647\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985756\",\"updated_at_time\":\"1674960622500\",\"transferred_at_block\":\"226985756\",\"transferred_at_time\":\"1674960622500\",\"minted_at_block\":\"226985756\",\"minted_at_time\":\"1674960622500\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"950000000\",\"average\":\"1225819375\",\"suggested_median\":\"1740000000\",\"suggested_average\":\"1735232102\",\"min\":\"60000000\",\"max\":\"2645000000\",\"sales\":\"600\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"127923\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmUZaMua7betQF4dPUGXEHoyNfi3dC73gDVkyDHqCNSpBx\",\"name\":\"Seeds\",\"rarity\":\"uncommon\"},\"name\":\"Seeds\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897197\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"7\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897196\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"6\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897195\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"5\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897194\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"4\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897193\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"3\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897192\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"2\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851897191\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"pack\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"uint64\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"website\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"}],\"created_at_block\":\"128484359\",\"created_at_time\":\"1625685127500\"},\"template\":{\"template_id\":\"654285\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"25505\",\"immutable_data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"created_at_time\":\"1674959892000\",\"created_at_block\":\"226984295\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226985207\",\"updated_at_time\":\"1674960348000\",\"transferred_at_block\":\"226985207\",\"transferred_at_time\":\"1674960348000\",\"minted_at_block\":\"226985207\",\"minted_at_time\":\"1674960348000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"997920000\",\"average\":\"1252776788\",\"suggested_median\":\"2374912088\",\"suggested_average\":\"2251386255\",\"min\":\"100000000\",\"max\":\"7000000000\",\"sales\":\"6264\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"143367\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"QmRhAvyiDgiZaJsisHuscFJttcWDyhZauZh4XYycMhqUAW\",\"name\":\"Universe Pack - Series One\",\"size\":\"single\",\"type\":\"universe\",\"series\":\"1\",\"description\":\"This pack contains 1 crafting item or a common Brigade equipment\"},\"name\":\"Universe Pack - Series One\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099851887066\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"value\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"654236\",\"max_supply\":\"0\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"3419\",\"immutable_data\":{\"img\":\"Qmf99bHtGm43Rd7d7R1RfqybMyo8FRFJCDEvo1j9tkEUyi\",\"name\":\"Water\",\"rarity\":\"common\"},\"created_at_time\":\"1674953760000\",\"created_at_block\":\"226972032\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"1\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"226981601\",\"updated_at_time\":\"1674958545000\",\"transferred_at_block\":\"226981601\",\"transferred_at_time\":\"1674958545000\",\"minted_at_block\":\"226981601\",\"minted_at_time\":\"1674958545000\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"683100000\",\"average\":\"941581795\",\"suggested_median\":\"1760563380\",\"suggested_average\":\"1761086304\",\"min\":\"50000000\",\"max\":\"5000000000\",\"sales\":\"1808\"}],\"template_buyoffers\":[{\"market_contract\":\"atomicmarket\",\"buyoffer_id\":\"139847\",\"token_symbol\":\"WAX\"}],\"data\":{\"img\":\"Qmf99bHtGm43Rd7d7R1RfqybMyo8FRFJCDEvo1j9tkEUyi\",\"name\":\"Water\",\"rarity\":\"common\"},\"name\":\"Water\"},{\"contract\":\"atomicassets\",\"asset_id\":\"1099795046474\",\"owner\":\"taco\",\"is_transferable\":true,\"is_burnable\":true,\"collection\":{\"collection_name\":\"taco\",\"name\":\"Taco\",\"img\":\"QmSNEtW5r6K4md8n12d8P7SMmJXFLfxZGABK2XPKUgwJy3\",\"images\":\"{\\\"banner_1920x500\\\":\\\"QmXsppfVwKw1SyY3C1oMEM9Fro1e1HGSUfFhL4J3ZkkmZ4\\\",\\\"logo_512x512\\\":\\\"QmV1PsD9anLHPMeR5mvz2AduXHKr8B6gJmjxSBZKti6ioc\\\"}\",\"author\":\"taco\",\"allow_notify\":true,\"authorized_accounts\":[\"taco\",\"atomicdropsx\",\"atomicpacksx\",\"neftyblocksd\",\"s.taco\",\"blend.nefty\",\"blenderizerx\",\"g.taco\",\"brigade.taco\",\"b.taco\",\"mkt.taco\",\"acr.taco\",\"takitakiboom\",\"l.taco\",\"worker.taco\",\"tacotacopool\",\"primarysale1\",\"combz.taco\",\"v.taco\"],\"notify_accounts\":[\"g.taco\",\"brigade.taco\",\"stake.taco\",\"swap.taco\",\"blend.nefty\",\"neftyblocksd\",\"neftyblocksp\",\"rent.taco\"],\"market_fee\":0.06,\"created_at_block\":\"123329591\",\"created_at_time\":\"1623106508500\"},\"schema\":{\"schema_name\":\"item\",\"format\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"img\",\"type\":\"image\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"static_img\",\"type\":\"image\"},{\"name\":\"blend_link\",\"type\":\"string\"},{\"name\":\"power\",\"type\":\"string\"},{\"name\":\"rarity\",\"type\":\"string\"},{\"name\":\"acr_owner\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"},{\"name\":\"value\",\"type\":\"string\"}],\"created_at_block\":\"159727801\",\"created_at_time\":\"1641318996000\"},\"template\":{\"template_id\":\"531613\",\"max_supply\":\"1234\",\"is_transferable\":true,\"is_burnable\":true,\"issued_supply\":\"610\",\"immutable_data\":{\"img\":\"QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V\",\"name\":\"Common License\",\"rarity\":\"common\",\"description\":\"Convert your Series 1 Venue into a Series 2 Venue. The Venue maintains its rarity, level and custom name\"},\"created_at_time\":\"1655124252500\",\"created_at_block\":\"187331427\"},\"mutable_data\":{},\"immutable_data\":{},\"template_mint\":\"2\",\"backed_tokens\":[],\"burned_by_account\":null,\"burned_at_block\":null,\"burned_at_time\":null,\"updated_at_block\":\"187995971\",\"updated_at_time\":\"1655457017500\",\"transferred_at_block\":\"187995971\",\"transferred_at_time\":\"1655457017500\",\"minted_at_block\":\"187995971\",\"minted_at_time\":\"1655457017500\",\"sales\":[],\"auctions\":[],\"prices\":[{\"market_contract\":\"atomicmarket\",\"token\":{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\"},\"median\":\"10900000000\",\"average\":\"12231486887\",\"suggested_median\":\"3252418920\",\"suggested_average\":\"3252418920\",\"min\":\"7795760583\",\"max\":\"21100000000\",\"sales\":\"85\"}],\"template_buyoffers\":[],\"data\":{\"img\":\"QmbuM6brNUqvU6jxPswdF5fqoPosDcWbcinZzAy5ibyJ1V\",\"name\":\"Common License\",\"rarity\":\"common\",\"description\":\"Convert your Series 1 Venue into a Series 2 Venue. The Venue maintains its rarity, level and custom name\"},\"name\":\"Common License\"}],\"query_time\":1705978787882}"
 }

@@ -1,0 +1,15 @@
+{
+    "request": {
+        "path": "https://wax.api.atomicassets.io/atomicassets/v1/burns?collection_name=testfighters&match_owner=includenull",
+        "params": {
+            "method": "GET"
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [],
+        "query_time": 1705978782874
+    },
+    "text": "{\"success\":true,\"data\":[],\"query_time\":1705978782874}"
+}

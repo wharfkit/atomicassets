@@ -112,8 +112,8 @@ export class CollectionObject extends Struct {
     @Struct.field(Name, {array: true}) declare authorized_accounts: Name[]
     @Struct.field(Name, {array: true}) declare notify_accounts: Name[]
     @Struct.field(Float64) declare market_fee: Float64
-    @Struct.field('string') declare name: string
-    @Struct.field('string') declare img: string
+    @Struct.field('string', {optional: true}) declare name: string
+    @Struct.field('string', {optional: true}) declare img: string
     @Struct.field(Name, {optional: true}) declare contract: Name
     @Struct.field('any', {optional: true}) declare data: Record<string, any>
     @Struct.field(UInt64) declare created_at_block: UInt64
@@ -171,6 +171,7 @@ export class AssetPriceV2 extends Struct {
     @Struct.field(UInt64) declare suggested_average: UInt64
     @Struct.field(UInt64) declare max: UInt64
     @Struct.field(UInt64) declare min: UInt64
+    @Struct.field(UInt64) declare sales: UInt64
 }
 
 @Struct.type('asset_object')
@@ -178,7 +179,7 @@ export class AssetObject extends Struct {
     @Struct.field(UInt64) declare asset_id: UInt64
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field(SchemaObject) declare schema: SchemaObject
-    @Struct.field(TemplateObject) declare template: TemplateObject
+    @Struct.field(TemplateObject, {optional: true}) declare template: TemplateObject
     @Struct.field(TokenAmount, {array: true}) declare backed_tokens: TokenAmount[]
     @Struct.field('any') declare immutable_data: Record<string, any>
     @Struct.field('any') declare mutable_data: Record<string, any>
@@ -225,6 +226,7 @@ export class TransferObject extends Struct {
     @Struct.field(Name) declare sender_name: Name
     @Struct.field(Name) declare recipient_name: Name
     @Struct.field('string') declare memo: string
+    @Struct.field('string') declare txid: string
     @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
@@ -247,6 +249,33 @@ export class LinkObject extends Struct {
     @Struct.field('string') declare updated_at_time: string
 }
 
+@Struct.type('sale_brief')
+export class SaleBrief extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(UInt64) declare sale_id: UInt64
+}
+
+@Struct.type('aucttion_brief')
+export class AuctionBrief extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(UInt64) declare auction_id: UInt64
+}
+
+@Struct.type('template_buyoffer')
+export class TemplateBuyoffer extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(UInt64) declare buyoffer_id: UInt64
+    @Struct.field('string') declare token_symbol: string
+}
+
+@Struct.type('market_asset_object')
+export class MarketAssetObject extends AssetObject {
+    @Struct.field(SaleBrief, {array: true}) declare sales: SaleBrief[]
+    @Struct.field(AuctionBrief, {array: true}) declare auctions: AuctionBrief[]
+    @Struct.field(AssetPriceV2, {array: true, optional: true}) declare prices: AssetPriceV2[]
+    @Struct.field(TemplateBuyoffer, {array: true}) declare template_buyoffers: TemplateBuyoffer[]
+}
+
 @Struct.type('sale_object')
 export class SaleObject extends Struct {
     @Struct.field(Name) declare market_contract: Name
@@ -258,7 +287,7 @@ export class SaleObject extends Struct {
     @Struct.field(TokenAmount) declare price: TokenAmount
     @Struct.field(UInt64) declare listing_price: UInt64
     @Struct.field('string') declare listing_symbol: string
-    @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
+    @Struct.field(MarketAssetObject, {array: true}) declare assets: MarketAssetObject[]
     @Struct.field('string') declare maker_marketplace: Name
     @Struct.field('string', {optional: true}) declare taker_marketplace: Name
     @Struct.field(UInt8) declare state: UInt8
@@ -287,7 +316,7 @@ export class AuctionObject extends Struct {
     @Struct.field(Name) declare assets_contract: Name
     @Struct.field(UInt64) declare auction_id: UInt64
     @Struct.field(Name) declare seller: Name
-    @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
+    @Struct.field(MarketAssetObject, {array: true}) declare assets: MarketAssetObject[]
     @Struct.field('string') declare end_time: string
     @Struct.field(TokenAmount) declare price: TokenAmount
     @Struct.field(Bid, {array: true}) declare bids: Bid[]
@@ -336,7 +365,7 @@ export class Marketplace extends Struct {
 
 @Struct.type('saleprice')
 export class SalePrice extends Struct {
-    @Struct.field(UInt64) declare sale_id: UInt64
+    @Struct.field(UInt64, {optional: true}) declare sale_id: UInt64
     @Struct.field(UInt64, {optional: true}) declare auction_id: UInt64
     @Struct.field(UInt64, {optional: true}) declare buyoffer_id: UInt64
     @Struct.field(UInt64) declare price: UInt64
@@ -373,6 +402,7 @@ export class TemplatePrice extends Struct {
     @Struct.field(UInt64) declare suggested_average: UInt64
     @Struct.field(UInt64) declare max: UInt64
     @Struct.field(UInt64) declare min: UInt64
+    @Struct.field(UInt64) declare sales: UInt64
 }
 
 @Struct.type('collectionprice')
@@ -496,9 +526,9 @@ export class AccountBurns extends Struct {
 
 @Struct.type('asset_sales')
 export class AssetSale extends Struct {
-    @Struct.field(UInt64) declare sale_id: UInt64
-    @Struct.field(UInt64) declare auction_id: UInt64
-    @Struct.field(UInt64) declare buyoffer_id: UInt64
+    @Struct.field(UInt64, {optional: true}) declare sale_id: UInt64
+    @Struct.field(UInt64, {optional: true}) declare auction_id: UInt64
+    @Struct.field(UInt64, {optional: true}) declare buyoffer_id: UInt64
     @Struct.field(UInt64) declare price: UInt64
     @Struct.field('string') declare token_symbol: string
     @Struct.field(UInt8) declare token_precision: UInt8
@@ -506,13 +536,6 @@ export class AssetSale extends Struct {
     @Struct.field(Name) declare seller: Name
     @Struct.field(Name) declare buyer: Name
     @Struct.field('string') declare block_time: string
-}
-
-@Struct.type('market_asset_object')
-export class MarketAssetObject extends AssetObject {
-    @Struct.field(SaleObject, {array: true}) declare sales: SaleObject[]
-    @Struct.field(AuctionObject, {array: true}) declare auctions: AuctionObject[]
-    @Struct.field(AssetPriceV2, {array: true}) declare prices: AssetPriceV2[]
 }
 
 @Struct.type('resp')
@@ -679,7 +702,7 @@ export namespace Market {
     export class CollectionStat extends Struct {
         @Struct.field(Name) declare contract: Name
         @Struct.field(Name) declare collection_name: Name
-        @Struct.field(Name) declare name: Name
+        @Struct.field('string') declare name: string
         @Struct.field('string') declare img: string
         @Struct.field(Name) declare author: Name
         @Struct.field('bool') declare allow_notify: boolean
@@ -702,7 +725,7 @@ export namespace Market {
     @Struct.type('market_templates')
     export class MarketTemplates extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(TemplateStat, {array: true}) declare results: TemplateStat
+        @Struct.field(TemplateStat, {array: true}) declare results: TemplateStat[]
     }
 
     @Struct.type('graph_stat')
@@ -716,12 +739,12 @@ export namespace Market {
     @Struct.type('market_graph')
     export class MarketGraph extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(GraphStat, {array: true}) declare results: GraphStat
+        @Struct.field(GraphStat, {array: true}) declare results: GraphStat[]
     }
 
     @Struct.type('sale_stat')
     export class SaleStat extends Struct {
-        @Struct.field(UInt64) declare volume: UInt64
+        @Struct.field(UInt64, {optional: true}) declare volume: UInt64
         @Struct.field(UInt64) declare sales: UInt64
     }
 
@@ -734,7 +757,7 @@ export namespace Market {
     @Struct.type('market_collections')
     export class MarketCollections extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(CollectionStat, {array: true}) declare results: CollectionStat
+        @Struct.field(CollectionStat, {array: true}) declare results: CollectionStat[]
     }
 
     @Struct.type('market_collection')
@@ -744,7 +767,7 @@ export namespace Market {
     }
 
     @Struct.type('account_stat')
-    export class AccountStats extends Struct {
+    export class AccountStat extends Struct {
         @Struct.field(Name) declare account: Name
         @Struct.field(UInt64) declare buy_volume: UInt64
         @Struct.field(UInt64) declare sell_volume: UInt64
@@ -753,13 +776,13 @@ export namespace Market {
     @Struct.type('market_accounts')
     export class MarketAccounts extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(AccountStats, {array: true}) declare results: AccountStats
+        @Struct.field(AccountStat, {array: true}) declare results: AccountStat[]
     }
 
     @Struct.type('market_account')
     export class MarketAccount extends Struct {
         @Struct.field(Token) declare symbol: Token
-        @Struct.field(AccountStats) declare result: AccountStats
+        @Struct.field(AccountStat) declare result: AccountStat
     }
 
     @Struct.type('schema_stat_v1')

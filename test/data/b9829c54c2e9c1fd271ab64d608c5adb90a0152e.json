@@ -13,7 +13,7 @@
             "atomicassets_contract": "atomicassets",
             "version": "1.0.0"
         },
-        "query_time": 1697980948074
+        "query_time": 1705978786906
     },
-    "text": "{\"success\":true,\"data\":{\"atomictools_contract\":\"atomictoolsx\",\"atomicassets_contract\":\"atomicassets\",\"version\":\"1.0.0\"},\"query_time\":1697980948074}"
+    "text": "{\"success\":true,\"data\":{\"atomictools_contract\":\"atomictoolsx\",\"atomicassets_contract\":\"atomicassets\",\"version\":\"1.0.0\"},\"query_time\":1705978786906}"
 }

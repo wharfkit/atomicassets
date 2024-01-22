@@ -1,0 +1,25 @@
+{
+    "request": {
+        "path": "https://wax.api.atomicassets.io/atomicmarket/v1/stats/sales?symbol=WAX&collection_whitelist=award.worlds",
+        "params": {
+            "method": "GET"
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": {
+            "symbol": {
+                "token_symbol": "WAX",
+                "token_contract": "eosio.token",
+                "token_precision": 8
+            },
+            "result": {
+                "volume": null,
+                "sales": "0"
+            }
+        },
+        "query_time": 1705978837254
+    },
+    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"result\":{\"volume\":null,\"sales\":\"0\"}},\"query_time\":1705978837254}"
+}

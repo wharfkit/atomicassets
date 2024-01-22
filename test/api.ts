@@ -63,6 +63,12 @@ suite('atomicassets', function () {
         assert.equal(res.success, true)
     })
 
+    test('get_collection_name_img_optional ', async function () {
+        const res = await atomicassets.atomicassets.v1.get_collection('testfighters')
+        assert.instanceOf(res, Types.Assets.GetCollectionResponse)
+        assert.equal(res.success, true)
+    })
+
     test('get_collection_stats', async function () {
         const res = await atomicassets.atomicassets.v1.get_collection_stats('taco')
         assert.instanceOf(res, Types.Assets.GetCollectionStatsResponse)
@@ -201,9 +207,8 @@ suite('atomicassets', function () {
 
     test('get_burns', async function () {
         const res = await atomicassets.atomicassets.v1.get_burns({
-            collection_name: [Name.from('taco'), 'alien.worlds'],
-            match_owner: 'taco',
-            limit: 10,
+            collection_name: [Name.from('testfighters')],
+            match_owner: 'includenull',
         })
         assert.instanceOf(res, Types.Assets.GetAccountsResponse)
         assert.equal(res.success, true)
@@ -264,6 +269,12 @@ suite('atomicmarket', function () {
 
     test('get_asset', async function () {
         const res = await atomicassets.atomicmarket.v1.get_asset(1099851897196)
+        assert.instanceOf(res, Types.Market.GetAssetResponse)
+        assert.equal(res.success, true)
+    })
+
+    test('get_asset_with_active_sale', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_asset(1099513214175)
         assert.instanceOf(res, Types.Market.GetAssetResponse)
         assert.equal(res.success, true)
     })
@@ -381,7 +392,8 @@ suite('atomicmarket', function () {
 
     test('get_buyoffers', async function () {
         const res = await atomicassets.atomicmarket.v1.get_buyoffers({
-            collection_name: [Name.from('taco'), 'alien.worlds'],
+            collection_name: [Name.from('testfighters'), 'alien.worlds'],
+            owner: ['includenull'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetBuyoffersResponse)
@@ -439,7 +451,7 @@ suite('atomicmarket', function () {
 
     test('get_asset_prices', async function () {
         const res = await atomicassets.atomicmarket.v1.get_asset_prices({
-            collection_name: ['taco'],
+            collection_name: ['testfighters'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetAssetPricesResponse)
@@ -492,7 +504,7 @@ suite('atomicmarket', function () {
     })
 
     test('get_stats_schemas_v1', async function () {
-        const res = await atomicassets.atomicmarket.v1.get_stats_schemas('taco', {
+        const res = await atomicassets.atomicmarket.v1.get_stats_schemas('award.worlds', {
             symbol: 'WAX',
             limit: 10,
         })
@@ -512,8 +524,8 @@ suite('atomicmarket', function () {
     test('get_stats_templates', async function () {
         const res = await atomicassets.atomicmarket.v1.get_stats_templates({
             symbol: 'WAX',
-            search: 'taco',
-            collection_name: ['taco'],
+            search: 'alien.worlds',
+            collection_name: ['alien.worlds'],
             limit: 10,
         })
         assert.instanceOf(res, Types.Market.GetStatsTemplatesResponse)
@@ -532,7 +544,7 @@ suite('atomicmarket', function () {
     test('get_stats_sales', async function () {
         const res = await atomicassets.atomicmarket.v1.get_stats_sales({
             symbol: 'WAX',
-            collection_whitelist: ['taco'],
+            collection_whitelist: ['award.worlds'],
         })
         assert.instanceOf(res, Types.Market.GetStatsSalesResponse)
         assert.equal(res.success, true)
