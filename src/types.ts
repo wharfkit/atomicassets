@@ -249,11 +249,15 @@ export class LinkObject extends Struct {
     @Struct.field('string') declare updated_at_time: string
 }
 
-@Struct.type('sale_object')
-export class SaleObject extends Struct {
+@Struct.type('slim_sale_objectm')
+export class SlimSaleObject extends Struct {
     @Struct.field(Name) declare market_contract: Name
-    @Struct.field(Name) declare assets_contract: Name
     @Struct.field(UInt64) declare sale_id: UInt64
+}
+
+@Struct.type('sale_object')
+export class SaleObject extends SlimSaleObject {
+    @Struct.field(Name) declare assets_contract: Name
     @Struct.field(Name) declare seller: Name
     @Struct.field(Name, {optional: true}) declare buyer: Name
     @Struct.field(UInt64) declare offer_id: UInt64
@@ -512,7 +516,7 @@ export class AssetSale extends Struct {
 
 @Struct.type('market_asset_object')
 export class MarketAssetObject extends AssetObject {
-    @Struct.field(SaleObject, {array: true}) declare sales: SaleObject[]
+    @Struct.field(SlimSaleObject, {array: true}) declare sales: SlimSaleObject[]
     @Struct.field(AuctionObject, {array: true}) declare auctions: AuctionObject[]
     @Struct.field(AssetPriceV2, {array: true}) declare prices: AssetPriceV2[]
 }
