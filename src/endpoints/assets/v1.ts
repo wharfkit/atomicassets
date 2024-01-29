@@ -3,7 +3,7 @@ import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelo
 import type {ActionNames as ActionType} from '../../contracts/atomicassets'
 import {Assets} from '../../types'
 import type {OfferState} from '../../types'
-import {buildQueryParams} from '../utils'
+import {buildBodyParams} from '../utils'
 
 export class AssetsV1APIClient {
     constructor(private client: APIClient) {}
@@ -46,11 +46,12 @@ export class AssetsV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicassets/v1/assets${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/assets`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetAssetsResponse,
         })
     }
@@ -81,11 +82,12 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/assets/${asset_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/assets/${asset_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -108,11 +110,12 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'collection_name'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/collections${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/collections`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetCollectionsResponse,
         })
     }
@@ -143,11 +146,12 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/collections/${collection_name}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/collections/${collection_name}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -169,11 +173,12 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'schema_name' | 'assets'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/schemas${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/schemas`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetSchemasResponse,
         })
     }
@@ -205,11 +210,12 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -242,11 +248,12 @@ export class AssetsV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicassets/v1/templates${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/templates`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetTemplatesResponse,
         })
     }
@@ -278,11 +285,12 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/templates/${collection_name}/${template_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/templates/${collection_name}/${template_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -320,11 +328,12 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'updated'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/offers${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/offers`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetOffersResponse,
         })
     }
@@ -347,11 +356,12 @@ export class AssetsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/offers/${offer_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/offers/${offer_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -380,11 +390,12 @@ export class AssetsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/transfers${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/transfers`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetTransfersResponse,
         })
     }
@@ -406,11 +417,12 @@ export class AssetsV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/accounts${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/accounts`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetAccountsResponse,
         })
     }
@@ -423,11 +435,12 @@ export class AssetsV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/accounts/${account}${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/accounts/${account}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetAccountResponse,
         })
     }
@@ -456,11 +469,12 @@ export class AssetsV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/burns${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/burns`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetAccountsResponse,
         })
     }
@@ -473,11 +487,12 @@ export class AssetsV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/burns/${account}${queryParams}`,
-            method: 'GET',
+            path: `/atomicassets/v1/burns/${account}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Assets.GetAccountBurnsResponse,
         })
     }
