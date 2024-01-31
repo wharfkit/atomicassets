@@ -2,7 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
 import type {SaleState} from '../../types'
 import {Market} from '../../types'
-import {buildQueryParams} from '../utils'
+import {buildBodyParams} from '../utils'
 
 export class MarketV2APIClient {
     constructor(private client: APIClient) {}
@@ -58,11 +58,12 @@ export class MarketV2APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicmarket/v2/sales${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v2/sales`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetSalesResponse,
         })
     }
@@ -79,11 +80,12 @@ export class MarketV2APIClient {
             sort?: 'volume' | 'sales'
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v2/stats/schemas/${collection_name}${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v2/stats/schemas/${collection_name}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsSchemasV2Response,
         })
     }

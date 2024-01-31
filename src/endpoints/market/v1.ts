@@ -4,7 +4,7 @@ import type {AuctionState, BuyofferState, OfferState} from '../../types'
 import {Market} from '../../types'
 import type {ActionNames as SActionType} from '../../contracts/atomicassets'
 import type {ActionNames as MActionType} from '../../contracts/atomicmarket'
-import {buildQueryParams} from '../utils'
+import {buildBodyParams} from '../utils'
 
 export class MarketV1APIClient {
     constructor(private client: APIClient) {}
@@ -57,11 +57,12 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/assets${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/assets`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetAssetsResponse,
         })
     }
@@ -92,11 +93,12 @@ export class MarketV1APIClient {
             action_blacklist?: SActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/assets/${asset_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -110,11 +112,12 @@ export class MarketV1APIClient {
             order?: 'asc' | 'desc'
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}/sales${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/assets/${asset_id}/sales`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetAssetSalesResponse,
         })
     }
@@ -152,11 +155,12 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created' | 'updated'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/offers${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/offers`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetOffersResponse,
         })
     }
@@ -179,11 +183,12 @@ export class MarketV1APIClient {
             action_blacklist?: SActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/offers/${offer_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/offers/${offer_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -212,11 +217,12 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/transfers${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/transfers`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetTransfersResponse,
         })
     }
@@ -239,11 +245,12 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/sales/${sale_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/sales/${sale_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -276,11 +283,12 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/sales/templates${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/sales/templates`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetSalesTemplatesResponse,
         })
     }
@@ -346,11 +354,12 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/auctions${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/auctions`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetAuctionsResponse,
         })
     }
@@ -373,11 +382,12 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/auctions/${auction_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/auctions/${auction_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -439,11 +449,12 @@ export class MarketV1APIClient {
         },
         extra_options?: {[key: string]: string}
     ) {
-        const queryParams = buildQueryParams(options, extra_options)
+        const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/buyoffers${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/buyoffers`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetBuyoffersResponse,
         })
     }
@@ -466,11 +477,12 @@ export class MarketV1APIClient {
             action_blacklist?: MActionType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -498,11 +510,12 @@ export class MarketV1APIClient {
         burned?: boolean
         symbol?: string
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/sales${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/prices/sales`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetSalePricesResponse,
         })
     }
@@ -514,11 +527,12 @@ export class MarketV1APIClient {
         burned?: boolean
         symbol?: string
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/sales/days${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/prices/sales/days`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetSalePricesDaysResponse,
         })
     }
@@ -533,11 +547,12 @@ export class MarketV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/templates${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/prices/templates`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetTemplatePricesResponse,
         })
     }
@@ -569,11 +584,12 @@ export class MarketV1APIClient {
         limit?: number
         order?: 'asc' | 'desc'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/assets${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/prices/assets`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetAssetPricesResponse,
         })
     }
@@ -601,11 +617,12 @@ export class MarketV1APIClient {
             upper_bound?: string
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/inventory/${account}${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/prices/inventory/${account}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetInventoryPricesResponse,
         })
     }
@@ -626,11 +643,12 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'volume' | 'listings'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/collections${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/collections`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsCollectionsResponse,
         })
     }
@@ -641,11 +659,12 @@ export class MarketV1APIClient {
             symbol: string
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/collections/${collection_name}${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/collections/${collection_name}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsCollectionResponse,
         })
     }
@@ -662,11 +681,12 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'buy_volume' | 'sell_volume'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/accounts${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/accounts`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsAccountsResponse,
         })
     }
@@ -679,11 +699,12 @@ export class MarketV1APIClient {
             collection_whitelist?: NameType[]
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/accounts/${account}${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/accounts/${account}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsAccountResponse,
         })
     }
@@ -700,11 +721,12 @@ export class MarketV1APIClient {
             sort?: 'volume' | 'listings'
         }
     ) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/schemas/${collection_name}${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/schemas/${collection_name}`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsSchemasV1Response,
         })
     }
@@ -726,11 +748,12 @@ export class MarketV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'volume' | 'sales'
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/templates${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/templates`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsTemplatesResponse,
         })
     }
@@ -740,11 +763,12 @@ export class MarketV1APIClient {
         collection_blacklist?: NameType[]
         collection_whitelist?: NameType[]
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/graph${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/graph`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsGraphResponse,
         })
     }
@@ -754,11 +778,12 @@ export class MarketV1APIClient {
         collection_blacklist?: NameType[]
         collection_whitelist?: NameType[]
     }) {
-        const queryParams = buildQueryParams(options)
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/sales${queryParams}`,
-            method: 'GET',
+            path: `/atomicmarket/v1/stats/sales`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Market.GetStatsSalesResponse,
         })
     }

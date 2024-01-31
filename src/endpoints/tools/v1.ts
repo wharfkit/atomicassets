@@ -3,6 +3,7 @@ import type {NameType, PublicKeyType, UInt64Type} from '@wharfkit/antelope'
 import type {LinkState} from '../../types'
 import {Tools} from '../../types'
 import type {ActionNames as ActionType} from '../../contracts/atomictoolsx'
+import {buildBodyParams} from '../utils'
 
 export class ToolsV1APIClient {
     constructor(private client: APIClient) {}
@@ -25,19 +26,12 @@ export class ToolsV1APIClient {
         order?: 'asc' | 'desc'
         sort?: 'created'
     }) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomictools/v1/links${queryParams}`,
-            method: 'GET',
+            path: `/atomictools/v1/links`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Tools.GetLinksResponse,
         })
     }
@@ -60,19 +54,12 @@ export class ToolsV1APIClient {
             action_blacklist?: ActionType[]
         }
     ) {
-        const queryParts = {}
-
-        for (const [key, value] of Object.entries(options || {})) {
-            queryParts[key] = String(value)
-        }
-
-        const queryParams = Object.keys(queryParts).length
-            ? '?' + new URLSearchParams(queryParts).toString()
-            : ''
+        const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomictools/v1/links/${link_id}/logs${queryParams}`,
-            method: 'GET',
+            path: `/atomictools/v1/links/${link_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
             responseType: Tools.ActionLogsResponse,
         })
     }
