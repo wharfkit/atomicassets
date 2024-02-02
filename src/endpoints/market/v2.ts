@@ -64,6 +64,7 @@ export class MarketV2APIClient {
             path: `/atomicmarket/v2/sales`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetSalesResponse,
         })
     }
@@ -86,6 +87,7 @@ export class MarketV2APIClient {
             path: `/atomicmarket/v2/stats/schemas/${collection_name}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsSchemasV2Response,
         })
     }

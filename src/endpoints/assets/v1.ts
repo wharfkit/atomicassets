@@ -52,6 +52,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/assets`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAssetsResponse,
         })
     }
@@ -88,6 +89,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/assets/${asset_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -116,6 +118,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/collections`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetCollectionsResponse,
         })
     }
@@ -152,6 +155,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/collections/${collection_name}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -179,6 +183,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/schemas`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetSchemasResponse,
         })
     }
@@ -216,6 +221,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -254,6 +260,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/templates`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetTemplatesResponse,
         })
     }
@@ -291,6 +298,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/templates/${collection_name}/${template_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -334,6 +342,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/offers`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetOffersResponse,
         })
     }
@@ -362,6 +371,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/offers/${offer_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.ActionLogsResponse,
         })
     }
@@ -396,6 +406,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/transfers`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetTransfersResponse,
         })
     }
@@ -423,6 +434,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/accounts`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAccountsResponse,
         })
     }
@@ -441,6 +453,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/accounts/${account}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAccountResponse,
         })
     }
@@ -475,6 +488,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/burns`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAccountsResponse,
         })
     }
@@ -493,6 +507,7 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/burns/${account}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAccountBurnsResponse,
         })
     }

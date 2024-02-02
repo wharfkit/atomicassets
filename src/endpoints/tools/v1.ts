@@ -32,6 +32,7 @@ export class ToolsV1APIClient {
             path: `/atomictools/v1/links`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Tools.GetLinksResponse,
         })
     }
@@ -60,6 +61,7 @@ export class ToolsV1APIClient {
             path: `/atomictools/v1/links/${link_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Tools.ActionLogsResponse,
         })
     }
