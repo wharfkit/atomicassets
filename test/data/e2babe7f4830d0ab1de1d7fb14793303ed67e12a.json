@@ -32,7 +32,7 @@
             "created_at_time": "1612898547500",
             "created_at_block": "102925412"
         },
-        "query_time": 1706668116105
+        "query_time": 1706855688720
     },
-    "text": "{\"success\":true,\"data\":{\"contract\":\"atomicassets\",\"collection_name\":\"testfighters\",\"name\":null,\"img\":null,\"author\":\"4je.m.wam\",\"allow_notify\":true,\"authorized_accounts\":[\"4je.m.wam\",\"lg5nw.wam\",\"5ql.s.wam\",\"unbox.nft\",\"config.nft\",\"craft.nft\"],\"notify_accounts\":[],\"market_fee\":0.09,\"data\":{\"description\":\"Test Fighters on wax!\"},\"created_at_time\":\"1612898547500\",\"created_at_block\":\"102925412\"},\"query_time\":1706668116105}"
+    "text": "{\"success\":true,\"data\":{\"contract\":\"atomicassets\",\"collection_name\":\"testfighters\",\"name\":null,\"img\":null,\"author\":\"4je.m.wam\",\"allow_notify\":true,\"authorized_accounts\":[\"4je.m.wam\",\"lg5nw.wam\",\"5ql.s.wam\",\"unbox.nft\",\"config.nft\",\"craft.nft\"],\"notify_accounts\":[],\"market_fee\":0.09,\"data\":{\"description\":\"Test Fighters on wax!\"},\"created_at_time\":\"1612898547500\",\"created_at_block\":\"102925412\"},\"query_time\":1706855688720}"
 }

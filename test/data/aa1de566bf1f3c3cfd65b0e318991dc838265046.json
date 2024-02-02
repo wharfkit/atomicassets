@@ -18,7 +18,7 @@
                 "assets": "98"
             }
         ],
-        "query_time": 1706668113432
+        "query_time": 1706855685166
     },
-    "text": "{\"success\":true,\"data\":[{\"account\":\"taco\",\"assets\":\"98\"}],\"query_time\":1706668113432}"
+    "text": "{\"success\":true,\"data\":[{\"account\":\"taco\",\"assets\":\"98\"}],\"query_time\":1706855685166}"
 }

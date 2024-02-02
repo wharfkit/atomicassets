@@ -26,8 +26,8 @@
                 "min": "900000",
                 "max": "50000000000",
                 "sales": "1025",
-                "suggested_median": "32900000000",
-                "suggested_average": "32900000000"
+                "suggested_median": "32000000000",
+                "suggested_average": "32000000000"
             },
             {
                 "market_contract": "atomicmarket",
@@ -74,8 +74,8 @@
                 "min": "498000000",
                 "max": "52800000000",
                 "sales": "1150",
-                "suggested_median": "30400000000",
-                "suggested_average": "30400000000"
+                "suggested_median": "30000000000",
+                "suggested_average": "30000000000"
             },
             {
                 "market_contract": "atomicmarket",
@@ -106,8 +106,8 @@
                 "min": "300000000",
                 "max": "2200000000000",
                 "sales": "114",
-                "suggested_median": "1799900000000",
-                "suggested_average": "1736203093923"
+                "suggested_median": "1700000000000",
+                "suggested_average": "1700000000000"
             },
             {
                 "market_contract": "atomicmarket",
@@ -165,16 +165,16 @@
                 "token_symbol": "WAX",
                 "token_contract": "eosio.token",
                 "token_precision": 8,
-                "median": "4480000000",
-                "average": "4288654742",
+                "median": "4473872584",
+                "average": "4285429134",
                 "min": "400000000",
                 "max": "12000000000",
-                "sales": "1624",
-                "suggested_median": "2240000000",
-                "suggested_average": "2152380000"
+                "sales": "1627",
+                "suggested_median": "2539000000",
+                "suggested_average": "2479960000"
             }
         ],
-        "query_time": 1706668158105
+        "query_time": 1706855732574
     },
-    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"164518\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2400000000\",\"average\":\"6492238866\",\"min\":\"900000\",\"max\":\"50000000000\",\"sales\":\"1025\",\"suggested_median\":\"32900000000\",\"suggested_average\":\"32900000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"164528\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2800000000\",\"average\":\"7988836880\",\"min\":\"148000000\",\"max\":\"65000000000\",\"sales\":\"972\",\"suggested_median\":\"32866043613\",\"suggested_average\":\"33082105520\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"173244\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"27000000000\",\"average\":\"49022795151\",\"min\":\"50000000\",\"max\":\"250000000000\",\"sales\":\"132\",\"suggested_median\":\"222222222222\",\"suggested_average\":\"221249397575\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"196590\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2700000000\",\"average\":\"6634745113\",\"min\":\"498000000\",\"max\":\"52800000000\",\"sales\":\"1150\",\"suggested_median\":\"30400000000\",\"suggested_average\":\"30400000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"200343\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"169420000000\",\"average\":\"1084710000000\",\"min\":\"169420000000\",\"max\":\"2000000000000\",\"sales\":\"2\",\"suggested_median\":\"169420000000\",\"suggested_average\":\"1084710000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"204199\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"311199000000\",\"average\":\"628708809859\",\"min\":\"300000000\",\"max\":\"2200000000000\",\"sales\":\"114\",\"suggested_median\":\"1799900000000\",\"suggested_average\":\"1736203093923\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208059\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"5300000000\",\"average\":\"10286907021\",\"min\":\"2145000000\",\"max\":\"39500000000\",\"sales\":\"176\",\"suggested_median\":\"16367670000\",\"suggested_average\":\"14032561100\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208065\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"12028869286\",\"average\":\"24403598796\",\"min\":\"5100000000\",\"max\":\"111900000000\",\"sales\":\"84\",\"suggested_median\":\"58000000000\",\"suggested_average\":\"62620000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208069\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"37900000000\",\"average\":\"77543289722\",\"min\":\"27700000000\",\"max\":\"313300000000\",\"sales\":\"64\",\"suggested_median\":\"200000000000\",\"suggested_average\":\"209780000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208155\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"4480000000\",\"average\":\"4288654742\",\"min\":\"400000000\",\"max\":\"12000000000\",\"sales\":\"1624\",\"suggested_median\":\"2240000000\",\"suggested_average\":\"2152380000\"}],\"query_time\":1706668158105}"
+    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"164518\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2400000000\",\"average\":\"6492238866\",\"min\":\"900000\",\"max\":\"50000000000\",\"sales\":\"1025\",\"suggested_median\":\"32000000000\",\"suggested_average\":\"32000000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"164528\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2800000000\",\"average\":\"7988836880\",\"min\":\"148000000\",\"max\":\"65000000000\",\"sales\":\"972\",\"suggested_median\":\"32866043613\",\"suggested_average\":\"33082105520\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"173244\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"27000000000\",\"average\":\"49022795151\",\"min\":\"50000000\",\"max\":\"250000000000\",\"sales\":\"132\",\"suggested_median\":\"222222222222\",\"suggested_average\":\"221249397575\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"196590\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"2700000000\",\"average\":\"6634745113\",\"min\":\"498000000\",\"max\":\"52800000000\",\"sales\":\"1150\",\"suggested_median\":\"30000000000\",\"suggested_average\":\"30000000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"200343\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"169420000000\",\"average\":\"1084710000000\",\"min\":\"169420000000\",\"max\":\"2000000000000\",\"sales\":\"2\",\"suggested_median\":\"169420000000\",\"suggested_average\":\"1084710000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"204199\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"311199000000\",\"average\":\"628708809859\",\"min\":\"300000000\",\"max\":\"2200000000000\",\"sales\":\"114\",\"suggested_median\":\"1700000000000\",\"suggested_average\":\"1700000000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208059\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"5300000000\",\"average\":\"10286907021\",\"min\":\"2145000000\",\"max\":\"39500000000\",\"sales\":\"176\",\"suggested_median\":\"16367670000\",\"suggested_average\":\"14032561100\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208065\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"12028869286\",\"average\":\"24403598796\",\"min\":\"5100000000\",\"max\":\"111900000000\",\"sales\":\"84\",\"suggested_median\":\"58000000000\",\"suggested_average\":\"62620000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208069\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"37900000000\",\"average\":\"77543289722\",\"min\":\"27700000000\",\"max\":\"313300000000\",\"sales\":\"64\",\"suggested_median\":\"200000000000\",\"suggested_average\":\"209780000000\"},{\"market_contract\":\"atomicmarket\",\"assets_contract\":\"atomicassets\",\"collection_name\":\"taco\",\"template_id\":\"208155\",\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8,\"median\":\"4473872584\",\"average\":\"4285429134\",\"min\":\"400000000\",\"max\":\"12000000000\",\"sales\":\"1627\",\"suggested_median\":\"2539000000\",\"suggested_average\":\"2479960000\"}],\"query_time\":1706855732574}"
 }
