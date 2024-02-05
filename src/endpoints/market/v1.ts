@@ -63,6 +63,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/assets`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetAssetsResponse,
         })
     }
@@ -99,6 +100,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/assets/${asset_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -118,6 +120,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/assets/${asset_id}/sales`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetAssetSalesResponse,
         })
     }
@@ -161,6 +164,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/offers`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetOffersResponse,
         })
     }
@@ -189,6 +193,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/offers/${offer_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -223,6 +228,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/transfers`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetTransfersResponse,
         })
     }
@@ -251,6 +257,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/sales/${sale_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -289,6 +296,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/sales/templates`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetSalesTemplatesResponse,
         })
     }
@@ -360,6 +368,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/auctions`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetAuctionsResponse,
         })
     }
@@ -388,6 +397,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/auctions/${auction_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -455,6 +465,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/buyoffers`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetBuyoffersResponse,
         })
     }
@@ -483,6 +494,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.ActionLogsResponse,
         })
     }
@@ -516,6 +528,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/prices/sales`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetSalePricesResponse,
         })
     }
@@ -533,6 +546,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/prices/sales/days`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetSalePricesDaysResponse,
         })
     }
@@ -553,6 +567,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/prices/templates`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetTemplatePricesResponse,
         })
     }
@@ -590,6 +605,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/prices/assets`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetAssetPricesResponse,
         })
     }
@@ -623,6 +639,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/prices/inventory/${account}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetInventoryPricesResponse,
         })
     }
@@ -649,6 +666,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/collections`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsCollectionsResponse,
         })
     }
@@ -665,6 +683,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/collections/${collection_name}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsCollectionResponse,
         })
     }
@@ -687,6 +706,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/accounts`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsAccountsResponse,
         })
     }
@@ -705,6 +725,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/accounts/${account}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsAccountResponse,
         })
     }
@@ -727,6 +748,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/schemas/${collection_name}`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsSchemasV1Response,
         })
     }
@@ -754,6 +776,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/templates`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsTemplatesResponse,
         })
     }
@@ -769,6 +792,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/graph`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsGraphResponse,
         })
     }
@@ -784,6 +808,7 @@ export class MarketV1APIClient {
             path: `/atomicmarket/v1/stats/sales`,
             method: 'POST',
             params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
             responseType: Market.GetStatsSalesResponse,
         })
     }

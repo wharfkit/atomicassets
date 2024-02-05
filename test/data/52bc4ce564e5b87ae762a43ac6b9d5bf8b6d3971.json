@@ -10,11 +10,11 @@
     "json": {
         "success": true,
         "data": {
-            "assets": "1793",
-            "burned": "1441",
+            "assets": "1799",
+            "burned": "1447",
             "templates": "9"
         },
-        "query_time": 1706668120320
+        "query_time": 1706855693202
     },
-    "text": "{\"success\":true,\"data\":{\"assets\":\"1793\",\"burned\":\"1441\",\"templates\":\"9\"},\"query_time\":1706668120320}"
+    "text": "{\"success\":true,\"data\":{\"assets\":\"1799\",\"burned\":\"1447\",\"templates\":\"9\"},\"query_time\":1706855693202}"
 }
