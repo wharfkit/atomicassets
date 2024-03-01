@@ -463,6 +463,32 @@ suite('atomicmarket', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_template_buyoffers', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_template_buyoffers({
+            template_id: ['443565'],
+            limit: 10,
+        })
+        assert.instanceOf(res, Types.Market.GetTemplateBuyoffersResponse)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+    })
+
+    test('get_template_buyoffer', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_template_buyoffer(284083)
+        assert.instanceOf(res, Types.Market.GetTemplateBuyofferResponse)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+    })
+
+    test('get_template_buyoffer_logs', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_template_buyoffer_logs(284083, {
+            limit: 10,
+        })
+        assert.instanceOf(res, Types.Market.ActionLogsResponse)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+    })
+
     test('get_marketplaces', async function () {
         const res = await atomicassets.atomicmarket.v1.get_marketplaces()
         assert.instanceOf(res, Types.Market.GetMarketplacesResponse)

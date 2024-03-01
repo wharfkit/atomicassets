@@ -1,6 +1,6 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
-import type {AuctionState, BuyofferState, OfferState} from '../../types'
+import type {AuctionState, BuyofferState, OfferState, TemplateBuyofferState} from '../../types'
 import {Market} from '../../types'
 import type {ActionNames as SActionType} from '../../contracts/atomicassets'
 import type {ActionNames as MActionType} from '../../contracts/atomicmarket'
@@ -492,6 +492,103 @@ export class MarketV1APIClient {
 
         return this.client.call({
             path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.ActionLogsResponse,
+        })
+    }
+
+    async get_template_buyoffers(
+        options?: {
+            state?: TemplateBuyofferState[]
+            max_assets?: UInt64Type
+            min_assets?: UInt64Type
+            show_seller_contracts?: boolean
+            contract_whitelist?: NameType[]
+            seller_blacklist?: NameType[]
+            buyer_blacklist?: NameType[]
+            asset_id?: UInt64Type[]
+            marketplace?: string[]
+            maker_marketplace?: string[]
+            taker_marketplace?: string[]
+            symbol?: string
+            account?: NameType[]
+            seller?: NameType[]
+            buyer?: NameType[]
+            min_price?: Float64Type
+            max_price?: Float64Type
+            min_template_mint?: UInt64Type
+            max_template_mint?: UInt64Type
+            collection_name?: NameType[]
+            schema_name?: NameType[]
+            template_id?: Int32Type[]
+            burned?: boolean
+            owner?: NameType[]
+            match?: string
+            search?: string
+            match_immutable_name?: string
+            match_mutable_name?: string
+            is_transferable?: boolean
+            is_burnable?: boolean
+            minter?: NameType[]
+            burner?: NameType[]
+            initial_receiver?: NameType[]
+            collection_blacklist?: NameType[]
+            collection_whitelist?: NameType[]
+            buyoffer_id?: UInt64Type[]
+            ids?: UInt64Type[]
+            lower_bound?: string
+            upper_bound?: string
+            before?: number
+            after?: number
+            page?: number
+            limit?: number
+            order?: 'asc' | 'desc'
+            sort?:
+                | 'created'
+                | 'updated'
+                | 'ending'
+                | 'buyoffer_id'
+                | 'price'
+                | 'template_mint'
+                | 'name'
+        },
+        extra_options?: {[key: string]: string}
+    ) {
+        const bodyParams = buildBodyParams(options, extra_options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/template_buyoffers`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetTemplateBuyoffersResponse,
+        })
+    }
+
+    async get_template_buyoffer(buyoffer_id: UInt64Type) {
+        return this.client.call({
+            path: `/atomicmarket/v1/template_buyoffers/${buyoffer_id}`,
+            method: 'GET',
+            responseType: Market.GetTemplateBuyofferResponse,
+        })
+    }
+
+    async get_template_buyoffer_logs(
+        buyoffer_id: UInt64Type,
+        options?: {
+            page?: number
+            limit?: number
+            order?: 'asc' | 'desc'
+            action_whitelist?: MActionType[]
+            action_blacklist?: MActionType[]
+        }
+    ) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/template_buyoffers/${buyoffer_id}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},

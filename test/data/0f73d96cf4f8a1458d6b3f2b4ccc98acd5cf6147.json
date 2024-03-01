@@ -1,0 +1,31 @@
+{
+    "request": {
+        "path": "https://wax.api.atomicassets.io/atomicmarket/v1/template_buyoffers/284083/logs",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":\"10\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [
+            {
+                "log_id": "88427041491",
+                "name": "lognewtbuyo",
+                "data": {
+                    "collection_fee": 0.05,
+                    "maker_marketplace": "nft.hive"
+                },
+                "txid": "b3f747ac12eab4a3b942052602015f386d91600617b69b341ba15cb0bd427446",
+                "created_at_block": "295414480",
+                "created_at_time": "1709179854000"
+            }
+        ],
+        "query_time": 1709248808715
+    },
+    "text": "{\"success\":true,\"data\":[{\"log_id\":\"88427041491\",\"name\":\"lognewtbuyo\",\"data\":{\"collection_fee\":0.05,\"maker_marketplace\":\"nft.hive\"},\"txid\":\"b3f747ac12eab4a3b942052602015f386d91600617b69b341ba15cb0bd427446\",\"created_at_block\":\"295414480\",\"created_at_time\":\"1709179854000\"}],\"query_time\":1709248808715}"
+}

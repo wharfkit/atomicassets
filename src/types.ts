@@ -45,11 +45,18 @@ export enum SaleState {
 }
 
 export enum BuyofferState {
-    WAITING = 0,
-    LISTED = 1,
+    PENDING = 0,
+    DECLINED = 1,
     CANCELED = 2,
-    SOLD = 3,
+    ACCEPTED = 3,
     INVALID = 4,
+}
+
+export enum TemplateBuyofferState {
+    LISTED = 0,
+    CANCELED = 1,
+    SOLD = 2,
+    INVALID = 3,
 }
 
 @Struct.type('token')
@@ -348,6 +355,26 @@ export class BuyofferObject extends Struct {
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field('string') declare memo: string
     @Struct.field('string', {optional: true}) declare decline_memo: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+    @Struct.field(UInt64) declare updated_at_block: UInt64
+    @Struct.field('string') declare updated_at_time: string
+    @Struct.field(UInt8) declare state: UInt8
+}
+
+@Struct.type('template_buyoffer_object')
+export class TemplateBuyofferObject extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(Name) declare assets_contract: Name
+    @Struct.field(UInt64) declare buyoffer_id: UInt64
+    @Struct.field(Name, {optional: true}) declare seller: Name
+    @Struct.field(Name) declare buyer: Name
+    @Struct.field(TokenAmount) declare price: TokenAmount
+    @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
+    @Struct.field('string') declare maker_marketplace: Name
+    @Struct.field('string', {optional: true}) declare taker_marketplace: Name
+    @Struct.field(CollectionObject) declare collection: CollectionObject
+    @Struct.field(TemplateObject) declare template: TemplateObject
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
     @Struct.field(UInt64) declare updated_at_block: UInt64
@@ -893,6 +920,16 @@ export namespace Market {
     @Struct.type('get_buyoffer_resp')
     export class GetBuyofferResponse extends ResponseStruct {
         @Struct.field(BuyofferObject) declare data: BuyofferObject
+    }
+
+    @Struct.type('get_template_buyoffers_resp')
+    export class GetTemplateBuyoffersResponse extends ResponseStruct {
+        @Struct.field(TemplateBuyofferObject, {array: true}) declare data: TemplateBuyofferObject[]
+    }
+
+    @Struct.type('get_template_buyoffer_resp')
+    export class GetTemplateBuyofferResponse extends ResponseStruct {
+        @Struct.field(TemplateBuyofferObject) declare data: TemplateBuyofferObject
     }
 
     @Struct.type('get_marketplaces_resp')
