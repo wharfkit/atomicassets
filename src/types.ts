@@ -45,11 +45,18 @@ export enum SaleState {
 }
 
 export enum BuyofferState {
-    WAITING = 0,
-    LISTED = 1,
+    PENDING = 0,
+    DECLINED = 1,
     CANCELED = 2,
-    SOLD = 3,
+    ACCEPTED = 3,
     INVALID = 4,
+}
+
+export enum TemplateBuyofferState {
+    LISTED = 0,
+    CANCELED = 1,
+    SOLD = 2,
+    INVALID = 3,
 }
 
 @Struct.type('token')
@@ -262,7 +269,7 @@ export class AuctionBrief extends Struct {
 }
 
 @Struct.type('template_buyoffer')
-export class TemplateBuyoffer extends Struct {
+export class TemplateBuyofferBrief extends Struct {
     @Struct.field(Name) declare market_contract: Name
     @Struct.field(UInt64) declare buyoffer_id: UInt64
     @Struct.field('string') declare token_symbol: string
@@ -273,7 +280,8 @@ export class MarketAssetObject extends AssetObject {
     @Struct.field(SaleBrief, {array: true}) declare sales: SaleBrief[]
     @Struct.field(AuctionBrief, {array: true}) declare auctions: AuctionBrief[]
     @Struct.field(AssetPriceV2, {array: true, optional: true}) declare prices: AssetPriceV2[]
-    @Struct.field(TemplateBuyoffer, {array: true}) declare template_buyoffers: TemplateBuyoffer[]
+    @Struct.field(TemplateBuyofferBrief, {array: true})
+    declare template_buyoffers: TemplateBuyofferBrief[]
 }
 
 @Struct.type('sale_object')
@@ -348,6 +356,26 @@ export class BuyofferObject extends Struct {
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field('string') declare memo: string
     @Struct.field('string', {optional: true}) declare decline_memo: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+    @Struct.field(UInt64) declare updated_at_block: UInt64
+    @Struct.field('string') declare updated_at_time: string
+    @Struct.field(UInt8) declare state: UInt8
+}
+
+@Struct.type('template_buyoffer_object')
+export class TemplateBuyofferObject extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(Name) declare assets_contract: Name
+    @Struct.field(UInt64) declare buyoffer_id: UInt64
+    @Struct.field(Name, {optional: true}) declare seller: Name
+    @Struct.field(Name) declare buyer: Name
+    @Struct.field(TokenAmount) declare price: TokenAmount
+    @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
+    @Struct.field('string') declare maker_marketplace: Name
+    @Struct.field('string', {optional: true}) declare taker_marketplace: Name
+    @Struct.field(CollectionObject) declare collection: CollectionObject
+    @Struct.field(TemplateObject) declare template: TemplateObject
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
     @Struct.field(UInt64) declare updated_at_block: UInt64
@@ -542,6 +570,11 @@ export class AssetSale extends Struct {
 export class ResponseStruct extends Struct {
     @Struct.field('bool') declare success: boolean
     @Struct.field(Float64) declare query_time: Float64
+}
+
+@Struct.type('get_count_resp')
+export class CountResponseStruct extends ResponseStruct {
+    @Struct.field(UInt64) declare data: UInt64
 }
 
 export namespace Assets {
@@ -893,6 +926,16 @@ export namespace Market {
     @Struct.type('get_buyoffer_resp')
     export class GetBuyofferResponse extends ResponseStruct {
         @Struct.field(BuyofferObject) declare data: BuyofferObject
+    }
+
+    @Struct.type('get_template_buyoffers_resp')
+    export class GetTemplateBuyoffersResponse extends ResponseStruct {
+        @Struct.field(TemplateBuyofferObject, {array: true}) declare data: TemplateBuyofferObject[]
+    }
+
+    @Struct.type('get_template_buyoffer_resp')
+    export class GetTemplateBuyofferResponse extends ResponseStruct {
+        @Struct.field(TemplateBuyofferObject) declare data: TemplateBuyofferObject
     }
 
     @Struct.type('get_marketplaces_resp')

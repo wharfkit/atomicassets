@@ -27,7 +27,7 @@
                 "block_time": "1705575088000"
             }
         ],
-        "query_time": 1706855714008
+        "query_time": 1709306645931
     },
-    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"sale_id\":\"150644145\",\"auction_id\":null,\"buyoffer_id\":null,\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"price\":\"1830000000\",\"seller\":\"gmube.wam\",\"buyer\":\"taco\",\"block_time\":\"1705575088000\"}],\"query_time\":1706855714008}"
+    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"sale_id\":\"150644145\",\"auction_id\":null,\"buyoffer_id\":null,\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"price\":\"1830000000\",\"seller\":\"gmube.wam\",\"buyer\":\"taco\",\"block_time\":\"1705575088000\"}],\"query_time\":1709306645931}"
 }

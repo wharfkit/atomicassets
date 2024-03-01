@@ -1,0 +1,19 @@
+{
+    "request": {
+        "path": "https://wax.api.atomicassets.io/atomicassets/v1/offers/_count",
+        "params": {
+            "method": "POST",
+            "body": "{\"collection_name\":\"outlawtroops,babymetaljpn\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": "186609",
+        "query_time": 1709306639167
+    },
+    "text": "{\"success\":true,\"data\":\"186609\",\"query_time\":1709306639167}"
+}

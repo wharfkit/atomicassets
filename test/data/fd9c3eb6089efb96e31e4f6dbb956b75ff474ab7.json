@@ -11,9 +11,9 @@
         "success": true,
         "data": {
             "assets": "2256",
-            "burned": "2070"
+            "burned": "2072"
         },
-        "query_time": 1706855695918
+        "query_time": 1709306628009
     },
-    "text": "{\"success\":true,\"data\":{\"assets\":\"2256\",\"burned\":\"2070\"},\"query_time\":1706855695918}"
+    "text": "{\"success\":true,\"data\":{\"assets\":\"2256\",\"burned\":\"2072\"},\"query_time\":1709306628009}"
 }

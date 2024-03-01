@@ -23,7 +23,7 @@
                 "sales": "0"
             }
         },
-        "query_time": 1706855741652
+        "query_time": 1709306665809
     },
-    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"result\":{\"volume\":null,\"sales\":\"0\"}},\"query_time\":1706855741652}"
+    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"result\":{\"volume\":null,\"sales\":\"0\"}},\"query_time\":1709306665809}"
 }

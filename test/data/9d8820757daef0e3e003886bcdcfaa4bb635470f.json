@@ -25,7 +25,7 @@
                 "created_at_time": "1674960348000"
             }
         ],
-        "query_time": 1706855699563
+        "query_time": 1709306629187
     },
-    "text": "{\"success\":true,\"data\":[{\"log_id\":\"73952596393\",\"name\":\"logmint\",\"data\":{\"new_asset_owner\":\"taco\",\"authorized_minter\":\"taco\"},\"txid\":\"5345915e304997c56cd6b82a227aa68bae8c56aeeb1098551e68d242309d5946\",\"created_at_block\":\"226985207\",\"created_at_time\":\"1674960348000\"}],\"query_time\":1706855699563}"
+    "text": "{\"success\":true,\"data\":[{\"log_id\":\"73952596393\",\"name\":\"logmint\",\"data\":{\"new_asset_owner\":\"taco\",\"authorized_minter\":\"taco\"},\"txid\":\"5345915e304997c56cd6b82a227aa68bae8c56aeeb1098551e68d242309d5946\",\"created_at_block\":\"226985207\",\"created_at_time\":\"1674960348000\"}],\"query_time\":1709306629187}"
 }

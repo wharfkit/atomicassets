@@ -1,0 +1,19 @@
+{
+    "request": {
+        "path": "https://wax.api.atomicassets.io/atomicmarket/v1/auctions/_count",
+        "params": {
+            "method": "POST",
+            "body": "{\"collection_name\":\"taco,bcbrawlers\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": "807",
+        "query_time": 1709306652963
+    },
+    "text": "{\"success\":true,\"data\":\"807\",\"query_time\":1709306652963}"
+}
