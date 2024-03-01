@@ -1,51 +1,190 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelope'
 import type {ActionNames as ActionType} from '../../contracts/atomicassets'
-import {Assets} from '../../types'
+import {Assets, CountResponseStruct} from '../../types'
 import type {OfferState} from '../../types'
 import {buildBodyParams} from '../utils'
+
+export interface GetAssetsOptions {
+    collection_name?: NameType[]
+    schema_name?: NameType[]
+    template_id?: Int32Type[]
+    burned?: boolean
+    owner?: NameType[]
+    match?: string
+    search?: string
+    match_immutable_name?: string
+    match_mutable_name?: string
+    is_transferable?: boolean
+    is_burnable?: boolean
+    minter?: NameType[]
+    burner?: NameType[]
+    initial_receiver?: NameType[]
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    only_duplicate_templates?: boolean
+    has_backed_tokens?: boolean
+    authorized_account?: NameType
+    template_whitelist?: Int32Type[]
+    template_blacklist?: Int32Type[]
+    hide_templates_by_accounts?: NameType[]
+    hide_offers?: boolean
+    asset_id?: UInt64Type[]
+    ids?: UInt64Type[]
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'asset_id' | 'minted' | 'updated' | 'transferred' | 'template_mint' | 'name'
+}
+
+export interface GetCollectionsOptions {
+    author?: NameType[]
+    match?: string
+    authorized_account?: NameType
+    notify_account?: NameType
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    collection_name?: NameType[]
+    ids?: UInt64Type[]
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created' | 'collection_name'
+}
+
+export interface GetSchemasOptions {
+    collection_name?: NameType[]
+    authorized_account?: NameType
+    schema_name?: NameType[]
+    match?: string
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    ids?: UInt64Type[]
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created' | 'schema_name' | 'assets'
+}
+
+export interface GetTemplatesOptions {
+    collection_name?: NameType[]
+    schema_name?: NameType[]
+    issued_supply?: UInt32Type
+    min_issued_supply?: UInt32Type
+    max_issued_supply?: UInt32Type
+    has_assets?: boolean
+    max_supply?: UInt32Type
+    is_burnable?: boolean
+    is_transferable?: boolean
+    authorized_account?: NameType
+    match?: string
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    template_id?: Int32Type[]
+    ids?: Int32Type[]
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created' | 'name'
+}
+
+export interface GetOffersOptions {
+    account?: NameType[]
+    sender?: NameType[]
+    recipient?: NameType[]
+    memo?: string
+    match_memo?: string
+    state?: OfferState[]
+    is_recipient_contract?: boolean
+    asset_id?: UInt64Type[]
+    template_id?: Int32Type[]
+    schema_name?: NameType[]
+    collection_name?: NameType[]
+    account_whitelist?: NameType[]
+    account_blacklist?: NameType[]
+    sender_asset_whitelist?: UInt64Type[]
+    sender_asset_blacklist?: UInt64Type[]
+    recipient_asset_whitelist?: UInt64Type[]
+    recipient_asset_blacklist?: UInt64Type[]
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    hide_contracts?: boolean
+    hide_empty_offers?: boolean
+    offer_id?: UInt64Type
+    ids?: UInt64Type
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created' | 'updated'
+}
+
+export interface GetTransfersOptions {
+    account?: NameType[]
+    sender?: NameType[]
+    recipient?: NameType[]
+    memo?: string
+    match_memo?: string
+    asset_id?: UInt64Type[]
+    template_id?: Int32Type[]
+    schema_name?: NameType[]
+    collection_name?: NameType[]
+    hide_contracts?: boolean
+    transfer_id?: UInt64Type[]
+    ids?: UInt64Type[]
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created'
+}
+
+export interface GetAccountsOptions {
+    match_owner?: string
+    collection_name?: NameType[]
+    schema_name?: NameType[]
+    template_id?: Int32Type[]
+    burned?: boolean
+    hide_offers?: boolean
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    owner?: NameType[]
+    ids?: UInt64Type[]
+    lower_bound?: string
+    upper_bound?: string
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+}
 
 export class AssetsV1APIClient {
     constructor(private client: APIClient) {}
 
-    async get_assets(
-        options?: {
-            collection_name?: NameType[]
-            schema_name?: NameType[]
-            template_id?: Int32Type[]
-            burned?: boolean
-            owner?: NameType[]
-            match?: string
-            search?: string
-            match_immutable_name?: string
-            match_mutable_name?: string
-            is_transferable?: boolean
-            is_burnable?: boolean
-            minter?: NameType[]
-            burner?: NameType[]
-            initial_receiver?: NameType[]
-            collection_blacklist?: NameType[]
-            collection_whitelist?: NameType[]
-            only_duplicate_templates?: boolean
-            has_backed_tokens?: boolean
-            authorized_account?: NameType
-            template_whitelist?: Int32Type[]
-            template_blacklist?: Int32Type[]
-            hide_templates_by_accounts?: NameType[]
-            hide_offers?: boolean
-            asset_id?: UInt64Type[]
-            ids?: UInt64Type[]
-            lower_bound?: string
-            upper_bound?: string
-            before?: number
-            after?: number
-            page?: number
-            limit?: number
-            order?: 'asc' | 'desc'
-            sort?: 'asset_id' | 'minted' | 'updated' | 'transferred' | 'template_mint' | 'name'
-        },
-        extra_options?: {[key: string]: string}
-    ) {
+    async get_assets(options?: GetAssetsOptions, extra_options?: {[key: string]: string}) {
         const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
@@ -54,6 +193,18 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAssetsResponse,
+        })
+    }
+
+    async get_assets_count(options?: GetAssetsOptions, extra_options?: {[key: string]: string}) {
+        const bodyParams = buildBodyParams(options, extra_options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/assets/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 
@@ -94,24 +245,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_collections(options?: {
-        author?: NameType[]
-        match?: string
-        authorized_account?: NameType
-        notify_account?: NameType
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        collection_name?: NameType[]
-        ids?: UInt64Type[]
-        lower_bound?: string
-        upper_bound?: string
-        before?: number
-        after?: number
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-        sort?: 'created' | 'collection_name'
-    }) {
+    async get_collections(options?: GetCollectionsOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
@@ -120,6 +254,18 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetCollectionsResponse,
+        })
+    }
+
+    async get_collections_count(options?: GetCollectionsOptions) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/collections/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 
@@ -160,23 +306,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_schemas(options?: {
-        collection_name?: NameType[]
-        authorized_account?: NameType
-        schema_name?: NameType[]
-        match?: string
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        ids?: UInt64Type[]
-        lower_bound?: string
-        upper_bound?: string
-        before?: number
-        after?: number
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-        sort?: 'created' | 'schema_name' | 'assets'
-    }) {
+    async get_schemas(options?: GetSchemasOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
@@ -185,6 +315,18 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetSchemasResponse,
+        })
+    }
+
+    async get_schemas_count(options?: GetSchemasOptions) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/schemas/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 
@@ -226,34 +368,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_templates(
-        options?: {
-            collection_name?: NameType[]
-            schema_name?: NameType[]
-            issued_supply?: UInt32Type
-            min_issued_supply?: UInt32Type
-            max_issued_supply?: UInt32Type
-            has_assets?: boolean
-            max_supply?: UInt32Type
-            is_burnable?: boolean
-            is_transferable?: boolean
-            authorized_account?: NameType
-            match?: string
-            collection_blacklist?: NameType[]
-            collection_whitelist?: NameType[]
-            template_id?: Int32Type[]
-            ids?: Int32Type[]
-            lower_bound?: string
-            upper_bound?: string
-            before?: number
-            after?: number
-            page?: number
-            limit?: number
-            order?: 'asc' | 'desc'
-            sort?: 'created' | 'name'
-        },
-        extra_options?: {[key: string]: string}
-    ) {
+    async get_templates(options?: GetTemplatesOptions, extra_options?: {[key: string]: string}) {
         const bodyParams = buildBodyParams(options, extra_options)
 
         return this.client.call({
@@ -262,6 +377,21 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetTemplatesResponse,
+        })
+    }
+
+    async get_templates_count(
+        options?: GetTemplatesOptions,
+        extra_options?: {[key: string]: string}
+    ) {
+        const bodyParams = buildBodyParams(options, extra_options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/templates/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 
@@ -303,39 +433,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_offers(options?: {
-        account?: NameType[]
-        sender?: NameType[]
-        recipient?: NameType[]
-        memo?: string
-        match_memo?: string
-        state?: OfferState[]
-        is_recipient_contract?: boolean
-        asset_id?: UInt64Type[]
-        template_id?: Int32Type[]
-        schema_name?: NameType[]
-        collection_name?: NameType[]
-        account_whitelist?: NameType[]
-        account_blacklist?: NameType[]
-        sender_asset_whitelist?: UInt64Type[]
-        sender_asset_blacklist?: UInt64Type[]
-        recipient_asset_whitelist?: UInt64Type[]
-        recipient_asset_blacklist?: UInt64Type[]
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        hide_contracts?: boolean
-        hide_empty_offers?: boolean
-        offer_id?: UInt64Type
-        ids?: UInt64Type
-        lower_bound?: string
-        upper_bound?: string
-        before?: number
-        after?: number
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-        sort?: 'created' | 'updated'
-    }) {
+    async get_offers(options?: GetOffersOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
@@ -344,6 +442,18 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetOffersResponse,
+        })
+    }
+
+    async get_offers_count(options?: GetOffersOptions) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/offers/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 
@@ -376,30 +486,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_transfers(options?: {
-        account?: NameType[]
-        sender?: NameType[]
-        recipient?: NameType[]
-        memo?: string
-        match_memo?: string
-        asset_id?: UInt64Type[]
-        template_id?: Int32Type[]
-        schema_name?: NameType[]
-        collection_name?: NameType[]
-        hide_contracts?: boolean
-        transfer_id?: UInt64Type[]
-        ids?: UInt64Type[]
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        lower_bound?: string
-        upper_bound?: string
-        before?: number
-        after?: number
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-        sort?: 'created'
-    }) {
+    async get_transfers(options?: GetTransfersOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
@@ -411,23 +498,19 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_accounts(options?: {
-        match_owner?: string
-        collection_name?: NameType[]
-        schema_name?: NameType[]
-        template_id?: Int32Type[]
-        burned?: boolean
-        hide_offers?: boolean
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        owner?: NameType[]
-        ids?: UInt64Type[]
-        lower_bound?: string
-        upper_bound?: string
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-    }) {
+    async get_transfers_count(options?: GetTransfersOptions) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/transfers/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
+        })
+    }
+
+    async get_accounts(options?: GetAccountsOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
@@ -436,6 +519,18 @@ export class AssetsV1APIClient {
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
             responseType: Assets.GetAccountsResponse,
+        })
+    }
+
+    async get_accounts_count(options?: GetAccountsOptions) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicassets/v1/accounts/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
         })
     }
 

@@ -21,13 +21,18 @@
             "results": [
                 {
                     "account": "zoieo.wam",
-                    "buy_volume": "18813803599538",
-                    "sell_volume": "23925744210000"
+                    "buy_volume": "19204947653724",
+                    "sell_volume": "24972511210000"
                 },
                 {
                     "account": "ubkb.wam",
-                    "buy_volume": "26390181467722",
-                    "sell_volume": "18073094000000"
+                    "buy_volume": "26541305607614",
+                    "sell_volume": "18270542000000"
+                },
+                {
+                    "account": "zfgb.wam",
+                    "buy_volume": "5834046244906",
+                    "sell_volume": "17461180033681"
                 },
                 {
                     "account": "wofxg.wam",
@@ -35,24 +40,24 @@
                     "sell_volume": "17261279010137"
                 },
                 {
-                    "account": "zfgb.wam",
-                    "buy_volume": "5832046244906",
-                    "sell_volume": "16862058443681"
-                },
-                {
                     "account": "o4eei.wam",
                     "buy_volume": "7025293790113",
-                    "sell_volume": "15779436000000"
+                    "sell_volume": "15869061000000"
                 },
                 {
                     "account": "e.4e4.wam",
                     "buy_volume": "338342394800",
-                    "sell_volume": "14898737362927"
+                    "sell_volume": "15357237362927"
                 },
                 {
                     "account": "hdmbk.wam",
                     "buy_volume": "2580159183069",
-                    "sell_volume": "13052203999998"
+                    "sell_volume": "14685593999998"
+                },
+                {
+                    "account": "azjiy.wam",
+                    "buy_volume": "5798468383773",
+                    "sell_volume": "13595360615228"
                 },
                 {
                     "account": "dmfvw.wam",
@@ -63,15 +68,10 @@
                     "account": "bxwb2.wam",
                     "buy_volume": "445751097369",
                     "sell_volume": "12830879143290"
-                },
-                {
-                    "account": "2shay.wam",
-                    "buy_volume": "4988156836702",
-                    "sell_volume": "12281448997405"
                 }
             ]
         },
-        "query_time": 1706855736203
+        "query_time": 1709306663444
     },
-    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"results\":[{\"account\":\"zoieo.wam\",\"buy_volume\":\"18813803599538\",\"sell_volume\":\"23925744210000\"},{\"account\":\"ubkb.wam\",\"buy_volume\":\"26390181467722\",\"sell_volume\":\"18073094000000\"},{\"account\":\"wofxg.wam\",\"buy_volume\":\"835996985548\",\"sell_volume\":\"17261279010137\"},{\"account\":\"zfgb.wam\",\"buy_volume\":\"5832046244906\",\"sell_volume\":\"16862058443681\"},{\"account\":\"o4eei.wam\",\"buy_volume\":\"7025293790113\",\"sell_volume\":\"15779436000000\"},{\"account\":\"e.4e4.wam\",\"buy_volume\":\"338342394800\",\"sell_volume\":\"14898737362927\"},{\"account\":\"hdmbk.wam\",\"buy_volume\":\"2580159183069\",\"sell_volume\":\"13052203999998\"},{\"account\":\"dmfvw.wam\",\"buy_volume\":\"1682402727067\",\"sell_volume\":\"12866595588626\"},{\"account\":\"bxwb2.wam\",\"buy_volume\":\"445751097369\",\"sell_volume\":\"12830879143290\"},{\"account\":\"2shay.wam\",\"buy_volume\":\"4988156836702\",\"sell_volume\":\"12281448997405\"}]},\"query_time\":1706855736203}"
+    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"results\":[{\"account\":\"zoieo.wam\",\"buy_volume\":\"19204947653724\",\"sell_volume\":\"24972511210000\"},{\"account\":\"ubkb.wam\",\"buy_volume\":\"26541305607614\",\"sell_volume\":\"18270542000000\"},{\"account\":\"zfgb.wam\",\"buy_volume\":\"5834046244906\",\"sell_volume\":\"17461180033681\"},{\"account\":\"wofxg.wam\",\"buy_volume\":\"835996985548\",\"sell_volume\":\"17261279010137\"},{\"account\":\"o4eei.wam\",\"buy_volume\":\"7025293790113\",\"sell_volume\":\"15869061000000\"},{\"account\":\"e.4e4.wam\",\"buy_volume\":\"338342394800\",\"sell_volume\":\"15357237362927\"},{\"account\":\"hdmbk.wam\",\"buy_volume\":\"2580159183069\",\"sell_volume\":\"14685593999998\"},{\"account\":\"azjiy.wam\",\"buy_volume\":\"5798468383773\",\"sell_volume\":\"13595360615228\"},{\"account\":\"dmfvw.wam\",\"buy_volume\":\"1682402727067\",\"sell_volume\":\"12866595588626\"},{\"account\":\"bxwb2.wam\",\"buy_volume\":\"445751097369\",\"sell_volume\":\"12830879143290\"}]},\"query_time\":1709306663444}"
 }

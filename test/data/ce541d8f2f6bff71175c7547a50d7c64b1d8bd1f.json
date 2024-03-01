@@ -17,15 +17,15 @@
                 "token_symbol": "WAX",
                 "token_precision": 8,
                 "token_contract": "eosio.token",
-                "median": "999000000",
-                "average": "1266568494",
+                "median": "1048707000",
+                "average": "1304610590",
                 "min": "100000000",
                 "max": "7000000000",
-                "suggested_median": "1850000000",
-                "suggested_average": "1857597175"
+                "suggested_median": "2090000000",
+                "suggested_average": "2117102732"
             }
         ],
-        "query_time": 1706855733050
+        "query_time": 1709306661769
     },
-    "text": "{\"success\":true,\"data\":[{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"median\":\"999000000\",\"average\":\"1266568494\",\"min\":\"100000000\",\"max\":\"7000000000\",\"suggested_median\":\"1850000000\",\"suggested_average\":\"1857597175\"}],\"query_time\":1706855733050}"
+    "text": "{\"success\":true,\"data\":[{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"median\":\"1048707000\",\"average\":\"1304610590\",\"min\":\"100000000\",\"max\":\"7000000000\",\"suggested_median\":\"2090000000\",\"suggested_average\":\"2117102732\"}],\"query_time\":1709306661769}"
 }

@@ -35,6 +35,17 @@ suite('atomicassets', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_accounts_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_accounts_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+            owner: ['taco'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_account', async function () {
         const res = await atomicassets.atomicassets.v1.get_account('taco')
         assert.instanceOf(res, Types.Assets.GetAccountResponse)
@@ -60,6 +71,16 @@ suite('atomicassets', function () {
         assert.instanceOf(res, Types.Assets.GetCollectionsResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_collections_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_collections_count({
+            author: [Name.from('taco'), 'alien.worlds'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_collection', async function () {
@@ -102,6 +123,16 @@ suite('atomicassets', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_schemas_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_schemas_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_schema', async function () {
         const res = await atomicassets.atomicassets.v1.get_schema('taco', 'cmbz.res')
         assert.instanceOf(res, Types.Assets.GetSchemaResponse)
@@ -133,6 +164,16 @@ suite('atomicassets', function () {
         assert.instanceOf(res, Types.Assets.GetTemplatesResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_templates_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_templates_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_template', async function () {
@@ -169,6 +210,17 @@ suite('atomicassets', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_assets_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_assets_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+            owner: ['taco'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_asset', async function () {
         const res = await atomicassets.atomicassets.v1.get_asset(1099851897196)
         assert.instanceOf(res, Types.Assets.GetAssetResponse)
@@ -203,6 +255,16 @@ suite('atomicassets', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_offers_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_offers_count({
+            collection_name: [Name.from('outlawtroops'), 'babymetaljpn'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_offer', async function () {
         const res = await atomicassets.atomicassets.v1.get_offer(22820296)
         assert.instanceOf(res, Types.Assets.GetOfferResponse)
@@ -228,6 +290,17 @@ suite('atomicassets', function () {
         assert.instanceOf(res, Types.Assets.GetTransfersResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_transfers_count', async function () {
+        const res = await atomicassets.atomicassets.v1.get_transfers_count({
+            account: ['taco'],
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_burns', async function () {
@@ -259,6 +332,16 @@ suite('atomictools', function () {
         assert.instanceOf(res, Types.Tools.GetLinksResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_links_count', async function () {
+        const res = await atomicassets.atomictools.v1.get_links_count({
+            creator: [Name.from('taco'), 'federation'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_link', async function () {
@@ -296,6 +379,17 @@ suite('atomicmarket', function () {
         assert.instanceOf(res, Types.Market.GetAssetsResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_assets_count', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_assets_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+            owner: ['taco'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_asset', async function () {
@@ -384,6 +478,17 @@ suite('atomicmarket', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_sales_count', async function () {
+        const res = await atomicassets.atomicmarket.v2.get_sales_count({
+            collection_name: [Name.from('taco'), 'alien.worlds'],
+            buyer: ['taco'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_sale', async function () {
         const res = await atomicassets.atomicmarket.v1.get_sale(89024803)
         assert.instanceOf(res, Types.Market.GetSaleResponse)
@@ -421,6 +526,16 @@ suite('atomicmarket', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_auctions_count', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_auctions_count({
+            collection_name: [Name.from('taco'), 'bcbrawlers'],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_auction', async function () {
         const res = await atomicassets.atomicmarket.v1.get_auction(1301765)
         assert.instanceOf(res, Types.Market.GetAuctionResponse)
@@ -447,6 +562,16 @@ suite('atomicmarket', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_buyoffers_count', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_buyoffers_count({
+            collection_name: [Name.from('taco')],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
+    })
+
     test('get_buyoffer', async function () {
         const res = await atomicassets.atomicmarket.v1.get_buyoffer(2432258)
         assert.instanceOf(res, Types.Market.GetBuyofferResponse)
@@ -471,6 +596,17 @@ suite('atomicmarket', function () {
         assert.instanceOf(res, Types.Market.GetTemplateBuyoffersResponse)
         assert.equal(res.success, true)
         assert.isNotEmpty(res.data)
+    })
+
+    test('get_template_buyoffers_count', async function () {
+        const res = await atomicassets.atomicmarket.v1.get_template_buyoffers_count({
+            template_id: ['443565'],
+            state: [Types.TemplateBuyofferState.CANCELED],
+        })
+        assert.instanceOf(res, Types.CountResponseStruct)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data)
+        assert.isAbove(res.data.toNumber(), 0)
     })
 
     test('get_template_buyoffer', async function () {
