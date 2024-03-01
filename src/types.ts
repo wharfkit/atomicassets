@@ -269,7 +269,7 @@ export class AuctionBrief extends Struct {
 }
 
 @Struct.type('template_buyoffer')
-export class TemplateBuyoffer extends Struct {
+export class TemplateBuyofferBrief extends Struct {
     @Struct.field(Name) declare market_contract: Name
     @Struct.field(UInt64) declare buyoffer_id: UInt64
     @Struct.field('string') declare token_symbol: string
@@ -280,7 +280,8 @@ export class MarketAssetObject extends AssetObject {
     @Struct.field(SaleBrief, {array: true}) declare sales: SaleBrief[]
     @Struct.field(AuctionBrief, {array: true}) declare auctions: AuctionBrief[]
     @Struct.field(AssetPriceV2, {array: true, optional: true}) declare prices: AssetPriceV2[]
-    @Struct.field(TemplateBuyoffer, {array: true}) declare template_buyoffers: TemplateBuyoffer[]
+    @Struct.field(TemplateBuyofferBrief, {array: true})
+    declare template_buyoffers: TemplateBuyofferBrief[]
 }
 
 @Struct.type('sale_object')
@@ -569,6 +570,11 @@ export class AssetSale extends Struct {
 export class ResponseStruct extends Struct {
     @Struct.field('bool') declare success: boolean
     @Struct.field(Float64) declare query_time: Float64
+}
+
+@Struct.type('get_count_resp')
+export class CountResponseStruct extends ResponseStruct {
+    @Struct.field(UInt64) declare data: UInt64
 }
 
 export namespace Assets {
