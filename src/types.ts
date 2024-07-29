@@ -194,7 +194,7 @@ export class AssetObject extends Struct {
     @Struct.field(Name, {optional: true}) declare owner: Name
     @Struct.field('bool') declare is_transferable: boolean
     @Struct.field('bool') declare is_burnable: boolean
-    @Struct.field('string') declare name: string
+    @Struct.field('string', {optional: true}) declare name: string
     @Struct.field(Name, {optional: true}) declare contract: Name
     @Struct.field(Name, {optional: true}) declare burned_by_account: Name
     @Struct.field(UInt64, {optional: true}) declare burned_at_block: UInt64
@@ -735,8 +735,8 @@ export namespace Market {
     export class CollectionStat extends Struct {
         @Struct.field(Name) declare contract: Name
         @Struct.field(Name) declare collection_name: Name
-        @Struct.field('string') declare name: string
-        @Struct.field('string') declare img: string
+        @Struct.field('string', {optional: true}) declare name: string
+        @Struct.field('string', {optional: true}) declare img: string
         @Struct.field(Name) declare author: Name
         @Struct.field('bool') declare allow_notify: boolean
         @Struct.field(Name, {array: true}) declare authorized_accounts: Name[]
