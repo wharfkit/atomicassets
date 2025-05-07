@@ -1,7 +1,7 @@
 {
     "name": "@wharfkit/atomicassets",
     "description": "AtomicAsset library for Wharf",
-    "version": "1.2.2",
+    "version": "1.2.1",
     "homepage": "https://github.com/wharfkit/atomicassets",
     "main": "lib/atomicassets.js",
     "module": "lib/atomicassets.m.js",
