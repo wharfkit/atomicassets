@@ -280,7 +280,7 @@ export class MarketAssetObject extends AssetObject {
     @Struct.field(SaleBrief, {array: true}) declare sales: SaleBrief[]
     @Struct.field(AuctionBrief, {array: true}) declare auctions: AuctionBrief[]
     @Struct.field(AssetPriceV2, {array: true, optional: true}) declare prices: AssetPriceV2[]
-    @Struct.field(TemplateBuyofferBrief, {array: true})
+    @Struct.field(TemplateBuyofferBrief, {array: true, optional: true})
     declare template_buyoffers: TemplateBuyofferBrief[]
 }
 
