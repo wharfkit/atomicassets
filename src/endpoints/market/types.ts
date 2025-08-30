@@ -8,6 +8,7 @@ import {
     AtomicMarketConfig,
     AuctionObject,
     BuyofferObject,
+    CollectionObject,
     InventoryPrice,
     MarketAssetObject,
     Marketplace,
@@ -25,26 +26,16 @@ import {
 } from '../types'
 
 @Struct.type('collection_stat')
-export class CollectionStat extends Struct {
-    @Struct.field(Name) declare contract: Name
-    @Struct.field(Name) declare collection_name: Name
-    @Struct.field('string', {optional: true}) declare name: string
-    @Struct.field('string', {optional: true}) declare img: string
-    @Struct.field(Name) declare author: Name
-    @Struct.field('bool') declare allow_notify: boolean
-    @Struct.field(Name, {array: true}) declare authorized_accounts: Name[]
-    @Struct.field(Name, {array: true}) declare notify_accounts: Name[]
-    @Struct.field(Float64) declare market_fee: Float64
-    @Struct.field('any') declare data: Record<string, any>
-    @Struct.field(UInt64) declare created_at_block: UInt64
-    @Struct.field('string') declare created_at_time: string
+export class CollectionStat extends CollectionObject {
     @Struct.field(UInt64) declare volume: UInt64
     @Struct.field(UInt64) declare sales: UInt64
+    @Struct.field(UInt64, {optional: true}) declare listings: UInt64
 }
 @Struct.type('template_stat')
 export class TemplateStat extends Struct {
     @Struct.field(UInt64) declare volume: UInt64
     @Struct.field(UInt64) declare sales: UInt64
+    @Struct.field(UInt64, {optional: true}) declare listings: UInt64
     @Struct.field(TemplateObject) declare template: TemplateObject
 }
 
@@ -58,6 +49,7 @@ export class MarketTemplates extends Struct {
 export class GraphStat extends Struct {
     @Struct.field(UInt64) declare volume: UInt64
     @Struct.field(UInt64) declare sales: UInt64
+    @Struct.field(UInt64, {optional: true}) declare listings: UInt64
     @Struct.field(UInt64) declare max: UInt64
     @Struct.field('string') declare time: string
 }
@@ -118,7 +110,7 @@ export class SchemaStatV1 extends Struct {
     @Struct.field(Name) declare schema_name: Name
     @Struct.field(UInt64) declare volume: UInt64
     @Struct.field(UInt64) declare sales: UInt64
-    @Struct.field(UInt64) declare listings: UInt64
+    @Struct.field(UInt64, {optional: true}) declare listings: UInt64
 }
 
 @Struct.type('schema_stat_v2')
@@ -126,6 +118,7 @@ export class SchemaStatV2 extends Struct {
     @Struct.field(Name) declare schema_name: Name
     @Struct.field(UInt64) declare volume: UInt64
     @Struct.field(UInt64) declare sales: UInt64
+    @Struct.field(UInt64, {optional: true}) declare listings: UInt64
     @Struct.field(SchemaObject) declare schema: SchemaObject
 }
 
