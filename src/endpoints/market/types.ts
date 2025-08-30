@@ -1,4 +1,4 @@
-import {Float64, Name, Struct, UInt64} from '@wharfkit/antelope'
+import {Name, Struct, UInt64} from '@wharfkit/antelope'
 
 import {
     ActionLog,
