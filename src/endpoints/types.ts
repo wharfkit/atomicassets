@@ -124,6 +124,8 @@ export class CollectionObject extends Struct {
     @Struct.field('string', {optional: true}) declare img: string
     @Struct.field('any', {optional: true}) declare data: Record<string, any>
     @Struct.field('string', {optional: true}) declare images: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
 }
 
 @Struct.type('schema_object')
