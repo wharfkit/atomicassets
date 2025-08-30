@@ -15,14 +15,14 @@ export function buildBodyParams(
     extra?: {[key: string]: string}
 ): {[key: string]: any} {
     let options = serializeQueryParams(params)
-    options = fixPageLimit(options)
+    options = fixPostArguments(options)
     return Object.assign(extra ? extra : {}, options)
 }
 
-export function fixPageLimit(params) {
+export function fixPostArguments(params) {
     // https://github.com/pinknetworkx/eosio-contract-api/issues/131
     const options = {...params}
-    for (const key of ['page', 'limit'])
+    for (const key of ['page', 'limit', 'before', 'after'])
         if (key in options) {
             options[key] = String(options[key])
         }

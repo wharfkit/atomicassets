@@ -1,21 +1,22 @@
 import {assert} from 'chai'
 
-import {APIClient, FetchProvider, Name} from '@wharfkit/antelope'
+import {APIClient, FetchProvider, Name, UInt8} from '@wharfkit/antelope'
 import {mockFetch} from '@wharfkit/mock-data'
+import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
 
 import {AtomicAssetsAPIClient, Types} from '$lib'
 
 // Setup an APIClient
 const client = new APIClient({
-    provider: new FetchProvider('https://wax.api.atomicassets.io/', {fetch: mockFetch}),
+    provider: new FetchProvider(BASE_URL, {fetch: mockFetch}),
 })
 
 // Setup the API
 const atomicassets = new AtomicAssetsAPIClient(client)
 
 suite('atomicassets', function () {
-    this.slow(200)
-    this.timeout(10 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     test('get_config', async function () {
         const res = await atomicassets.atomicassets.v1.get_config()
@@ -257,7 +258,7 @@ suite('atomicassets', function () {
 
     test('get_offers_count', async function () {
         const res = await atomicassets.atomicassets.v1.get_offers_count({
-            collection_name: [Name.from('outlawtroops'), 'babymetaljpn'],
+            collection_name: [Name.from('inspectorgen'), 'waxartcards1'],
         })
         assert.instanceOf(res, Types.CountResponseStruct)
         assert.equal(res.success, true)
@@ -321,8 +322,8 @@ suite('atomicassets', function () {
 })
 
 suite('atomictools', function () {
-    this.slow(200)
-    this.timeout(10 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     test('get_links', async function () {
         const res = await atomicassets.atomictools.v1.get_links({
@@ -367,8 +368,8 @@ suite('atomictools', function () {
 })
 
 suite('atomicmarket', function () {
-    this.slow(200)
-    this.timeout(10 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     test('get_assets', async function () {
         const res = await atomicassets.atomicmarket.v1.get_assets({

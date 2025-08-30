@@ -1,7 +1,7 @@
 {
     "name": "@wharfkit/atomicassets",
     "description": "AtomicAsset library for Wharf",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "homepage": "https://github.com/wharfkit/atomicassets",
     "main": "lib/atomicassets.js",
     "module": "lib/atomicassets.m.js",
@@ -19,14 +19,14 @@
         "prepare": "make"
     },
     "dependencies": {
-        "@wharfkit/antelope": "^1.0.8-rc1",
+        "@wharfkit/antelope": "^1.0.8",
         "@wharfkit/common": "^1.2.0",
         "@wharfkit/contract": "^1.1.1",
         "@wharfkit/signing-request": "^3.0.0",
         "tslib": "^2.0.3"
     },
     "resolutions": {
-        "@wharfkit/antelope": "^1.0.8-rc1"
+        "@wharfkit/antelope": "^1.0.8"
     },
     "devDependencies": {
         "@rollup/plugin-alias": "^4.0.2",
@@ -38,6 +38,7 @@
         "@rollup/plugin-typescript": "^9.0.2",
         "@rollup/plugin-virtual": "^3.0.1",
         "@types/bn.js": "^5.1.0",
+        "@types/chai": "^5.2.2",
         "@types/elliptic": "^6.4.12",
         "@types/mocha": "^10.0.0",
         "@types/node": "^18.6.5",
@@ -58,6 +59,7 @@
         "rollup-plugin-dts": "^5.0.0",
         "ts-node": "^10.1.0",
         "tsconfig-paths": "^4.0.0",
-        "typescript": "^4.4"
+        "typedoc": "^0.28.11",
+        "typescript": "^5.0"
     }
 }

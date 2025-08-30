@@ -3,6 +3,8 @@ import {APIClient, FetchProvider, PublicKey, Serializer, Signature} from '@wharf
 import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
+import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
+
 import type {Link} from '$lib'
 import {
     Asset,
@@ -20,22 +22,22 @@ const client = new APIClient({
 // Setup the API
 const atomicassets = new AtomicAssetsAPIClient(
     new APIClient({
-        provider: new FetchProvider('https://wax.api.atomicassets.io/', {fetch: mockFetch}),
+        provider: new FetchProvider(BASE_URL, {fetch: mockFetch}),
     })
 )
 
-const utility = new KitUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
+const utility = new KitUtility(BASE_URL, Chains.WAX, {
     client,
     atomicClient: atomicassets,
 })
 
-const kitInst = new AtomicToolsKit('https://wax.api.atomicassets.io/', Chains.WAX, utility)
+const kitInst = new AtomicToolsKit(BASE_URL, Chains.WAX, utility)
 const linkId = 1451754
 const accountName = 'test.gm'
 
 suite('Link', function () {
-    this.slow(200)
-    this.timeout(5 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     let testLink: Link
 

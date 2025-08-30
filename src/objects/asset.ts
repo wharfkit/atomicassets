@@ -64,7 +64,7 @@ export class Asset {
     }
 
     get owner() {
-        return Name.from(this.data.owner)
+        return this.data.owner ? Name.from(this.data.owner) : null
     }
 
     get transferable() {

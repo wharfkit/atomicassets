@@ -2,7 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
 import type {AuctionState, BuyofferState, OfferState, TemplateBuyofferState} from '../../types'
 import {CountResponseStruct} from '../../types'
-import {Market} from '../../types'
+import * as Market from './types'
 import type {ActionNames as SActionType} from '../../contracts/atomicassets'
 import type {ActionNames as MActionType} from '../../contracts/atomicmarket'
 import {buildBodyParams} from '../utils'
@@ -779,7 +779,7 @@ export class MarketV1APIClient {
 
     async get_stats_collections(options: {
         symbol: string
-        search: string
+        search?: string
         collection_name?: NameType[]
         ids?: UInt64Type[]
         collection_blacklist?: NameType[]
@@ -888,7 +888,7 @@ export class MarketV1APIClient {
 
     async get_stats_templates(options: {
         symbol: string
-        search: string
+        search?: string
         collection_name?: NameType[]
         schema_name?: NameType[]
         template_id?: Int32Type[]

@@ -1,6 +1,12 @@
 # @wharfkit/atomicassets
 
-AtomicAsset library for Wharf
+AtomicAssets library for Wharf
+
+## Installing
+
+```
+yarn add @wharfkit/atomicassets
+```
 
 ## Running Tests
 
