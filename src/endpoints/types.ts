@@ -123,6 +123,7 @@ export class CollectionObject extends Struct {
     @Struct.field('string', {optional: true}) declare name: string
     @Struct.field('string', {optional: true}) declare img: string
     @Struct.field('any', {optional: true}) declare data: Record<string, any>
+    @Struct.field('string', {optional: true}) declare images: string
 }
 
 @Struct.type('schema_object')
