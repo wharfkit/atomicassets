@@ -3,6 +3,8 @@ import {APIClient, FetchProvider, Serializer} from '@wharfkit/antelope'
 import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
+import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
+
 import type {Offer} from '$lib'
 import {
     Asset,
@@ -20,22 +22,22 @@ const client = new APIClient({
 // Setup the API
 const atomicassets = new AtomicAssetsAPIClient(
     new APIClient({
-        provider: new FetchProvider('https://wax.api.atomicassets.io/', {fetch: mockFetch}),
+        provider: new FetchProvider(BASE_URL, {fetch: mockFetch}),
     })
 )
 
-const utility = new KitUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
+const utility = new KitUtility(BASE_URL, Chains.WAX, {
     client,
     atomicClient: atomicassets,
 })
 
-const kitInst = new AtomicAssetsKit('https://wax.api.atomicassets.io/', Chains.WAX, utility)
+const kitInst = new AtomicAssetsKit(BASE_URL, Chains.WAX, utility)
 const offerId = 22820296
 const accountName = 'test.gm'
 
 suite('Offer', function () {
-    this.slow(200)
-    this.timeout(5 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     let testOffer: Offer
 

@@ -1,7 +1,8 @@
 import type {APIClient} from '@wharfkit/antelope'
 import type {Int32Type, NameType, UInt32Type, UInt64Type} from '@wharfkit/antelope'
 import type {ActionNames as ActionType} from '../../contracts/atomicassets'
-import {Assets, CountResponseStruct} from '../../types'
+import {CountResponseStruct} from '../../types'
+import * as Assets from './types'
 import type {OfferState} from '../../types'
 import {buildBodyParams} from '../utils'
 

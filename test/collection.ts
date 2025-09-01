@@ -3,6 +3,8 @@ import {APIClient, FetchProvider, Int64, Name, Serializer} from '@wharfkit/antel
 import {Chains} from '@wharfkit/common'
 import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
+import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
+
 import type {Collection} from '$lib'
 import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility} from '$lib'
 
@@ -13,22 +15,22 @@ const client = new APIClient({
 // Setup the API
 const atomicassets = new AtomicAssetsAPIClient(
     new APIClient({
-        provider: new FetchProvider('https://wax.api.atomicassets.io/', {fetch: mockFetch}),
+        provider: new FetchProvider(BASE_URL, {fetch: mockFetch}),
     })
 )
 
-const utility = new KitUtility('https://wax.api.atomicassets.io/', Chains.WAX, {
+const utility = new KitUtility(BASE_URL, Chains.WAX, {
     client,
     atomicClient: atomicassets,
 })
 
-const kitInst = new AtomicAssetsKit('https://wax.api.atomicassets.io/', Chains.WAX, utility)
+const kitInst = new AtomicAssetsKit(BASE_URL, Chains.WAX, utility)
 const collectionName = 'taco'
 const accountName = 'test.gm'
 
 suite('Collection', function () {
-    this.slow(200)
-    this.timeout(5 * 1000)
+    this.slow(SLOW_THRESHOLD)
+    this.timeout(TIMEOUT)
 
     let testCollection: Collection
 

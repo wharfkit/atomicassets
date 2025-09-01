@@ -2,7 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {NameType, PublicKeyType, UInt64Type} from '@wharfkit/antelope'
 import type {LinkState} from '../../types'
 import {CountResponseStruct} from '../../types'
-import {Tools} from '../../types'
+import * as Tools from './types'
 import type {ActionNames as ActionType} from '../../contracts/atomictoolsx'
 import {buildBodyParams} from '../utils'
 

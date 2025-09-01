@@ -2,7 +2,7 @@ import type {APIClient} from '@wharfkit/antelope'
 import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antelope'
 import type {SaleState} from '../../types'
 import {CountResponseStruct} from '../../types'
-import {Market} from '../../types'
+import * as Market from './types'
 import {buildBodyParams} from '../utils'
 
 export interface GetSalesOptions {
