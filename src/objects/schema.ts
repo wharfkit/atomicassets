@@ -1,5 +1,5 @@
 import type {Action, NameType} from '@wharfkit/antelope'
-import {Name} from '@wharfkit/antelope'
+import {Name, UInt64} from '@wharfkit/antelope'
 import type {SchemaObject} from '../types'
 import {Collection} from './collection'
 import type * as AtomicAssetsContract from '../contracts/atomicassets'
@@ -23,6 +23,10 @@ export class Schema {
 
     get schemaName() {
         return Name.from(this.data.schema_name)
+    }
+
+    get assets() {
+        return UInt64.from(this.data.assets)
     }
 
     get format() {
