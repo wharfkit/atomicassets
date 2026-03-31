@@ -25,6 +25,10 @@ export interface GetAssetsOptions {
     collection_whitelist?: NameType[]
     only_duplicate_templates?: boolean
     has_backed_tokens?: boolean
+    has_template_buyoffer?: boolean
+    template_mint?: UInt32Type
+    min_template_mint?: UInt32Type
+    max_template_mint?: UInt32Type
     authorized_account?: NameType
     template_whitelist?: Int32Type[]
     template_blacklist?: Int32Type[]
@@ -45,12 +49,13 @@ export interface GetAssetsOptions {
 export interface GetCollectionsOptions {
     author?: NameType[]
     match?: string
+    search?: string
     authorized_account?: NameType
     notify_account?: NameType
     collection_blacklist?: NameType[]
     collection_whitelist?: NameType[]
     collection_name?: NameType[]
-    ids?: UInt64Type[]
+    ids?: NameType[]
     lower_bound?: string
     upper_bound?: string
     before?: number
@@ -68,7 +73,7 @@ export interface GetSchemasOptions {
     match?: string
     collection_blacklist?: NameType[]
     collection_whitelist?: NameType[]
-    ids?: UInt64Type[]
+    ids?: NameType[]
     lower_bound?: string
     upper_bound?: string
     before?: number
@@ -91,6 +96,7 @@ export interface GetTemplatesOptions {
     is_transferable?: boolean
     authorized_account?: NameType
     match?: string
+    search?: string
     collection_blacklist?: NameType[]
     collection_whitelist?: NameType[]
     template_id?: Int32Type[]
@@ -127,8 +133,8 @@ export interface GetOffersOptions {
     collection_whitelist?: NameType[]
     hide_contracts?: boolean
     hide_empty_offers?: boolean
-    offer_id?: UInt64Type
-    ids?: UInt64Type
+    offer_id?: UInt64Type[]
+    ids?: UInt64Type[]
     lower_bound?: string
     upper_bound?: string
     before?: number
@@ -174,12 +180,28 @@ export interface GetAccountsOptions {
     collection_blacklist?: NameType[]
     collection_whitelist?: NameType[]
     owner?: NameType[]
-    ids?: UInt64Type[]
+    ids?: NameType[]
     lower_bound?: string
     upper_bound?: string
     page?: number
     limit?: number
-    order?: 'asc' | 'desc'
+}
+
+export interface GetBurnsOptions {
+    match_owner?: string
+    collection_name?: NameType[]
+    schema_name?: NameType[]
+    template_id?: Int32Type[]
+    burned?: boolean
+    hide_offers?: boolean
+    collection_blacklist?: NameType[]
+    collection_whitelist?: NameType[]
+    burned_by_account?: NameType[]
+    ids?: NameType[]
+    lower_bound?: string
+    upper_bound?: string
+    page?: number
+    limit?: number
 }
 
 export class AssetsV1APIClient {
@@ -283,6 +305,14 @@ export class AssetsV1APIClient {
             path: `/atomicassets/v1/collections/${collection_name}/stats`,
             method: 'GET',
             responseType: Assets.GetCollectionStatsResponse,
+        })
+    }
+
+    async get_collection_schemas(collection_name: NameType) {
+        return this.client.call({
+            path: `/atomicassets/v1/collections/${collection_name}/schemas`,
+            method: 'GET',
+            responseType: Assets.GetCollectionSchemasResponse,
         })
     }
 
@@ -404,9 +434,19 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_template_stats(collection_name: NameType, template_id: Int32Type) {
+    async get_template_stats(template_id: Int32Type): Promise<any>
+    async get_template_stats(collection_name: NameType, template_id: Int32Type): Promise<any>
+    async get_template_stats(
+        collection_name_or_template_id: NameType | Int32Type,
+        template_id?: Int32Type
+    ) {
+        const path =
+            typeof template_id === 'undefined'
+                ? `/atomicassets/v1/templates/${collection_name_or_template_id}/stats`
+                : `/atomicassets/v1/templates/${collection_name_or_template_id}/${template_id}/stats`
+
         return this.client.call({
-            path: `/atomicassets/v1/templates/${collection_name}/${template_id}/stats`,
+            path,
             method: 'GET',
             responseType: Assets.GetTemplateStatsResponse,
         })
@@ -562,22 +602,7 @@ export class AssetsV1APIClient {
         })
     }
 
-    async get_burns(options?: {
-        match_owner?: string
-        collection_name?: NameType[]
-        schema_name?: NameType[]
-        template_id?: Int32Type[]
-        burned?: boolean
-        collection_blacklist?: NameType[]
-        collection_whitelist?: NameType[]
-        burned_by_account?: NameType[]
-        ids?: UInt64Type[]
-        lower_bound?: string
-        upper_bound?: string
-        page?: number
-        limit?: number
-        order?: 'asc' | 'desc'
-    }) {
+    async get_burns(options?: GetBurnsOptions) {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({

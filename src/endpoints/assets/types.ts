@@ -50,6 +50,11 @@ export class SchemaCount extends Struct {
     @Struct.field(UInt64) declare assets: UInt64
 }
 
+@Struct.type('collection_schema')
+export class CollectionSchema extends Struct {
+    @Struct.field(Name) declare schema_name: Name
+}
+
 @Struct.type('template_count')
 export class TemplateCount extends Struct {
     @Struct.field(Int32) declare template_id: Int32
@@ -80,6 +85,11 @@ export class GetCollectionResponse extends ResponseStruct {
 @Struct.type('get_collection_stats_resp')
 export class GetCollectionStatsResponse extends ResponseStruct {
     @Struct.field(CollectionStats) declare data: CollectionStats
+}
+
+@Struct.type('get_collection_schemas_resp')
+export class GetCollectionSchemasResponse extends ResponseStruct {
+    @Struct.field(CollectionSchema, {array: true}) declare data: CollectionSchema[]
 }
 
 @Struct.type('get_schemas_resp')

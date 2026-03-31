@@ -22,7 +22,7 @@ export function buildBodyParams(
 export function fixPostArguments(params) {
     // https://github.com/pinknetworkx/eosio-contract-api/issues/131
     const options = {...params}
-    for (const key of ['page', 'limit', 'before', 'after'])
+    for (const key of ['page', 'limit', 'before', 'after', 'burned'])
         if (key in options) {
             options[key] = String(options[key])
         }

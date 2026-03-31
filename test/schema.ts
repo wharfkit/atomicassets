@@ -43,6 +43,10 @@ suite('Schema', function () {
         assert.isTrue(testSchema.schemaName.equals(schemaName))
     })
 
+    test('assets', function () {
+        assert.isTrue(testSchema.assets.toNumber() > 0)
+    })
+
     test('collection', function () {
         assert.isTrue(testSchema.collection.collectionName.equals(collectionName))
     })

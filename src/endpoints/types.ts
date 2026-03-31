@@ -131,6 +131,7 @@ export class CollectionObject extends Struct {
 @Struct.type('schema_object')
 export class SchemaObject extends Struct {
     @Struct.field(Name) declare schema_name: Name
+    @Struct.field(UInt64, {optional: true}) declare assets: UInt64
     @Struct.field(AtomicAssetsContract.Types.FORMAT, {array: true})
     declare format: AtomicAssetsContract.Types.FORMAT[]
     @Struct.field(Name, {optional: true}) declare contract: Name
@@ -505,8 +506,8 @@ export class BurnedBySchema extends Struct {
 
 @Struct.type('collection_stats')
 export class CollectionStats extends Struct {
-    @Struct.field(UInt64) declare assets: UInt64
-    @Struct.field(UInt64) declare burned: UInt64
+    @Struct.field(UInt64, {optional: true}) declare assets: UInt64
+    @Struct.field(UInt64, {optional: true}) declare burned: UInt64
     @Struct.field(UInt64) declare templates: UInt64
     @Struct.field(UInt64) declare schemas: UInt64
     @Struct.field(BurnedByTemplate, {array: true})
@@ -528,8 +529,8 @@ export class TemplateStats extends Struct {
 
 @Struct.type('schema_stats')
 export class SchemaStats extends Struct {
-    @Struct.field(UInt64) declare assets: UInt64
-    @Struct.field(UInt64) declare burned: UInt64
+    @Struct.field(UInt64, {optional: true}) declare assets: UInt64
+    @Struct.field(UInt64, {optional: true}) declare burned: UInt64
     @Struct.field(UInt64) declare templates: UInt64
 }
 
