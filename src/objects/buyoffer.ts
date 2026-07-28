@@ -53,8 +53,14 @@ export class Buyoffer {
         return Name.from(this.data.buyer)
     }
 
+    /**
+     * Always a Name, unlike takerMarketplace, which is null until a listing
+     * executes. A maker marketplace is fixed when the listing is created, and
+     * the API reports the default marketplace as null rather than the empty
+     * name it holds on chain.
+     */
     get makerMarketplace() {
-        return Name.from(this.data.maker_marketplace)
+        return Name.from(this.data.maker_marketplace ?? '')
     }
 
     get takerMarketplace() {
