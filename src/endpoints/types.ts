@@ -126,14 +126,36 @@ export class CollectionObject extends Struct {
     @Struct.field('string', {optional: true}) declare images: string
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
+    /** Pending author succession, set by `createauswap`. AtomicAssets v2 only. */
+    @Struct.field(Name, {optional: true}) declare new_author_name: Name
+    /** Date the pending author succession may be accepted. AtomicAssets v2 only. */
+    @Struct.field('string', {optional: true}) declare new_author_date: string
+}
+
+/**
+ * A schema format field as returned by the API.
+ *
+ * This is intentionally not the contract's `FORMAT` struct: `createschema` takes
+ * only `{name, type}`, while the API additionally reports the `mediatype` and
+ * `info` recorded by the AtomicAssets v2 `setschematyp` action. Widening the
+ * contract struct would let those fields leak into serialized action data.
+ */
+@Struct.type('schema_format_field')
+export class SchemaFormatField extends Struct {
+    @Struct.field('string') declare name: string
+    @Struct.field('string') declare type: string
+    /** Media type recorded by `setschematyp`. AtomicAssets v2 only. */
+    @Struct.field('string', {optional: true}) declare mediatype: string
+    /** Free-form descriptor recorded by `setschematyp`. AtomicAssets v2 only. */
+    @Struct.field('string', {optional: true}) declare info: string
 }
 
 @Struct.type('schema_object')
 export class SchemaObject extends Struct {
     @Struct.field(Name) declare schema_name: Name
     @Struct.field(UInt64, {optional: true}) declare assets: UInt64
-    @Struct.field(AtomicAssetsContract.Types.FORMAT, {array: true})
-    declare format: AtomicAssetsContract.Types.FORMAT[]
+    @Struct.field(SchemaFormatField, {array: true})
+    declare format: SchemaFormatField[]
     @Struct.field(Name, {optional: true}) declare contract: Name
     @Struct.field(Name, {optional: true}) declare collection_name: Name
     @Struct.field(CollectionObject, {optional: true}) declare collection: CollectionObject
@@ -155,6 +177,14 @@ export class TemplateObject extends Struct {
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
     @Struct.field('string', {optional: true}) declare name: string
+    /** Mutable template data, set by `settempldata`. AtomicAssets v2 only. */
+    @Struct.field('any', {optional: true}) declare mutable_data: Record<string, any>
+    /** Immutable and mutable data merged. AtomicAssets v2 only. */
+    @Struct.field('any', {optional: true}) declare data: Record<string, any>
+    /** Set once the template is removed by `deltemplate`. AtomicAssets v2 only. */
+    @Struct.field(UInt64, {optional: true}) declare deleted_at_block: UInt64
+    /** Set once the template is removed by `deltemplate`. AtomicAssets v2 only. */
+    @Struct.field('string', {optional: true}) declare deleted_at_time: string
 }
 
 @Struct.type('assetpricev1')
@@ -298,7 +328,8 @@ export class SaleObject extends Struct {
     @Struct.field(UInt64) declare listing_price: UInt64
     @Struct.field('string') declare listing_symbol: string
     @Struct.field(MarketAssetObject, {array: true}) declare assets: MarketAssetObject[]
-    @Struct.field('string') declare maker_marketplace: Name
+    // Null whenever the listing was created without a referring marketplace.
+    @Struct.field('string', {optional: true}) declare maker_marketplace: Name
     @Struct.field('string', {optional: true}) declare taker_marketplace: Name
     @Struct.field(UInt8) declare state: UInt8
     @Struct.field('bool') declare is_seller_contract: boolean
@@ -308,6 +339,8 @@ export class SaleObject extends Struct {
     @Struct.field('string') declare updated_at_time: string
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
+    /** Collection fee resolved at listing time. AtomicMarket v2 only. */
+    @Struct.field(Float64, {optional: true}) declare current_collection_fee: Float64
 }
 
 @Struct.type('bid')
@@ -334,7 +367,8 @@ export class AuctionObject extends Struct {
     @Struct.field(Name, {optional: true}) declare buyer: Name
     @Struct.field('bool') declare claimed_by_seller: boolean
     @Struct.field('bool') declare claimed_by_buyer: boolean
-    @Struct.field('string') declare maker_marketplace: Name
+    // Null whenever the listing was created without a referring marketplace.
+    @Struct.field('string', {optional: true}) declare maker_marketplace: Name
     @Struct.field('string', {optional: true}) declare taker_marketplace: Name
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field('bool') declare is_seller_contract: boolean
@@ -353,7 +387,8 @@ export class BuyofferObject extends Struct {
     @Struct.field(Name) declare buyer: Name
     @Struct.field(TokenAmount) declare price: TokenAmount
     @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
-    @Struct.field('string') declare maker_marketplace: Name
+    // Null whenever the listing was created without a referring marketplace.
+    @Struct.field('string', {optional: true}) declare maker_marketplace: Name
     @Struct.field('string', {optional: true}) declare taker_marketplace: Name
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field('string') declare memo: string
@@ -374,7 +409,8 @@ export class TemplateBuyofferObject extends Struct {
     @Struct.field(Name) declare buyer: Name
     @Struct.field(TokenAmount) declare price: TokenAmount
     @Struct.field(AssetObject, {array: true}) declare assets: AssetObject[]
-    @Struct.field('string') declare maker_marketplace: Name
+    // Null whenever the listing was created without a referring marketplace.
+    @Struct.field('string', {optional: true}) declare maker_marketplace: Name
     @Struct.field('string', {optional: true}) declare taker_marketplace: Name
     @Struct.field(CollectionObject) declare collection: CollectionObject
     @Struct.field(TemplateObject) declare template: TemplateObject

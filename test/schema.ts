@@ -6,7 +6,7 @@ import {PlaceholderAuth} from '@wharfkit/signing-request'
 import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
 
 import type {Schema} from '$lib'
-import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility} from '$lib'
+import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility, Types} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -52,7 +52,62 @@ suite('Schema', function () {
     })
 
     test('format', function () {
-        assert.instanceOf(testSchema.format[0], AtomicAssetsContract.Types.FORMAT)
+        assert.instanceOf(testSchema.format[0], Types.SchemaFormatField)
+    })
+
+    test('format carries v2 media types', function () {
+        const field = Types.SchemaFormatField.from({
+            name: 'video',
+            type: 'string',
+            mediatype: 'video/mp4',
+            info: 'trailer',
+        })
+
+        assert.equal(field.name, 'video')
+        assert.equal(field.type, 'string')
+        assert.equal(field.mediatype, 'video/mp4')
+        assert.equal(field.info, 'trailer')
+    })
+
+    test('format decodes v1 responses without media types', function () {
+        const field = Types.SchemaFormatField.from({name: 'video', type: 'string'})
+
+        assert.equal(field.name, 'video')
+        assert.equal(field.type, 'string')
+        assert.isNull(field.mediatype)
+        assert.isNull(field.info)
+    })
+
+    test('the API format type stays separate from the contract format type', function () {
+        // The contract's FORMAT is what createschema and extendschema serialize,
+        // so it must stay at {name, type}. The API reports two further fields.
+        // Keeping them on a separate struct is what stops a mediatype from ever
+        // reaching action data.
+        const contractFields = AtomicAssetsContract.Types.FORMAT.abiFields?.map((f) => f.name)
+        const apiFields = Types.SchemaFormatField.abiFields?.map((f) => f.name)
+
+        assert.deepEqual(contractFields, ['name', 'type'])
+        assert.deepEqual(apiFields, ['name', 'type', 'mediatype', 'info'])
+    })
+
+    test('media types are dropped from createschema action data', function () {
+        const action = kitInst.createSchema({
+            authorized_creator: accountName,
+            collection_name: collectionName,
+            schema_name: schemaName,
+            schema_format: [{name: 'video', type: 'string', mediatype: 'video/mp4'} as any],
+        })
+
+        const decoded = Serializer.decode({
+            data: action.data,
+            type: AtomicAssetsContract.Types.createschema,
+        })
+
+        assert.equal(decoded.schema_format.length, 1)
+        assert.deepEqual(Object.keys(Serializer.objectify(decoded.schema_format[0])), [
+            'name',
+            'type',
+        ])
     })
 
     test('extendSchema', function () {
