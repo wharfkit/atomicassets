@@ -5,8 +5,16 @@ import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
 import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
 
-import type {Sale} from '$lib'
-import {AtomicAssetsAPIClient, AtomicMarketContract, AtomicMarketKit, KitUtility, Types} from '$lib'
+import {
+    AtomicAssetsAPIClient,
+    AtomicMarketContract,
+    AtomicMarketKit,
+    Auction,
+    Buyoffer,
+    KitUtility,
+    Sale,
+    Types,
+} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -171,5 +179,72 @@ suite('Sale', function () {
         assert.isTrue(decoded.listing_price.equals(token))
         assert.isTrue(decoded.settlement_symbol.equals(token.symbol))
         assert.isTrue(decoded.maker_marketplace.equals(testSale.makerMarketplace))
+    })
+
+    test('decodes listings created without a referring marketplace', function () {
+        // maker_marketplace is null for any listing created without a referrer,
+        // which is a large share of live sales, auctions and buyoffers.
+        const base = {
+            market_contract: 'atomicmarket',
+            assets_contract: 'atomicassets',
+            seller: 'test.gm',
+            offer_id: 1,
+            price: {
+                token_contract: 'eosio.token',
+                token_symbol: 'WAX',
+                token_precision: 8,
+                amount: '100000000',
+            },
+            listing_price: 1,
+            listing_symbol: '8,WAX',
+            assets: [],
+            maker_marketplace: null,
+            taker_marketplace: null,
+            state: 1,
+            is_seller_contract: false,
+            collection_name: 'taco',
+            collection: {
+                collection_name: 'taco',
+                author: 'test.gm',
+                allow_notify: true,
+                authorized_accounts: [],
+                notify_accounts: [],
+                market_fee: 0.05,
+                created_at_block: 1,
+                created_at_time: '1',
+            },
+            updated_at_block: 1,
+            updated_at_time: '1',
+            created_at_block: 1,
+            created_at_time: '1',
+        }
+
+        const sale = Types.SaleObject.from({...base, sale_id: 1})
+        assert.isNull(sale.maker_marketplace)
+
+        const auction = Types.AuctionObject.from({
+            ...base,
+            auction_id: 1,
+            end_time: '1',
+            bids: [],
+            claimed_by_buyer: false,
+            claimed_by_seller: false,
+        })
+        assert.isNull(auction.maker_marketplace)
+
+        const buyoffer = Types.BuyofferObject.from({
+            ...base,
+            buyoffer_id: 1,
+            buyer: 'test.gm',
+            memo: '',
+        })
+        assert.isNull(buyoffer.maker_marketplace)
+
+        // The accessors still return a Name: a null in the API is the default
+        // marketplace, which is the empty name on chain. All three carry the
+        // same logic, so all three are asserted.
+        assert.isTrue(Sale.from(sale, utility).makerMarketplace.equals(''))
+        assert.isTrue(Auction.from(auction, utility).makerMarketplace.equals(''))
+        assert.isTrue(Buyoffer.from(buyoffer, utility).makerMarketplace.equals(''))
     })
 })
