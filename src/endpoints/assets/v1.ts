@@ -4,7 +4,7 @@ import type {ActionNames as ActionType} from '../../contracts/atomicassets'
 import {CountResponseStruct} from '../../types'
 import * as Assets from './types'
 import type {OfferState} from '../../types'
-import {buildBodyParams} from '../utils'
+import {buildBodyParams, pathSegment} from '../utils'
 
 export interface GetAssetsOptions {
     collection_name?: NameType[]
@@ -233,7 +233,7 @@ export class AssetsV1APIClient {
 
     async get_asset(asset_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicassets/v1/assets/${asset_id}`,
+            path: `/atomicassets/v1/assets/${pathSegment(asset_id)}`,
             method: 'GET',
             responseType: Assets.GetAssetResponse,
         })
@@ -241,7 +241,7 @@ export class AssetsV1APIClient {
 
     async get_asset_stats(asset_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicassets/v1/assets/${asset_id}/stats`,
+            path: `/atomicassets/v1/assets/${pathSegment(asset_id)}/stats`,
             method: 'GET',
             responseType: Assets.GetAssetStatsResponse,
         })
@@ -260,7 +260,7 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/assets/${asset_id}/logs`,
+            path: `/atomicassets/v1/assets/${pathSegment(asset_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -294,7 +294,7 @@ export class AssetsV1APIClient {
 
     async get_collection(collection_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/collections/${collection_name}`,
+            path: `/atomicassets/v1/collections/${pathSegment(collection_name)}`,
             method: 'GET',
             responseType: Assets.GetCollectionResponse,
         })
@@ -302,7 +302,7 @@ export class AssetsV1APIClient {
 
     async get_collection_stats(collection_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/collections/${collection_name}/stats`,
+            path: `/atomicassets/v1/collections/${pathSegment(collection_name)}/stats`,
             method: 'GET',
             responseType: Assets.GetCollectionStatsResponse,
         })
@@ -310,7 +310,7 @@ export class AssetsV1APIClient {
 
     async get_collection_schemas(collection_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/collections/${collection_name}/schemas`,
+            path: `/atomicassets/v1/collections/${pathSegment(collection_name)}/schemas`,
             method: 'GET',
             responseType: Assets.GetCollectionSchemasResponse,
         })
@@ -329,7 +329,7 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/collections/${collection_name}/logs`,
+            path: `/atomicassets/v1/collections/${pathSegment(collection_name)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -363,7 +363,9 @@ export class AssetsV1APIClient {
 
     async get_schema(collection_name: NameType, schema_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}`,
+            path: `/atomicassets/v1/schemas/${pathSegment(collection_name)}/${pathSegment(
+                schema_name
+            )}`,
             method: 'GET',
             responseType: Assets.GetSchemaResponse,
         })
@@ -371,7 +373,9 @@ export class AssetsV1APIClient {
 
     async get_schema_stats(collection_name: NameType, schema_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/stats`,
+            path: `/atomicassets/v1/schemas/${pathSegment(collection_name)}/${pathSegment(
+                schema_name
+            )}/stats`,
             method: 'GET',
             responseType: Assets.GetSchemaStatsResponse,
         })
@@ -391,7 +395,9 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/schemas/${collection_name}/${schema_name}/logs`,
+            path: `/atomicassets/v1/schemas/${pathSegment(collection_name)}/${pathSegment(
+                schema_name
+            )}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -428,7 +434,9 @@ export class AssetsV1APIClient {
 
     async get_template(collection_name: NameType, template_id: Int32Type) {
         return this.client.call({
-            path: `/atomicassets/v1/templates/${collection_name}/${template_id}`,
+            path: `/atomicassets/v1/templates/${pathSegment(collection_name)}/${pathSegment(
+                template_id
+            )}`,
             method: 'GET',
             responseType: Assets.GetTemplateResponse,
         })
@@ -442,8 +450,10 @@ export class AssetsV1APIClient {
     ) {
         const path =
             typeof template_id === 'undefined'
-                ? `/atomicassets/v1/templates/${collection_name_or_template_id}/stats`
-                : `/atomicassets/v1/templates/${collection_name_or_template_id}/${template_id}/stats`
+                ? `/atomicassets/v1/templates/${pathSegment(collection_name_or_template_id)}/stats`
+                : `/atomicassets/v1/templates/${pathSegment(
+                      collection_name_or_template_id
+                  )}/${pathSegment(template_id)}/stats`
 
         return this.client.call({
             path,
@@ -466,7 +476,9 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/templates/${collection_name}/${template_id}/logs`,
+            path: `/atomicassets/v1/templates/${pathSegment(collection_name)}/${pathSegment(
+                template_id
+            )}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -500,7 +512,7 @@ export class AssetsV1APIClient {
 
     async get_offer(offer_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicassets/v1/offers/${offer_id}`,
+            path: `/atomicassets/v1/offers/${pathSegment(offer_id)}`,
             method: 'GET',
             responseType: Assets.GetOfferResponse,
         })
@@ -519,7 +531,7 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/offers/${offer_id}/logs`,
+            path: `/atomicassets/v1/offers/${pathSegment(offer_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -586,7 +598,7 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/accounts/${account}`,
+            path: `/atomicassets/v1/accounts/${pathSegment(account)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -596,7 +608,9 @@ export class AssetsV1APIClient {
 
     async get_account_template_schema_count(account: NameType, collection_name: NameType) {
         return this.client.call({
-            path: `/atomicassets/v1/accounts/${account}/${collection_name}`,
+            path: `/atomicassets/v1/accounts/${pathSegment(account)}/${pathSegment(
+                collection_name
+            )}`,
             method: 'GET',
             responseType: Assets.GetAccountTemplateSchemaCountResponse,
         })
@@ -625,7 +639,7 @@ export class AssetsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicassets/v1/burns/${account}`,
+            path: `/atomicassets/v1/burns/${pathSegment(account)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},

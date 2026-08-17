@@ -5,7 +5,7 @@ import {CountResponseStruct} from '../../types'
 import * as Market from './types'
 import type {ActionNames as SActionType} from '../../contracts/atomicassets'
 import type {ActionNames as MActionType} from '../../contracts/atomicmarket'
-import {buildBodyParams} from '../utils'
+import {buildBodyParams, pathSegment} from '../utils'
 
 export interface GetAssetsOptions {
     collection_name?: NameType[]
@@ -250,7 +250,7 @@ export class MarketV1APIClient {
 
     async get_asset(asset_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}`,
+            path: `/atomicmarket/v1/assets/${pathSegment(asset_id)}`,
             method: 'GET',
             responseType: Market.GetAssetResponse,
         })
@@ -258,7 +258,7 @@ export class MarketV1APIClient {
 
     async get_asset_stats(asset_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}/stats`,
+            path: `/atomicmarket/v1/assets/${pathSegment(asset_id)}/stats`,
             method: 'GET',
             responseType: Market.GetAssetStatsResponse,
         })
@@ -277,7 +277,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}/logs`,
+            path: `/atomicmarket/v1/assets/${pathSegment(asset_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -297,7 +297,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/assets/${asset_id}/sales`,
+            path: `/atomicmarket/v1/assets/${pathSegment(asset_id)}/sales`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -351,7 +351,7 @@ export class MarketV1APIClient {
 
     async get_offer(offer_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/offers/${offer_id}`,
+            path: `/atomicmarket/v1/offers/${pathSegment(offer_id)}`,
             method: 'GET',
             responseType: Market.GetOfferResponse,
         })
@@ -370,7 +370,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/offers/${offer_id}/logs`,
+            path: `/atomicmarket/v1/offers/${pathSegment(offer_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -415,7 +415,7 @@ export class MarketV1APIClient {
 
     async get_sale(sale_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/sales/${sale_id}`,
+            path: `/atomicmarket/v1/sales/${pathSegment(sale_id)}`,
             method: 'GET',
             responseType: Market.GetSaleResponse,
         })
@@ -434,7 +434,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/sales/${sale_id}/logs`,
+            path: `/atomicmarket/v1/sales/${pathSegment(sale_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -510,7 +510,7 @@ export class MarketV1APIClient {
 
     async get_auction(auction_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/auctions/${auction_id}`,
+            path: `/atomicmarket/v1/auctions/${pathSegment(auction_id)}`,
             method: 'GET',
             responseType: Market.GetAuctionResponse,
         })
@@ -529,7 +529,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/auctions/${auction_id}/logs`,
+            path: `/atomicmarket/v1/auctions/${pathSegment(auction_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -566,7 +566,7 @@ export class MarketV1APIClient {
 
     async get_buyoffer(buyoffer_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/buyoffers/${buyoffer_id}`,
+            path: `/atomicmarket/v1/buyoffers/${pathSegment(buyoffer_id)}`,
             method: 'GET',
             responseType: Market.GetBuyofferResponse,
         })
@@ -585,7 +585,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/buyoffers/${buyoffer_id}/logs`,
+            path: `/atomicmarket/v1/buyoffers/${pathSegment(buyoffer_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -625,7 +625,7 @@ export class MarketV1APIClient {
 
     async get_template_buyoffer(buyoffer_id: UInt64Type) {
         return this.client.call({
-            path: `/atomicmarket/v1/template_buyoffers/${buyoffer_id}`,
+            path: `/atomicmarket/v1/template_buyoffers/${pathSegment(buyoffer_id)}`,
             method: 'GET',
             responseType: Market.GetTemplateBuyofferResponse,
         })
@@ -644,7 +644,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/template_buyoffers/${buyoffer_id}/logs`,
+            path: `/atomicmarket/v1/template_buyoffers/${pathSegment(buyoffer_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -662,7 +662,7 @@ export class MarketV1APIClient {
 
     async get_marketplace(marketplace_name: string) {
         return this.client.call({
-            path: `/atomicmarket/v1/marketplaces/${marketplace_name}`,
+            path: `/atomicmarket/v1/marketplaces/${pathSegment(marketplace_name)}`,
             method: 'GET',
             responseType: Market.GetMarketplaceResponse,
         })
@@ -789,7 +789,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/prices/inventory/${account}`,
+            path: `/atomicmarket/v1/prices/inventory/${pathSegment(account)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -833,7 +833,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/collections/${collection_name}`,
+            path: `/atomicmarket/v1/stats/collections/${pathSegment(collection_name)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -875,7 +875,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/accounts/${account}`,
+            path: `/atomicmarket/v1/stats/accounts/${pathSegment(account)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -898,7 +898,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/stats/schemas/${collection_name}`,
+            path: `/atomicmarket/v1/stats/schemas/${pathSegment(collection_name)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -1009,7 +1009,7 @@ export class MarketV1APIClient {
      */
     async get_royalty_config(collection_name: NameType) {
         return this.client.call({
-            path: `/atomicmarket/v1/royalties/${collection_name}`,
+            path: `/atomicmarket/v1/royalties/${pathSegment(collection_name)}`,
             method: 'GET',
             responseType: Market.GetRoyaltyConfigResponse,
         })
@@ -1026,7 +1026,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/royalties/${collection_name}/templates`,
+            path: `/atomicmarket/v1/royalties/${pathSegment(collection_name)}/templates`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -1046,7 +1046,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/royalties/${collection_name}/attributes`,
+            path: `/atomicmarket/v1/royalties/${pathSegment(collection_name)}/attributes`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
@@ -1098,7 +1098,7 @@ export class MarketV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v1/royalties/accounts/${account}`,
+            path: `/atomicmarket/v1/royalties/accounts/${pathSegment(account)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
