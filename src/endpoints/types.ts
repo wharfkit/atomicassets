@@ -339,7 +339,11 @@ export class SaleObject extends Struct {
     @Struct.field('string') declare updated_at_time: string
     @Struct.field(UInt64) declare created_at_block: UInt64
     @Struct.field('string') declare created_at_time: string
-    /** Collection fee resolved at listing time. AtomicMarket v2 only. */
+    /**
+     * The collection's `market_fee` as of the last indexed block. The nested
+     * `collection.market_fee` is the listing-time snapshot, and the two differ
+     * while the listing is open. AtomicMarket v2 only, undefined on a v1 indexer.
+     */
     @Struct.field(Float64, {optional: true}) declare current_collection_fee: Float64
 }
 
@@ -376,6 +380,11 @@ export class AuctionObject extends Struct {
     @Struct.field('string') declare created_at_time: string
     @Struct.field(UInt64) declare updated_at_block: UInt64
     @Struct.field('string') declare updated_at_time: string
+    /**
+     * The collection's live market_fee; see SaleObject.current_collection_fee.
+     * AtomicMarket v2 only.
+     */
+    @Struct.field(Float64, {optional: true}) declare current_collection_fee: Float64
 }
 
 @Struct.type('buyoffer_object')
@@ -398,6 +407,11 @@ export class BuyofferObject extends Struct {
     @Struct.field(UInt64) declare updated_at_block: UInt64
     @Struct.field('string') declare updated_at_time: string
     @Struct.field(UInt8) declare state: UInt8
+    /**
+     * The collection's live market_fee; see SaleObject.current_collection_fee.
+     * AtomicMarket v2 only.
+     */
+    @Struct.field(Float64, {optional: true}) declare current_collection_fee: Float64
 }
 
 @Struct.type('template_buyoffer_object')
@@ -419,6 +433,11 @@ export class TemplateBuyofferObject extends Struct {
     @Struct.field(UInt64) declare updated_at_block: UInt64
     @Struct.field('string') declare updated_at_time: string
     @Struct.field(UInt8) declare state: UInt8
+    /**
+     * The collection's live market_fee; see SaleObject.current_collection_fee.
+     * AtomicMarket v2 only.
+     */
+    @Struct.field(Float64, {optional: true}) declare current_collection_fee: Float64
 }
 
 @Struct.type('marketplace')

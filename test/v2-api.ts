@@ -66,4 +66,126 @@ suite('v2 API response fields', function () {
         assert.isTrue(collection.new_author_name.equals('bob'))
         assert.equal(collection.new_author_date, '1785263212000')
     })
+
+    // The nested collection carries the fee the listing was created with, and
+    // current_collection_fee carries the fee as of the last indexed block.
+    const listingCollection = {
+        collection_name: 'royaltycol11',
+        author: 'alice',
+        allow_notify: true,
+        authorized_accounts: [],
+        notify_accounts: [],
+        market_fee: 0.05,
+        created_at_block: 1,
+        created_at_time: '1',
+    }
+
+    const listingPrice = {
+        token_contract: 'eosio.token',
+        token_symbol: 'WAX',
+        token_precision: 8,
+        amount: '1250000',
+    }
+
+    const listingTemplate = {
+        template_id: 662912,
+        is_transferable: true,
+        is_burnable: true,
+        issued_supply: 1,
+        max_supply: 10,
+        immutable_data: {name: 'Test'},
+        created_at_block: 1,
+        created_at_time: '1',
+    }
+
+    test('auctions, buyoffers, and template buyoffers report the live collection fee', function () {
+        const auction = Types.AuctionObject.from({
+            market_contract: 'atomicmarket',
+            assets_contract: 'atomicassets',
+            auction_id: 1,
+            seller: 'alice',
+            assets: [],
+            end_time: '1783387748000',
+            price: listingPrice,
+            bids: [],
+            state: 1,
+            claimed_by_seller: false,
+            claimed_by_buyer: false,
+            collection: listingCollection,
+            is_seller_contract: false,
+            created_at_block: 1,
+            created_at_time: '1',
+            updated_at_block: 2,
+            updated_at_time: '2',
+            current_collection_fee: 0.07,
+        })
+
+        const buyoffer = Types.BuyofferObject.from({
+            market_contract: 'atomicmarket',
+            assets_contract: 'atomicassets',
+            buyoffer_id: 2,
+            seller: 'alice',
+            buyer: 'bob',
+            price: listingPrice,
+            assets: [],
+            collection: listingCollection,
+            memo: '',
+            created_at_block: 1,
+            created_at_time: '1',
+            updated_at_block: 2,
+            updated_at_time: '2',
+            state: 0,
+            current_collection_fee: 0.07,
+        })
+
+        const templateBuyoffer = Types.TemplateBuyofferObject.from({
+            market_contract: 'atomicmarket',
+            assets_contract: 'atomicassets',
+            buyoffer_id: 3,
+            buyer: 'bob',
+            price: listingPrice,
+            assets: [],
+            collection: listingCollection,
+            template: listingTemplate,
+            created_at_block: 1,
+            created_at_time: '1',
+            updated_at_block: 2,
+            updated_at_time: '2',
+            state: 0,
+            current_collection_fee: 0.07,
+        })
+
+        assert.equal(auction.current_collection_fee.value, 0.07)
+        assert.equal(buyoffer.current_collection_fee.value, 0.07)
+        assert.equal(templateBuyoffer.current_collection_fee.value, 0.07)
+
+        assert.equal(auction.collection.market_fee.value, 0.05)
+        assert.equal(buyoffer.collection.market_fee.value, 0.05)
+        assert.equal(templateBuyoffer.collection.market_fee.value, 0.05)
+    })
+
+    test('an auction from a v1 indexer decodes without the collection fee', function () {
+        const auction = Types.AuctionObject.from({
+            market_contract: 'atomicmarket',
+            assets_contract: 'atomicassets',
+            auction_id: 1,
+            seller: 'alice',
+            assets: [],
+            end_time: '1783387748000',
+            price: listingPrice,
+            bids: [],
+            state: 1,
+            claimed_by_seller: false,
+            claimed_by_buyer: false,
+            collection: listingCollection,
+            is_seller_contract: false,
+            created_at_block: 1,
+            created_at_time: '1',
+            updated_at_block: 2,
+            updated_at_time: '2',
+        })
+
+        assert.isUndefined(auction.current_collection_fee)
+        assert.equal(auction.collection.market_fee.value, 0.05)
+    })
 })
