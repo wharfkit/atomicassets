@@ -136,17 +136,38 @@ export class CollectionObject extends Struct {
  * A schema format field as returned by the API.
  *
  * This is intentionally not the contract's `FORMAT` struct: `createschema` takes
- * only `{name, type}`, while the API additionally reports the `mediatype` and
- * `info` recorded by the AtomicAssets v2 `setschematyp` action. Widening the
- * contract struct would let those fields leak into serialized action data.
+ * only `{name, type}`, while the API additionally reports a `mediatype` and an
+ * `info` descriptor per field. Widening the contract struct would let those
+ * fields leak into serialized action data.
  */
 @Struct.type('schema_format_field')
 export class SchemaFormatField extends Struct {
     @Struct.field('string') declare name: string
     @Struct.field('string') declare type: string
-    /** Media type recorded by `setschematyp`. AtomicAssets v2 only. */
+    /**
+     * Media type for the field. The API merges the descriptors authored through
+     * `setschematyp` with a name and type heuristic, so a value here can be
+     * derived rather than stored. `SchemaObject.types` reports the authored
+     * ones. AtomicAssets v2 only.
+     */
     @Struct.field('string', {optional: true}) declare mediatype: string
-    /** Free-form descriptor recorded by `setschematyp`. AtomicAssets v2 only. */
+    /**
+     * Free-form descriptor for the field, merged with the same heuristic as
+     * `mediatype`. `SchemaObject.types` reports the authored ones.
+     * AtomicAssets v2 only.
+     */
+    @Struct.field('string', {optional: true}) declare info: string
+}
+
+/**
+ * A media-type descriptor authored through `setschematyp`, exactly as stored on
+ * chain. It carries no serialization `type`, which is what separates it from
+ * `SchemaFormatField`.
+ */
+@Struct.type('schema_format_type')
+export class SchemaFormatType extends Struct {
+    @Struct.field('string') declare name: string
+    @Struct.field('string', {optional: true}) declare mediatype: string
     @Struct.field('string', {optional: true}) declare info: string
 }
 
@@ -156,6 +177,15 @@ export class SchemaObject extends Struct {
     @Struct.field(UInt64, {optional: true}) declare assets: UInt64
     @Struct.field(SchemaFormatField, {array: true})
     declare format: SchemaFormatField[]
+    /**
+     * The descriptors authored through `setschematyp`, unmerged. Returned by
+     * `/schemas` and `/schemas/{collection_name}/{schema_name}` alone, so a
+     * schema nested in an asset, template, or account response omits it. An
+     * empty array means the schema has none, and an absent one means the
+     * response does not report them. AtomicAssets v2 only.
+     */
+    @Struct.field(SchemaFormatType, {array: true, optional: true})
+    declare types: SchemaFormatType[]
     @Struct.field(Name, {optional: true}) declare contract: Name
     @Struct.field(Name, {optional: true}) declare collection_name: Name
     @Struct.field(CollectionObject, {optional: true}) declare collection: CollectionObject

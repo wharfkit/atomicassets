@@ -188,4 +188,34 @@ suite('v2 API response fields', function () {
         assert.isUndefined(auction.current_collection_fee)
         assert.equal(auction.collection.market_fee.value, 0.05)
     })
+
+    test('a schema reports the authored media type descriptors', function () {
+        const schema = Types.SchemaObject.from({
+            schema_name: 'cmbz.res',
+            format: [{name: 'video', type: 'string', mediatype: 'video/mp4', info: 'trailer'}],
+            types: [{name: 'video', mediatype: 'video/mp4', info: 'trailer'}],
+            created_at_block: 1,
+            created_at_time: '1',
+        })
+
+        assert.equal(schema.types.length, 1)
+        assert.instanceOf(schema.types[0], Types.SchemaFormatType)
+        assert.equal(schema.types[0].name, 'video')
+        assert.equal(schema.types[0].mediatype, 'video/mp4')
+        assert.equal(schema.types[0].info, 'trailer')
+    })
+
+    test('a schema without the descriptors decodes and reports none', function () {
+        const schema = Types.SchemaObject.from({
+            schema_name: 'cmbz.res',
+            format: [{name: 'video', type: 'string'}],
+            created_at_block: 1,
+            created_at_time: '1',
+        })
+
+        // An absent types array means the response does not report descriptors,
+        // which is a different answer from the empty array a schema endpoint
+        // sends for a schema that has none.
+        assert.isUndefined(schema.types)
+    })
 })

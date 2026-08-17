@@ -5,8 +5,15 @@ import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
 import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
 
-import type {Schema} from '$lib'
-import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility, Types} from '$lib'
+import {
+    AtomicAssetsAPIClient,
+    AtomicAssetsContract,
+    AtomicAssetsKit,
+    AtomicMarketContract,
+    KitUtility,
+    Schema,
+    Types,
+} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -78,6 +85,23 @@ suite('Schema', function () {
         assert.isNull(field.info)
     })
 
+    test('types returns the authored media type descriptors', function () {
+        // The shared fixture comes from a v1 chain, whose schema endpoints
+        // report no types at all, so the descriptors are built here instead.
+        const schemaObject = Types.SchemaObject.from({
+            schema_name: schemaName,
+            format: [{name: 'video', type: 'string', mediatype: 'video/mp4'}],
+            types: [{name: 'video', mediatype: 'video/mp4', info: 'trailer'}],
+            created_at_block: 1,
+            created_at_time: '1',
+        })
+        const schema = Schema.from(schemaObject, utility)
+
+        assert.instanceOf(schema.types[0], Types.SchemaFormatType)
+        assert.equal(schema.types[0].name, 'video')
+        assert.equal(schema.types[0].mediatype, 'video/mp4')
+        assert.equal(schema.types[0].info, 'trailer')
+    })
     test('the API format type stays separate from the contract format type', function () {
         // The contract's FORMAT is what createschema and extendschema serialize,
         // so it must stay at {name, type}. The API reports two further fields.
