@@ -33,6 +33,15 @@ export class Schema {
         return this.data.format
     }
 
+    /**
+     * The descriptors authored through `setschematyp`. Undefined when the
+     * schema came from a response that does not report them, such as the schema
+     * nested in an asset or template.
+     */
+    get types() {
+        return this.data.types
+    }
+
     extendSchema(
         authorizedEditor: NameType,
         schemaFormat: AtomicAssetsContract.ActionParams.Type.FORMAT[]

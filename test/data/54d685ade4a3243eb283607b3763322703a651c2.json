@@ -1,0 +1,37 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/royaltycol11",
+        "params": {
+            "method": "GET",
+            "headers": {}
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": {
+            "market_contract": "atomicmarket",
+            "collection_name": "royaltycol11",
+            "founders": [
+                {
+                    "weight": 1,
+                    "recipient": "jacktestr125"
+                },
+                {
+                    "weight": 3,
+                    "recipient": "pe2etestacct"
+                }
+            ],
+            "attribute_mode": 0,
+            "split_founders": "2",
+            "split_templates": "1",
+            "split_attributes": "1",
+            "updated_at_block": "414895352",
+            "updated_at_time": "1783371583500",
+            "created_at_block": "414895352",
+            "created_at_time": "1783371583500"
+        },
+        "query_time": 1787002594513
+    },
+    "text": "{\"success\":true,\"data\":{\"market_contract\":\"atomicmarket\",\"collection_name\":\"royaltycol11\",\"founders\":[{\"weight\":1,\"recipient\":\"jacktestr125\"},{\"weight\":3,\"recipient\":\"pe2etestacct\"}],\"attribute_mode\":0,\"split_founders\":\"2\",\"split_templates\":\"1\",\"split_attributes\":\"1\",\"updated_at_block\":\"414895352\",\"updated_at_time\":\"1783371583500\",\"created_at_block\":\"414895352\",\"created_at_time\":\"1783371583500\"},\"query_time\":1787002594513}"
+}

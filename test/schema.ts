@@ -5,8 +5,15 @@ import {mockFetch} from '@wharfkit/mock-data'
 import {PlaceholderAuth} from '@wharfkit/signing-request'
 import {BASE_URL, TIMEOUT, SLOW_THRESHOLD} from './config'
 
-import type {Schema} from '$lib'
-import {AtomicAssetsAPIClient, AtomicAssetsContract, AtomicAssetsKit, KitUtility, Types} from '$lib'
+import {
+    AtomicAssetsAPIClient,
+    AtomicAssetsContract,
+    AtomicAssetsKit,
+    AtomicMarketContract,
+    KitUtility,
+    Schema,
+    Types,
+} from '$lib'
 
 const client = new APIClient({
     provider: new FetchProvider(Chains.WAX.url, {fetch: mockFetch}),
@@ -76,6 +83,38 @@ suite('Schema', function () {
         assert.equal(field.type, 'string')
         assert.isNull(field.mediatype)
         assert.isNull(field.info)
+    })
+
+    test('types returns the authored media type descriptors', function () {
+        // The shared fixture comes from a v1 chain, whose schema endpoints
+        // report no types at all, so the descriptors are built here instead.
+        const schemaObject = Types.SchemaObject.from({
+            schema_name: schemaName,
+            format: [{name: 'video', type: 'string', mediatype: 'video/mp4'}],
+            types: [{name: 'video', mediatype: 'video/mp4', info: 'trailer'}],
+            created_at_block: 1,
+            created_at_time: '1',
+        })
+        const schema = Schema.from(schemaObject, utility)
+
+        assert.instanceOf(schema.types[0], Types.SchemaFormatType)
+        assert.equal(schema.types[0].name, 'video')
+        assert.equal(schema.types[0].mediatype, 'video/mp4')
+        assert.equal(schema.types[0].info, 'trailer')
+    })
+
+    test('the API royalty pair stays separate from the contract royalty pair', function () {
+        // The contract's ROYALTYPAIR is what setroyalconf and the rule actions
+        // serialize. The API struct only decodes a response row, and keeping the
+        // two apart is what stops a decoded row from reaching action data.
+        const contractFields = AtomicMarketContract.Types.ROYALTYPAIR.abiFields?.map((f) => f.name)
+        const apiFields = Types.RoyaltyPair.abiFields?.map((f) => f.name)
+
+        assert.deepEqual(contractFields, ['recipient', 'weight'])
+        assert.deepEqual(apiFields, ['recipient', 'weight'])
+        assert.notEqual(Types.RoyaltyPair, AtomicMarketContract.Types.ROYALTYPAIR as any)
+        assert.equal(AtomicMarketContract.Types.ROYALTYPAIR.abiName, 'ROYALTYPAIR')
+        assert.equal(Types.RoyaltyPair.abiName, 'royalty_pair')
     })
 
     test('the API format type stays separate from the contract format type', function () {
