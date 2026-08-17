@@ -14,6 +14,11 @@ import {
     Marketplace,
     OfferObject,
     ResponseStruct,
+    RoyaltyAccountTotal,
+    RoyaltyAttributeRule,
+    RoyaltyConfig,
+    RoyaltyPayout,
+    RoyaltyTemplateRule,
     SaleObject,
     SalePrice,
     SalePriceDay,
@@ -302,4 +307,29 @@ export class GetStatsGraphResponse extends ResponseStruct {
 @Struct.type('get_stats_sales_resp')
 export class GetStatsSalesResponse extends ResponseStruct {
     @Struct.field(MarketSale) declare data: MarketSale
+}
+
+@Struct.type('get_royalty_config_resp')
+export class GetRoyaltyConfigResponse extends ResponseStruct {
+    @Struct.field(RoyaltyConfig) declare data: RoyaltyConfig
+}
+
+@Struct.type('get_royalty_template_rules_resp')
+export class GetRoyaltyTemplateRulesResponse extends ResponseStruct {
+    @Struct.field(RoyaltyTemplateRule, {array: true}) declare data: RoyaltyTemplateRule[]
+}
+
+@Struct.type('get_royalty_attribute_rules_resp')
+export class GetRoyaltyAttributeRulesResponse extends ResponseStruct {
+    @Struct.field(RoyaltyAttributeRule, {array: true}) declare data: RoyaltyAttributeRule[]
+}
+
+@Struct.type('get_royalty_payouts_resp')
+export class GetRoyaltyPayoutsResponse extends ResponseStruct {
+    @Struct.field(RoyaltyPayout, {array: true}) declare data: RoyaltyPayout[]
+}
+
+@Struct.type('get_royalty_account_resp')
+export class GetRoyaltyAccountResponse extends ResponseStruct {
+    @Struct.field(RoyaltyAccountTotal, {array: true}) declare data: RoyaltyAccountTotal[]
 }

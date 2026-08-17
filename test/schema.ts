@@ -102,6 +102,21 @@ suite('Schema', function () {
         assert.equal(schema.types[0].mediatype, 'video/mp4')
         assert.equal(schema.types[0].info, 'trailer')
     })
+
+    test('the API royalty pair stays separate from the contract royalty pair', function () {
+        // The contract's ROYALTYPAIR is what setroyalconf and the rule actions
+        // serialize. The API struct only decodes a response row, and keeping the
+        // two apart is what stops a decoded row from reaching action data.
+        const contractFields = AtomicMarketContract.Types.ROYALTYPAIR.abiFields?.map((f) => f.name)
+        const apiFields = Types.RoyaltyPair.abiFields?.map((f) => f.name)
+
+        assert.deepEqual(contractFields, ['recipient', 'weight'])
+        assert.deepEqual(apiFields, ['recipient', 'weight'])
+        assert.notEqual(Types.RoyaltyPair, AtomicMarketContract.Types.ROYALTYPAIR as any)
+        assert.equal(AtomicMarketContract.Types.ROYALTYPAIR.abiName, 'ROYALTYPAIR')
+        assert.equal(Types.RoyaltyPair.abiName, 'royalty_pair')
+    })
+
     test('the API format type stays separate from the contract format type', function () {
         // The contract's FORMAT is what createschema and extendschema serialize,
         // so it must stay at {name, type}. The API reports two further fields.

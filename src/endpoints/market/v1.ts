@@ -201,6 +201,26 @@ export interface GetTemplateBuyoffersOptions {
     sort?: 'created' | 'updated' | 'ending' | 'buyoffer_id' | 'price' | 'template_mint' | 'name'
 }
 
+export interface GetRoyaltyPayoutsOptions {
+    recipient?: NameType[]
+    collection_name?: NameType[]
+    asset_id?: UInt64Type[]
+    symbol?: string
+    listing_type?: 'unresolved' | 'sale' | 'auction' | 'buyoffer' | 'template_buyoffer'
+    listing_id?: UInt64Type
+    category?: Array<'founders' | 'template' | 'attribute' | 'dust'>
+    ids?: UInt64Type[]
+    // lower_bound and upper_bound range over log_global_sequence.
+    lower_bound?: string
+    upper_bound?: string
+    before?: number
+    after?: number
+    page?: number
+    limit?: number
+    order?: 'asc' | 'desc'
+    sort?: 'created' | 'amount'
+}
+
 export class MarketV1APIClient {
     constructor(private client: APIClient) {}
 
@@ -951,6 +971,114 @@ export class MarketV1APIClient {
             path: '/atomicmarket/v1/config',
             method: 'GET',
             responseType: Market.GetConfigResponse,
+        })
+    }
+
+    /**
+     * The royalty configuration of a collection, mirrored from `royaltyconf`.
+     *
+     * A collection with no configuration answers HTTP 416, which reaches the
+     * caller as an `APIError` with `error.response.status === 416`. That is the
+     * "not configured" answer rather than a failure, and every collection on an
+     * AtomicMarket v1 chain answers that way. An indexer that predates the
+     * royalty routes answers 404.
+     */
+    async get_royalty_config(collection_name: NameType) {
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/${collection_name}`,
+            method: 'GET',
+            responseType: Market.GetRoyaltyConfigResponse,
+        })
+    }
+
+    async get_royalty_template_rules(
+        collection_name: NameType,
+        options?: {
+            template_id?: Int32Type[]
+            page?: number
+            limit?: number
+        }
+    ) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/${collection_name}/templates`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetRoyaltyTemplateRulesResponse,
+        })
+    }
+
+    async get_royalty_attribute_rules(
+        collection_name: NameType,
+        options?: {
+            source?: number
+            field?: string
+            page?: number
+            limit?: number
+        }
+    ) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/${collection_name}/attributes`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetRoyaltyAttributeRulesResponse,
+        })
+    }
+
+    /** The settled payout ledger. Empty on an AtomicMarket v1 chain. */
+    async get_royalty_payouts(
+        options?: GetRoyaltyPayoutsOptions,
+        extra_options?: {[key: string]: string}
+    ) {
+        const bodyParams = buildBodyParams(options, extra_options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/payouts`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetRoyaltyPayoutsResponse,
+        })
+    }
+
+    async get_royalty_payouts_count(
+        options?: GetRoyaltyPayoutsOptions,
+        extra_options?: {[key: string]: string}
+    ) {
+        const bodyParams = buildBodyParams(options, extra_options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/payouts/_count`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: CountResponseStruct,
+        })
+    }
+
+    /** One row per token symbol the account has been paid in. */
+    async get_royalty_account(
+        account: NameType,
+        options?: {
+            collection_name?: NameType[]
+            symbol?: string
+            before?: number
+            after?: number
+        }
+    ) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/royalties/accounts/${account}`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetRoyaltyAccountResponse,
         })
     }
 }

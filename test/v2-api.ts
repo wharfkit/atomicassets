@@ -218,4 +218,82 @@ suite('v2 API response fields', function () {
         // sends for a schema that has none.
         assert.isUndefined(schema.types)
     })
+
+    test('a royalty payout decodes the nullable ids the indexer emits', function () {
+        const attributePayout = Types.RoyaltyPayout.from({
+            market_contract: 'atomicmarket',
+            log_global_sequence: '840330124',
+            payout_index: 0,
+            listing_type: 'sale',
+            listing_id: '46890',
+            category: 'attribute',
+            collection_name: 'royaltycol11',
+            asset_id: '1099603751717',
+            template_id: null,
+            rule_id: '2',
+            recipient: 'jacktestr125',
+            amount: '1250000',
+            token_symbol: 'WAX',
+            token_precision: 8,
+            token_contract: 'eosio.token',
+            txid: '6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a',
+            created_at_block: '414927681',
+            created_at_time: '1783387748000',
+        })
+
+        assert.equal(attributePayout.amount.toNumber(), 1250000)
+        assert.equal(attributePayout.listing_id.toNumber(), 46890)
+        assert.equal(attributePayout.rule_id.toNumber(), 2)
+        assert.isUndefined(attributePayout.template_id)
+
+        // listing_type and category are the strings the indexer maps the stored
+        // integers to, and it sends null for a value it has no name for.
+        const unmappedPayout = Types.RoyaltyPayout.from({
+            market_contract: 'atomicmarket',
+            log_global_sequence: '840330125',
+            payout_index: 1,
+            listing_type: null,
+            listing_id: null,
+            category: null,
+            collection_name: 'royaltycol11',
+            asset_id: null,
+            template_id: null,
+            rule_id: null,
+            recipient: 'jacktestr125',
+            amount: '1250000',
+            token_symbol: 'WAX',
+            token_precision: 8,
+            token_contract: 'eosio.token',
+            txid: '6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a',
+            created_at_block: '414927681',
+            created_at_time: '1783387748000',
+        })
+
+        assert.isNull(unmappedPayout.listing_type)
+        assert.isNull(unmappedPayout.category)
+        assert.isUndefined(unmappedPayout.listing_id)
+        assert.isUndefined(unmappedPayout.asset_id)
+    })
+
+    test('a royalty attribute rule keeps the raw variant tuple', function () {
+        const rule = Types.RoyaltyAttributeRule.from({
+            market_contract: 'atomicmarket',
+            collection_name: 'royaltycol11',
+            rule_id: '2',
+            source: 0,
+            field: 'rarity',
+            value: ['string', 'legendary'],
+            weight: '1',
+            recipients: [{recipient: 'jacktestr125', weight: 1}],
+            lookup_hash: '68ec3427c453d24cfd9faaa1db9d39533ab06b8127bb09a6f2958e5c26ebce74',
+            updated_at_block: '414895354',
+            updated_at_time: '1783371584500',
+            created_at_block: '414895354',
+            created_at_time: '1783371584500',
+        })
+
+        assert.deepEqual(rule.value, ['string', 'legendary'])
+        assert.equal(rule.weight.toNumber(), 1)
+        assert.isTrue(rule.recipients[0].recipient.equals('jacktestr125'))
+    })
 })

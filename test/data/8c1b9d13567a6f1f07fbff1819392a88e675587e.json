@@ -1,0 +1,27 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/accounts/jacktestr125",
+        "params": {
+            "method": "POST",
+            "body": "{}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [
+            {
+                "token_symbol": "WAX",
+                "token_precision": 8,
+                "token_contract": "eosio.token",
+                "amount": "76875000",
+                "payout_count": "10"
+            }
+        ],
+        "query_time": 1787002594271
+    },
+    "text": "{\"success\":true,\"data\":[{\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"amount\":\"76875000\",\"payout_count\":\"10\"}],\"query_time\":1787002594271}"
+}

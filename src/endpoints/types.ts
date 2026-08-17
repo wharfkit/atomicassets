@@ -478,6 +478,116 @@ export class Marketplace extends Struct {
     @Struct.field('string') declare created_at_time: string
 }
 
+/**
+ * A royalty recipient and its weight as returned by the API.
+ *
+ * This is intentionally not the AtomicMarket contract's `ROYALTYPAIR` struct.
+ * That one serializes action data for `setroyalconf` and the rule actions, this
+ * one only decodes an API row, and keeping them apart is what stops a decoded
+ * row from reaching the wire.
+ */
+@Struct.type('royalty_pair')
+export class RoyaltyPair extends Struct {
+    @Struct.field(Name) declare recipient: Name
+    @Struct.field(UInt32) declare weight: UInt32
+}
+
+/**
+ * The `royaltyconf` row for a collection, mirrored field for field.
+ *
+ * The API answers HTTP 416 for a collection that has no row, and every
+ * collection on an AtomicMarket v1 chain answers that way. AtomicMarket v2 only.
+ */
+@Struct.type('royalty_config')
+export class RoyaltyConfig extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(Name) declare collection_name: Name
+    @Struct.field(RoyaltyPair, {array: true}) declare founders: RoyaltyPair[]
+    /** How attribute rules combine: 0 merged, 1 granular. */
+    @Struct.field(UInt8) declare attribute_mode: UInt8
+    @Struct.field(UInt32) declare split_founders: UInt32
+    @Struct.field(UInt32) declare split_templates: UInt32
+    @Struct.field(UInt32) declare split_attributes: UInt32
+    @Struct.field(UInt64) declare updated_at_block: UInt64
+    @Struct.field('string') declare updated_at_time: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+}
+
+/** A `royaltytemp` row: the per-template recipient override. AtomicMarket v2 only. */
+@Struct.type('royalty_template_rule')
+export class RoyaltyTemplateRule extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(Name) declare collection_name: Name
+    @Struct.field(Int32) declare template_id: Int32
+    @Struct.field(RoyaltyPair, {array: true}) declare recipients: RoyaltyPair[]
+    @Struct.field(UInt64) declare updated_at_block: UInt64
+    @Struct.field('string') declare updated_at_time: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+}
+
+/** A `royaltyattr` row: the attribute-matched recipient override. AtomicMarket v2 only. */
+@Struct.type('royalty_attribute_rule')
+export class RoyaltyAttributeRule extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(Name) declare collection_name: Name
+    @Struct.field(UInt64) declare rule_id: UInt64
+    /** Which data source the matched attribute is read from, as the contract stores it. */
+    @Struct.field(UInt8) declare source: UInt8
+    @Struct.field('string') declare field: string
+    /**
+     * The raw `["type", value]` variant tuple the rule matches on. It is kept
+     * untyped so an integer payload stays the string the API sent and nothing
+     * is reparsed. The content is chain-authored by the collection and relayed
+     * by the indexer, so a caller shape-checks it before use.
+     */
+    @Struct.field('any') declare value: [string, unknown]
+    @Struct.field(UInt32) declare weight: UInt32
+    @Struct.field(RoyaltyPair, {array: true}) declare recipients: RoyaltyPair[]
+    /** Hex-encoded sha256 of the matched attribute, as the contract stores it. */
+    @Struct.field('string') declare lookup_hash: string
+    @Struct.field(UInt64) declare updated_at_block: UInt64
+    @Struct.field('string') declare updated_at_time: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+}
+
+/**
+ * One settled royalty payout, keyed by the log trace global sequence and the
+ * entry's position in the payouts vector. AtomicMarket v2 only.
+ */
+@Struct.type('royalty_payout')
+export class RoyaltyPayout extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    @Struct.field(UInt64) declare log_global_sequence: UInt64
+    @Struct.field(UInt32) declare payout_index: UInt32
+    /** One of unresolved, sale, auction, buyoffer, template_buyoffer. */
+    @Struct.field('string', {optional: true}) declare listing_type: string
+    @Struct.field(UInt64, {optional: true}) declare listing_id: UInt64
+    /** One of founders, template, attribute, dust. */
+    @Struct.field('string', {optional: true}) declare category: string
+    @Struct.field(Name) declare collection_name: Name
+    @Struct.field(UInt64, {optional: true}) declare asset_id: UInt64
+    @Struct.field(Int32, {optional: true}) declare template_id: Int32
+    @Struct.field(UInt64, {optional: true}) declare rule_id: UInt64
+    @Struct.field(Name) declare recipient: Name
+    @Struct.field(UInt64) declare amount: UInt64
+    @Struct.field('string') declare token_symbol: string
+    @Struct.field(UInt8) declare token_precision: UInt8
+    @Struct.field(Name) declare token_contract: Name
+    /** Hex-encoded id of the transaction the payout was logged in. */
+    @Struct.field('string') declare txid: string
+    @Struct.field(UInt64) declare created_at_block: UInt64
+    @Struct.field('string') declare created_at_time: string
+}
+
+/** An account's settled royalties for one token symbol. AtomicMarket v2 only. */
+@Struct.type('royalty_account_total')
+export class RoyaltyAccountTotal extends TokenAmount {
+    @Struct.field(UInt64) declare payout_count: UInt64
+}
+
 @Struct.type('saleprice')
 export class SalePrice extends Struct {
     @Struct.field(UInt64, {optional: true}) declare sale_id: UInt64

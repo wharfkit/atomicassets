@@ -1,0 +1,15 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/alien.worlds",
+        "params": {
+            "method": "GET",
+            "headers": {}
+        }
+    },
+    "status": 416,
+    "json": {
+        "success": false,
+        "message": "Royalty config not found"
+    },
+    "text": "{\"success\":false,\"message\":\"Royalty config not found\"}"
+}

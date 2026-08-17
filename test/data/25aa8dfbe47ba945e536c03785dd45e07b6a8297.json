@@ -1,0 +1,35 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/royaltycol11/templates",
+        "params": {
+            "method": "POST",
+            "body": "{}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [
+            {
+                "market_contract": "atomicmarket",
+                "collection_name": "royaltycol11",
+                "template_id": "662912",
+                "recipients": [
+                    {
+                        "weight": 1,
+                        "recipient": "pe2etestacct"
+                    }
+                ],
+                "updated_at_block": "414895353",
+                "updated_at_time": "1783371584000",
+                "created_at_block": "414895353",
+                "created_at_time": "1783371584000"
+            }
+        ],
+        "query_time": 1787002594984
+    },
+    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"collection_name\":\"royaltycol11\",\"template_id\":\"662912\",\"recipients\":[{\"weight\":1,\"recipient\":\"pe2etestacct\"}],\"updated_at_block\":\"414895353\",\"updated_at_time\":\"1783371584000\",\"created_at_block\":\"414895353\",\"created_at_time\":\"1783371584000\"}],\"query_time\":1787002594984}"
+}
