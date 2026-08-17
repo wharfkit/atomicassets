@@ -966,6 +966,30 @@ export class MarketV1APIClient {
         })
     }
 
+    /**
+     * Seller, buyer, and volume totals per marketplace for one token symbol.
+     *
+     * Bound the query with `collection_whitelist` or an `after` window. On a
+     * mainnet-sized indexer the unbounded aggregate exceeds the server timeout.
+     */
+    async get_stats_markets(options: {
+        symbol: string
+        collection_blacklist?: NameType[]
+        collection_whitelist?: NameType[]
+        before?: number
+        after?: number
+    }) {
+        const bodyParams = buildBodyParams(options)
+
+        return this.client.call({
+            path: `/atomicmarket/v1/stats/markets`,
+            method: 'POST',
+            params: bodyParams,
+            headers: {'Content-Type': 'application/json'},
+            responseType: Market.GetStatsMarketsResponse,
+        })
+    }
+
     async get_config() {
         return this.client.call({
             path: '/atomicmarket/v1/config',

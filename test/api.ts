@@ -779,6 +779,21 @@ suite('atomicmarket', function () {
         assert.isNotEmpty(res.data)
     })
 
+    test('get_stats_markets', async function () {
+        // The aggregate runs over every sale the indexer holds, so an unbounded
+        // call answers 408 on a mainnet-sized host. One collection and an after
+        // window keep it inside the server timeout.
+        const res = await atomicassets.atomicmarket.v1.get_stats_markets({
+            symbol: 'WAX',
+            collection_whitelist: ['alien.worlds'],
+            after: 1750000000000,
+        })
+        assert.instanceOf(res, Types.Market.GetStatsMarketsResponse)
+        assert.equal(res.success, true)
+        assert.isNotEmpty(res.data.symbol)
+        assert.isNotEmpty(res.data.results)
+    })
+
     test('get_config', async function () {
         const res = await atomicassets.atomicmarket.v1.get_config()
         assert.instanceOf(res, Types.Market.GetConfigResponse)

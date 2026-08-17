@@ -108,6 +108,32 @@ export class MarketAccount extends Struct {
     @Struct.field(AccountStat) declare result: AccountStat
 }
 
+@Struct.type('marketplace_stat')
+export class MarketplaceStat extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    /**
+     * Null when no marketplace is stored, and the empty string when the
+     * stored value is the default marketplace name. Both mean the same
+     * thing to a client.
+     */
+    @Struct.field('string', {optional: true}) declare marketplace_name: string
+    @Struct.field(UInt64) declare sellers: UInt64
+    @Struct.field(UInt64) declare buyers: UInt64
+    /**
+     * The field is declared optional defensively because the outer sort
+     * carries NULLS LAST. The aggregate answers `0`, not null, for a side
+     * with no rows.
+     */
+    @Struct.field(UInt64, {optional: true}) declare maker_volume: UInt64
+    @Struct.field(UInt64, {optional: true}) declare taker_volume: UInt64
+}
+
+@Struct.type('market_marketplaces')
+export class MarketMarketplaces extends Struct {
+    @Struct.field(Token) declare symbol: Token
+    @Struct.field(MarketplaceStat, {array: true}) declare results: MarketplaceStat[]
+}
+
 @Struct.type('schema_stat_v1')
 export class SchemaStatV1 extends Struct {
     @Struct.field(Name) declare contract: Name
@@ -307,6 +333,11 @@ export class GetStatsGraphResponse extends ResponseStruct {
 @Struct.type('get_stats_sales_resp')
 export class GetStatsSalesResponse extends ResponseStruct {
     @Struct.field(MarketSale) declare data: MarketSale
+}
+
+@Struct.type('get_stats_markets_resp')
+export class GetStatsMarketsResponse extends ResponseStruct {
+    @Struct.field(MarketMarketplaces) declare data: MarketMarketplaces
 }
 
 @Struct.type('get_royalty_config_resp')

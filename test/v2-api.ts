@@ -296,4 +296,35 @@ suite('v2 API response fields', function () {
         assert.equal(rule.weight.toNumber(), 1)
         assert.isTrue(rule.recipients[0].recipient.equals('jacktestr125'))
     })
+
+    test('a marketplace stat decodes an unnamed marketplace and empty volumes', function () {
+        const unnamed = Types.Market.MarketplaceStat.from({
+            market_contract: 'atomicmarket',
+            marketplace_name: null,
+            sellers: '4896',
+            buyers: '0',
+            maker_volume: '1749594747693104',
+            taker_volume: null,
+        })
+
+        // Null when no marketplace is stored, and the empty string when the
+        // stored value is the default marketplace name. Both mean the same
+        // thing to a client.
+        const blank = Types.Market.MarketplaceStat.from({
+            market_contract: 'atomicmarket',
+            marketplace_name: '',
+            sellers: '0',
+            buyers: '2106',
+            maker_volume: null,
+            taker_volume: '1412670696427700',
+        })
+
+        assert.isNull(unnamed.marketplace_name)
+        assert.equal(unnamed.sellers.toNumber(), 4896)
+        assert.isUndefined(unnamed.taker_volume)
+
+        assert.equal(blank.marketplace_name, '')
+        assert.isUndefined(blank.maker_volume)
+        assert.equal(blank.taker_volume.toNumber(), 1412670696427700)
+    })
 })
