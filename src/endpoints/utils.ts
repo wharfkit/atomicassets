@@ -41,3 +41,24 @@ export function serializeQueryParams(params?: {[key: string]: any}): {[key: stri
 
     return result
 }
+
+/**
+ * Encode a value for use as one path segment.
+ *
+ * An empty value or a dot segment would rewrite the request path, so both are rejected, as is a
+ * missing value, which would otherwise travel as the literal segment 'undefined'. A value that
+ * equals a sibling route literal such as '_count' is a valid segment and is not rejected here.
+ */
+export function pathSegment(value: unknown): string {
+    if (value === null || value === undefined) {
+        throw new Error('Invalid path segment: a value is required')
+    }
+    const segment = String(value)
+    if (segment === '' || segment === '.' || segment === '..') {
+        throw new Error(
+            `Invalid path segment '${segment}': an empty or dot segment rewrites the request path`
+        )
+    }
+
+    return encodeURIComponent(segment)
+}

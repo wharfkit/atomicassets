@@ -3,7 +3,7 @@ import type {Float64Type, Int32Type, NameType, UInt64Type} from '@wharfkit/antel
 import type {SaleState} from '../../types'
 import {CountResponseStruct} from '../../types'
 import * as Market from './types'
-import {buildBodyParams} from '../utils'
+import {buildBodyParams, pathSegment} from '../utils'
 
 export interface GetSalesOptions {
     state?: SaleState[]
@@ -96,7 +96,7 @@ export class MarketV2APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomicmarket/v2/stats/schemas/${collection_name}`,
+            path: `/atomicmarket/v2/stats/schemas/${pathSegment(collection_name)}`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},

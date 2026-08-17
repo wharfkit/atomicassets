@@ -1,0 +1,19 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/payouts/_count",
+        "params": {
+            "method": "POST",
+            "body": "{}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": "20",
+        "query_time": 1787002594102
+    },
+    "text": "{\"success\":true,\"data\":\"20\",\"query_time\":1787002594102}"
+}

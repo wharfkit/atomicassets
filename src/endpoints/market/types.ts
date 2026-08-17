@@ -14,6 +14,11 @@ import {
     Marketplace,
     OfferObject,
     ResponseStruct,
+    RoyaltyAccountTotal,
+    RoyaltyAttributeRule,
+    RoyaltyConfig,
+    RoyaltyPayout,
+    RoyaltyTemplateRule,
     SaleObject,
     SalePrice,
     SalePriceDay,
@@ -101,6 +106,32 @@ export class MarketAccounts extends Struct {
 export class MarketAccount extends Struct {
     @Struct.field(Token) declare symbol: Token
     @Struct.field(AccountStat) declare result: AccountStat
+}
+
+@Struct.type('marketplace_stat')
+export class MarketplaceStat extends Struct {
+    @Struct.field(Name) declare market_contract: Name
+    /**
+     * Null when no marketplace is stored, and the empty string when the
+     * stored value is the default marketplace name. Both mean the same
+     * thing to a client.
+     */
+    @Struct.field('string', {optional: true}) declare marketplace_name: string
+    @Struct.field(UInt64) declare sellers: UInt64
+    @Struct.field(UInt64) declare buyers: UInt64
+    /**
+     * The field is declared optional defensively because the outer sort
+     * carries NULLS LAST. The aggregate answers `0`, not null, for a side
+     * with no rows.
+     */
+    @Struct.field(UInt64, {optional: true}) declare maker_volume: UInt64
+    @Struct.field(UInt64, {optional: true}) declare taker_volume: UInt64
+}
+
+@Struct.type('market_marketplaces')
+export class MarketMarketplaces extends Struct {
+    @Struct.field(Token) declare symbol: Token
+    @Struct.field(MarketplaceStat, {array: true}) declare results: MarketplaceStat[]
 }
 
 @Struct.type('schema_stat_v1')
@@ -302,4 +333,34 @@ export class GetStatsGraphResponse extends ResponseStruct {
 @Struct.type('get_stats_sales_resp')
 export class GetStatsSalesResponse extends ResponseStruct {
     @Struct.field(MarketSale) declare data: MarketSale
+}
+
+@Struct.type('get_stats_markets_resp')
+export class GetStatsMarketsResponse extends ResponseStruct {
+    @Struct.field(MarketMarketplaces) declare data: MarketMarketplaces
+}
+
+@Struct.type('get_royalty_config_resp')
+export class GetRoyaltyConfigResponse extends ResponseStruct {
+    @Struct.field(RoyaltyConfig) declare data: RoyaltyConfig
+}
+
+@Struct.type('get_royalty_template_rules_resp')
+export class GetRoyaltyTemplateRulesResponse extends ResponseStruct {
+    @Struct.field(RoyaltyTemplateRule, {array: true}) declare data: RoyaltyTemplateRule[]
+}
+
+@Struct.type('get_royalty_attribute_rules_resp')
+export class GetRoyaltyAttributeRulesResponse extends ResponseStruct {
+    @Struct.field(RoyaltyAttributeRule, {array: true}) declare data: RoyaltyAttributeRule[]
+}
+
+@Struct.type('get_royalty_payouts_resp')
+export class GetRoyaltyPayoutsResponse extends ResponseStruct {
+    @Struct.field(RoyaltyPayout, {array: true}) declare data: RoyaltyPayout[]
+}
+
+@Struct.type('get_royalty_account_resp')
+export class GetRoyaltyAccountResponse extends ResponseStruct {
+    @Struct.field(RoyaltyAccountTotal, {array: true}) declare data: RoyaltyAccountTotal[]
 }

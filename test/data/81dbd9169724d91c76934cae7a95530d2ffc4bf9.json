@@ -1,0 +1,187 @@
+{
+    "request": {
+        "path": "https://wax-atomic.alcor.exchange/atomicmarket/v1/stats/markets",
+        "params": {
+            "method": "POST",
+            "body": "{\"symbol\":\"WAX\",\"collection_whitelist\":\"alien.worlds\",\"after\":\"1750000000000\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": {
+            "symbol": {
+                "token_symbol": "WAX",
+                "token_contract": "eosio.token",
+                "token_precision": 8
+            },
+            "results": [
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": null,
+                    "sellers": "4896",
+                    "buyers": "0",
+                    "maker_volume": "1749594747693104",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "",
+                    "sellers": "0",
+                    "buyers": "2106",
+                    "maker_volume": "0",
+                    "taker_volume": "1412670696427700"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "nft.hive",
+                    "sellers": "549",
+                    "buyers": "1082",
+                    "maker_volume": "406043235255205",
+                    "taker_volume": "553583840630693"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "market.nefty",
+                    "sellers": "452",
+                    "buyers": "395",
+                    "maker_volume": "90515525429321",
+                    "taker_volume": "269335609220115"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "f12keymarket",
+                    "sellers": "9",
+                    "buyers": "53",
+                    "maker_volume": "541643330848",
+                    "taker_volume": "9862644226728"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "atomicsniper",
+                    "sellers": "4",
+                    "buyers": "14",
+                    "maker_volume": "2934474234377",
+                    "taker_volume": "2933355536600"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "market.nemo",
+                    "sellers": "0",
+                    "buyers": "1",
+                    "maker_volume": "0",
+                    "taker_volume": "5470000000000"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "bazaarbazaar",
+                    "sellers": "6",
+                    "buyers": "1",
+                    "maker_volume": "3189822290372",
+                    "taker_volume": "8131096465"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "market.wax",
+                    "sellers": "44",
+                    "buyers": "0",
+                    "maker_volume": "555352208064",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "market.place",
+                    "sellers": "1",
+                    "buyers": "0",
+                    "maker_volume": "300000000000",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "waxplorercom",
+                    "sellers": "23",
+                    "buyers": "0",
+                    "maker_volume": "244857289370",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "earncashback",
+                    "sellers": "0",
+                    "buyers": "1",
+                    "maker_volume": "0",
+                    "taker_volume": "190773056817"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "alcor",
+                    "sellers": "2",
+                    "buyers": "0",
+                    "maker_volume": "111153500000",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "waxportal",
+                    "sellers": "47",
+                    "buyers": "1",
+                    "maker_volume": "108116880000",
+                    "taker_volume": "38000000"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "hoardiostore",
+                    "sellers": "0",
+                    "buyers": "1",
+                    "maker_volume": "0",
+                    "taker_volume": "75957262807"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "kipsmarket11",
+                    "sellers": "1",
+                    "buyers": "1",
+                    "maker_volume": "992228134",
+                    "taker_volume": "12700255878"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "wax.stash",
+                    "sellers": "5",
+                    "buyers": "0",
+                    "maker_volume": "3378000000",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "chainchampss",
+                    "sellers": "1",
+                    "buyers": "0",
+                    "maker_volume": "424710000",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "wombatmarket",
+                    "sellers": "2",
+                    "buyers": "0",
+                    "maker_volume": "29200000",
+                    "taker_volume": "0"
+                },
+                {
+                    "market_contract": "atomicmarket",
+                    "marketplace_name": "rwax",
+                    "sellers": "0",
+                    "buyers": "1",
+                    "maker_volume": "0",
+                    "taker_volume": "6534992"
+                }
+            ]
+        },
+        "query_time": 1787002602663
+    },
+    "text": "{\"success\":true,\"data\":{\"symbol\":{\"token_symbol\":\"WAX\",\"token_contract\":\"eosio.token\",\"token_precision\":8},\"results\":[{\"market_contract\":\"atomicmarket\",\"marketplace_name\":null,\"sellers\":\"4896\",\"buyers\":\"0\",\"maker_volume\":\"1749594747693104\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"\",\"sellers\":\"0\",\"buyers\":\"2106\",\"maker_volume\":\"0\",\"taker_volume\":\"1412670696427700\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"nft.hive\",\"sellers\":\"549\",\"buyers\":\"1082\",\"maker_volume\":\"406043235255205\",\"taker_volume\":\"553583840630693\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"market.nefty\",\"sellers\":\"452\",\"buyers\":\"395\",\"maker_volume\":\"90515525429321\",\"taker_volume\":\"269335609220115\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"f12keymarket\",\"sellers\":\"9\",\"buyers\":\"53\",\"maker_volume\":\"541643330848\",\"taker_volume\":\"9862644226728\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"atomicsniper\",\"sellers\":\"4\",\"buyers\":\"14\",\"maker_volume\":\"2934474234377\",\"taker_volume\":\"2933355536600\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"market.nemo\",\"sellers\":\"0\",\"buyers\":\"1\",\"maker_volume\":\"0\",\"taker_volume\":\"5470000000000\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"bazaarbazaar\",\"sellers\":\"6\",\"buyers\":\"1\",\"maker_volume\":\"3189822290372\",\"taker_volume\":\"8131096465\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"market.wax\",\"sellers\":\"44\",\"buyers\":\"0\",\"maker_volume\":\"555352208064\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"market.place\",\"sellers\":\"1\",\"buyers\":\"0\",\"maker_volume\":\"300000000000\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"waxplorercom\",\"sellers\":\"23\",\"buyers\":\"0\",\"maker_volume\":\"244857289370\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"earncashback\",\"sellers\":\"0\",\"buyers\":\"1\",\"maker_volume\":\"0\",\"taker_volume\":\"190773056817\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"alcor\",\"sellers\":\"2\",\"buyers\":\"0\",\"maker_volume\":\"111153500000\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"waxportal\",\"sellers\":\"47\",\"buyers\":\"1\",\"maker_volume\":\"108116880000\",\"taker_volume\":\"38000000\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"hoardiostore\",\"sellers\":\"0\",\"buyers\":\"1\",\"maker_volume\":\"0\",\"taker_volume\":\"75957262807\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"kipsmarket11\",\"sellers\":\"1\",\"buyers\":\"1\",\"maker_volume\":\"992228134\",\"taker_volume\":\"12700255878\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"wax.stash\",\"sellers\":\"5\",\"buyers\":\"0\",\"maker_volume\":\"3378000000\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"chainchampss\",\"sellers\":\"1\",\"buyers\":\"0\",\"maker_volume\":\"424710000\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"wombatmarket\",\"sellers\":\"2\",\"buyers\":\"0\",\"maker_volume\":\"29200000\",\"taker_volume\":\"0\"},{\"market_contract\":\"atomicmarket\",\"marketplace_name\":\"rwax\",\"sellers\":\"0\",\"buyers\":\"1\",\"maker_volume\":\"0\",\"taker_volume\":\"6534992\"}]},\"query_time\":1787002602663}"
+}

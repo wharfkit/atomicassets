@@ -1,0 +1,60 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/payouts",
+        "params": {
+            "method": "POST",
+            "body": "{\"category\":\"attribute\",\"listing_type\":\"sale\",\"sort\":\"amount\",\"order\":\"asc\",\"limit\":\"2\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [
+            {
+                "market_contract": "atomicmarket",
+                "log_global_sequence": "840330124",
+                "payout_index": 0,
+                "listing_type": "sale",
+                "listing_id": "46890",
+                "category": "attribute",
+                "collection_name": "royaltycol11",
+                "asset_id": "1099603751717",
+                "template_id": null,
+                "rule_id": "2",
+                "recipient": "jacktestr125",
+                "amount": "1250000",
+                "token_symbol": "WAX",
+                "token_precision": 8,
+                "token_contract": "eosio.token",
+                "txid": "6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a",
+                "created_at_block": "414927681",
+                "created_at_time": "1783387748000"
+            },
+            {
+                "market_contract": "atomicmarket",
+                "log_global_sequence": "840242817",
+                "payout_index": 0,
+                "listing_type": "sale",
+                "listing_id": "46855",
+                "category": "attribute",
+                "collection_name": "royaltycol11",
+                "asset_id": "1099603751714",
+                "template_id": null,
+                "rule_id": "1",
+                "recipient": "jacktestr125",
+                "amount": "12500000",
+                "token_symbol": "WAX",
+                "token_precision": 8,
+                "token_contract": "eosio.token",
+                "txid": "a346ac1e0324c39a677f14dd85f23f6f94d602bf229d6810050ac3512a395a08",
+                "created_at_block": "414849702",
+                "created_at_time": "1783348758500"
+            }
+        ],
+        "query_time": 1787002593925
+    },
+    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"log_global_sequence\":\"840330124\",\"payout_index\":0,\"listing_type\":\"sale\",\"listing_id\":\"46890\",\"category\":\"attribute\",\"collection_name\":\"royaltycol11\",\"asset_id\":\"1099603751717\",\"template_id\":null,\"rule_id\":\"2\",\"recipient\":\"jacktestr125\",\"amount\":\"1250000\",\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"txid\":\"6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a\",\"created_at_block\":\"414927681\",\"created_at_time\":\"1783387748000\"},{\"market_contract\":\"atomicmarket\",\"log_global_sequence\":\"840242817\",\"payout_index\":0,\"listing_type\":\"sale\",\"listing_id\":\"46855\",\"category\":\"attribute\",\"collection_name\":\"royaltycol11\",\"asset_id\":\"1099603751714\",\"template_id\":null,\"rule_id\":\"1\",\"recipient\":\"jacktestr125\",\"amount\":\"12500000\",\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"txid\":\"a346ac1e0324c39a677f14dd85f23f6f94d602bf229d6810050ac3512a395a08\",\"created_at_block\":\"414849702\",\"created_at_time\":\"1783348758500\"}],\"query_time\":1787002593925}"
+}

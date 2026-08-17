@@ -1,0 +1,60 @@
+{
+    "request": {
+        "path": "https://test.wax.api.atomicassets.io/atomicmarket/v1/royalties/payouts",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":\"2\"}",
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    "status": 200,
+    "json": {
+        "success": true,
+        "data": [
+            {
+                "market_contract": "atomicmarket",
+                "log_global_sequence": "840330124",
+                "payout_index": 0,
+                "listing_type": "sale",
+                "listing_id": "46890",
+                "category": "attribute",
+                "collection_name": "royaltycol11",
+                "asset_id": "1099603751717",
+                "template_id": null,
+                "rule_id": "2",
+                "recipient": "jacktestr125",
+                "amount": "1250000",
+                "token_symbol": "WAX",
+                "token_precision": 8,
+                "token_contract": "eosio.token",
+                "txid": "6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a",
+                "created_at_block": "414927681",
+                "created_at_time": "1783387748000"
+            },
+            {
+                "market_contract": "atomicmarket",
+                "log_global_sequence": "840330123",
+                "payout_index": 0,
+                "listing_type": "sale",
+                "listing_id": "46890",
+                "category": "template",
+                "collection_name": "royaltycol11",
+                "asset_id": "1099603751717",
+                "template_id": "662912",
+                "rule_id": null,
+                "recipient": "pe2etestacct",
+                "amount": "1250000",
+                "token_symbol": "WAX",
+                "token_precision": 8,
+                "token_contract": "eosio.token",
+                "txid": "6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a",
+                "created_at_block": "414927681",
+                "created_at_time": "1783387748000"
+            }
+        ],
+        "query_time": 1787002593620
+    },
+    "text": "{\"success\":true,\"data\":[{\"market_contract\":\"atomicmarket\",\"log_global_sequence\":\"840330124\",\"payout_index\":0,\"listing_type\":\"sale\",\"listing_id\":\"46890\",\"category\":\"attribute\",\"collection_name\":\"royaltycol11\",\"asset_id\":\"1099603751717\",\"template_id\":null,\"rule_id\":\"2\",\"recipient\":\"jacktestr125\",\"amount\":\"1250000\",\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"txid\":\"6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a\",\"created_at_block\":\"414927681\",\"created_at_time\":\"1783387748000\"},{\"market_contract\":\"atomicmarket\",\"log_global_sequence\":\"840330123\",\"payout_index\":0,\"listing_type\":\"sale\",\"listing_id\":\"46890\",\"category\":\"template\",\"collection_name\":\"royaltycol11\",\"asset_id\":\"1099603751717\",\"template_id\":\"662912\",\"rule_id\":null,\"recipient\":\"pe2etestacct\",\"amount\":\"1250000\",\"token_symbol\":\"WAX\",\"token_precision\":8,\"token_contract\":\"eosio.token\",\"txid\":\"6df6118add83bab9b0d79b5a7a6cf3877133893daefb96280f6f52943db74f2a\",\"created_at_block\":\"414927681\",\"created_at_time\":\"1783387748000\"}],\"query_time\":1787002593620}"
+}

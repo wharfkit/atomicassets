@@ -4,7 +4,7 @@ import type {LinkState} from '../../types'
 import {CountResponseStruct} from '../../types'
 import * as Tools from './types'
 import type {ActionNames as ActionType} from '../../contracts/atomictoolsx'
-import {buildBodyParams} from '../utils'
+import {buildBodyParams, pathSegment} from '../utils'
 
 export interface GetLinksOptions {
     creator?: NameType[]
@@ -54,7 +54,7 @@ export class ToolsV1APIClient {
 
     async get_link(link_id: UInt64Type) {
         return this.client.call({
-            path: `/atomictools/v1/links/${link_id}`,
+            path: `/atomictools/v1/links/${pathSegment(link_id)}`,
             method: 'GET',
             responseType: Tools.GetLinkResponse,
         })
@@ -73,7 +73,7 @@ export class ToolsV1APIClient {
         const bodyParams = buildBodyParams(options)
 
         return this.client.call({
-            path: `/atomictools/v1/links/${link_id}/logs`,
+            path: `/atomictools/v1/links/${pathSegment(link_id)}/logs`,
             method: 'POST',
             params: bodyParams,
             headers: {'Content-Type': 'application/json'},
